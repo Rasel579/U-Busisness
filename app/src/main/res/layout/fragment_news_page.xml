@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bridal_heath">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/newsPage_toolbar"
+            layout="@layout/base_page_toolbar" />
+
+        <TextView
+            android:id="@+id/newsPage_text"
+            style="@style/base_page_text_style"
+            tools:text="@string/dummy_text" />
+    </LinearLayout>
+
+</ScrollView>
