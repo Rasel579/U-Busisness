@@ -7,4 +7,12 @@
 
 Повседневная практика показывает, что консультация с широким активом требуют определения и уточнения существенных финансовых и административных условий. Повседневная практика показывает, что сложившаяся структура организации требуют определения и уточнения модели развития. Задача организации, в особенности же постоянное.</string>
     <string name="more">подробнее</string>
+    <string name="own_data">ЛИЧНЫЕ ДАННЫЕ</string>
+    <string name="name_caps">ИМЯ</string>
+    <string name="e_mail_caps">E-MAIL</string>
+    <string name="phone_caps">ТЕЛЕФОН</string>
+    <string name="language_caps">ЯЗЫК</string>
+    <string name="save">Сохранить</string>
+    <string name="edit">Редактировать</string>
+    <string name="subscription_management">Управление подпиской</string>
 </resources>

@@ -3,6 +3,6 @@
     <color name="bridal_heath">#FFF9F4</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="grey_light">#D8D7D7</color>
-    <color name="grey">#BCBEC0</color>
+    <color name="gray_light">#D8D7D7</color>
+    <color name="gray">#BCBEC0</color>
 </resources>
