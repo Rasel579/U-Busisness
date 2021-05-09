@@ -34,6 +34,8 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:foreground">?android:selectableItemBackground</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
     </style>
 
     <style name="base_page_text_style">
@@ -55,6 +57,8 @@
         <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">10sp</item>
         <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
     </style>
 
     <style name="base_text_field_style">
@@ -64,6 +68,9 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:paddingBottom">25dp</item>
     </style>
 
     <style name="outlined_button_style">
@@ -75,5 +82,7 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:foreground">?android:selectableItemBackground</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
     </style>
 </resources>

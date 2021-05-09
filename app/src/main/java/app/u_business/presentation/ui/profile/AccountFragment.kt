@@ -19,7 +19,6 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
         super.onViewCreated(view, savedInstanceState)
         initUi()
         initListeners()
-        //binding.accountNameEt.setText("Яна Насыбулина")
     }
 
     private fun initUi() {
