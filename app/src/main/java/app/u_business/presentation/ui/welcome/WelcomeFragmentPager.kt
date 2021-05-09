@@ -35,7 +35,7 @@ class WelcomeFragmentPager : Fragment(R.layout.fragment_welcome_pager) {
                     }
 
                     override fun onPageSelected(position: Int) {
-                        welcomePageIndicatorView.selection = position
+//                        welcomePageIndicatorView.selection = position
                     }
 
                     override fun onPageScrollStateChanged(state: Int) {

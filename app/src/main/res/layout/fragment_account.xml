@@ -1,107 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bridal_heath">
+<layout>
 
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="30dp"
-        android:background="@color/bridal_heath"
-        android:orientation="vertical">
+        android:background="@color/bridal_heath">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/univers_lt_cyr_65_bold"
-            android:gravity="center_horizontal"
-            android:text="@string/own_data"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:background="@color/bridal_heath"
+            android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="25dp">
-
-            <ImageView
-                android:id="@+id/account_avatar_image"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/univers_lt_cyr_65_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/own_data"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-            <ImageView
-                android:id="@+id/account_editMask_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/mask_avatar"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="25dp">
+
+                <ImageView
+                    android:id="@+id/account_avatar_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/account_editMask_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mask_avatar"
+                    android:visibility="gone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/name_caps" />
+
+            <EditText
+                android:id="@+id/account_name_et"
+                style="@style/base_text_field_style"
+                android:enabled="false"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/e_mail_caps" />
+
+            <EditText
+                android:id="@+id/account_email_et"
+                style="@style/base_text_field_style"
+                android:enabled="false"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/phone_caps" />
+
+            <EditText
+                android:id="@+id/account_phone_et"
+                style="@style/base_text_field_style"
+                android:enabled="false"
+                android:inputType="phone|number" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/language_caps" />
+
+            <EditText
+                android:id="@+id/account_language_et"
+                style="@style/base_text_field_style"
+                android:enabled="false"
+                android:inputType="text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/account_save_btn"
+                style="@style/base_button_style"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="60dp"
+                android:text="@string/save"
                 android:visibility="gone" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/account_edit_btn"
+                style="@style/outlined_button_style"
+                android:layout_marginTop="50dp"
+                android:text="@string/edit" />
 
-        <TextView
-            style="@style/base_text_field_title_style"
-            android:text="@string/name_caps" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/account_subscription_btn"
+                style="@style/outlined_button_style"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="60dp"
+                android:text="@string/subscription_management" />
 
-        <EditText
-            android:id="@+id/account_name_et"
-            style="@style/base_text_field_style"
-            android:enabled="false"
-            android:inputType="text" />
-
-        <TextView
-            style="@style/base_text_field_title_style"
-            android:text="@string/e_mail_caps" />
-
-        <EditText
-            android:id="@+id/account_email_et"
-            style="@style/base_text_field_style"
-            android:enabled="false"
-            android:inputType="textEmailAddress" />
-
-        <TextView
-            style="@style/base_text_field_title_style"
-            android:text="@string/phone_caps" />
-
-        <EditText
-            android:id="@+id/account_phone_et"
-            style="@style/base_text_field_style"
-            android:enabled="false"
-            android:inputType="phone|number" />
-
-        <TextView
-            style="@style/base_text_field_title_style"
-            android:text="@string/language_caps" />
-
-        <EditText
-            android:id="@+id/account_language_et"
-            style="@style/base_text_field_style"
-            android:enabled="false"
-            android:inputType="text" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/account_save_btn"
-            style="@style/base_button_style"
-            android:layout_marginTop="50dp"
-            android:text="@string/save"
-            android:visibility="gone"
-            android:layout_marginBottom="60dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/account_edit_btn"
-            style="@style/outlined_button_style"
-            android:layout_marginTop="50dp"
-            android:text="@string/edit" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/account_subscription_btn"
-            style="@style/outlined_button_style"
-            android:layout_marginTop="15dp"
-            android:text="@string/subscription_management"
-            android:layout_marginBottom="60dp" />
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</layout>
