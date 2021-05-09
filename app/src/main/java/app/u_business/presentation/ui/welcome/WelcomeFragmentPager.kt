@@ -13,7 +13,16 @@ class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_page
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        pagerAdapter = WelcomePagerAdapter(requireContext(), childFragmentManager)
+        pagerAdapter = WelcomePagerAdapter(
+            requireContext(),
+            listOf(
+                WelcomeFragment(),
+                FirstOnBoardFragment(),
+                SecondOnBoardFragment(),
+                ThirdOnBoardFragment()
+            ),
+            childFragmentManager
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
