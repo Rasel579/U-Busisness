@@ -19,7 +19,7 @@ class AccountFragment(override val layoutId: Int = R.layout.fragment_account) : 
         super.onViewCreated(view, savedInstanceState)
         initUi()
         initListeners()
-        //binding.accountNameEt.setText("Яна Насыбулина")
+        binding.accountNameEt.setText("Яна Насыбулина")
     }
 
     private fun initUi() {
