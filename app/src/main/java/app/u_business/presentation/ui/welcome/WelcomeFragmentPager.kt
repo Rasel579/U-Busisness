@@ -5,11 +5,11 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import app.u_business.R
-import app.u_business.databinding.FragmentWelcomePagerBinding
+import app.u_business.databinding.FrWelcomePagerBinding
 import by.kirich1409.viewbindingdelegate.viewBinding
 
-class WelcomeFragmentPager : Fragment(R.layout.fragment_welcome_pager) {
-    private val binding: FragmentWelcomePagerBinding by viewBinding()
+class WelcomeFragmentPager : Fragment(R.layout.fr_welcome_pager) {
+    private val binding: FrWelcomePagerBinding by viewBinding()
     private lateinit var pagerAdapter: WelcomePagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

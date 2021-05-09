@@ -5,15 +5,15 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import app.u_business.R
-import app.u_business.databinding.FragmentAccountBinding
+import app.u_business.databinding.FrAccountBinding
 import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.tinkoff.decoro.MaskImpl
 import ru.tinkoff.decoro.slots.PredefinedSlots
 import ru.tinkoff.decoro.watchers.FormatWatcher
 import ru.tinkoff.decoro.watchers.MaskFormatWatcher
 
-class AccountFragment : Fragment(R.layout.fragment_account) {
-    private val binding: FragmentAccountBinding by viewBinding()
+class AccountFragment : Fragment(R.layout.fr_account) {
+    private val binding: FrAccountBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
