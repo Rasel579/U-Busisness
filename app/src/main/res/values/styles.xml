@@ -76,4 +76,53 @@
         <item name="android:focusable">true</item>
         <item name="android:foreground">?android:selectableItemBackground</item>
     </style>
+
+    <style name="constraint">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/bridal_heath</item>
+    </style>
+
+    <style name="black_rounded_button_style">
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/shape_btn_rounded_5</item>
+        <item name="backgroundTint">@color/black</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingTop">20dp</item>
+    </style>
+
+    <style name="gray_rounded_button_style">
+        <item name="textAllCaps">true</item>
+        <item name="android:background">@drawable/shape_btn_rounded_5</item>
+        <item name="backgroundTint">@color/gray_btn</item>
+    </style>
+
+    <style name="main_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/univers_lt_cyr_65_bold</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginTop">170dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_marginBottom">200dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="input_text_style">
+        <item name="android:background">@drawable/shape_input_rounded_4</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_marginBottom">25dp</item>
+    </style>
 </resources>
