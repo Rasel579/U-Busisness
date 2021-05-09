@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import app.u_business.R
 import app.u_business.databinding.FrWelcomeBinding
-import by.kirich1409.viewbindingdelegate.viewBinding
+import app.u_business.presentation.ui.base.BaseFragment
 
-class WelcomeFragment : Fragment(R.layout.fr_welcome), View.OnClickListener {
-    private val binding: FrWelcomeBinding by viewBinding()
+class WelcomeFragment(override val layoutId: Int = R.layout.fr_welcome) : BaseFragment<FrWelcomeBinding>(), View.OnClickListener {
     private var selectedLanguage: Language = Language.RUSSIAN
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

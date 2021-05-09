@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import app.u_business.R
 import app.u_business.databinding.FrWelcomePagerBinding
-import by.kirich1409.viewbindingdelegate.viewBinding
+import app.u_business.presentation.ui.base.BaseFragment
 
-class WelcomeFragmentPager : Fragment(R.layout.fr_welcome_pager) {
-    private val binding: FrWelcomePagerBinding by viewBinding()
+class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_pager) : BaseFragment<FrWelcomePagerBinding>() {
     private lateinit var pagerAdapter: WelcomePagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
