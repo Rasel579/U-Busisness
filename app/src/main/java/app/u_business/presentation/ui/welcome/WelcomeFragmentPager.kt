@@ -25,31 +25,13 @@ class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_page
         )
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initViews() {
         initViewPager()
     }
 
     private fun initViewPager() {
         with(binding) {
-            welcomeViewPager.apply {
-                adapter = pagerAdapter
-                addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-                    override fun onPageScrolled(
-                        position: Int,
-                        positionOffset: Float,
-                        positionOffsetPixels: Int
-                    ) {
-                    }
-
-                    override fun onPageSelected(position: Int) {
-//                        welcomePageIndicatorView.selection = position
-                    }
-
-                    override fun onPageScrollStateChanged(state: Int) {
-                    }
-                })
-            }
+            welcomeViewPager.adapter = pagerAdapter
             pagerIndicator.initWithViewPager(welcomeViewPager)
         }
     }

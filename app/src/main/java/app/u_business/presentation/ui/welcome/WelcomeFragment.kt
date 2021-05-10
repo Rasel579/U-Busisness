@@ -8,11 +8,11 @@ import app.u_business.R
 import app.u_business.databinding.FrWelcomeBinding
 import app.u_business.presentation.ui.base.BaseFragment
 
-class WelcomeFragment(override val layoutId: Int = R.layout.fr_welcome) : BaseFragment<FrWelcomeBinding>(), View.OnClickListener {
+class WelcomeFragment(override val layoutId: Int = R.layout.fr_welcome) :
+    BaseFragment<FrWelcomeBinding>(), View.OnClickListener {
     private var selectedLanguage: Language = Language.RUSSIAN
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initViews() {
         initLangPicker()
     }
 

@@ -14,11 +14,10 @@ import ru.tinkoff.decoro.watchers.MaskFormatWatcher
 
 class AccountFragment(override val layoutId: Int = R.layout.fr_account) : BaseFragment<FrAccountBinding>() {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initViews() {
         initUi()
         initListeners()
-        binding.accountNameEt.setText("Яна Насыбулина")
+//        binding.accountNameEt.setText("Яна Насыбулина")
     }
 
     private fun initUi() {
