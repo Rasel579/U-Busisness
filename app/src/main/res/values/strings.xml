@@ -27,4 +27,5 @@
     <string name="business_card_country">Страна</string>
     <string name="business_card_address">Адрес</string>
     <string name="business_card_tags">Тэги</string>
+    <string name="business_card_save">Сохранить</string>
 </resources>
