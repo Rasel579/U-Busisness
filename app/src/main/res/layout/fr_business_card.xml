@@ -88,23 +88,94 @@
 
                 <TextView
                     style="@style/base_text_field_title_style"
+                    android:layout_marginStart="15dp"
                     android:text="@string/business_card_industry" />
 
                 <EditText
                     android:id="@+id/businessCard_industry_et"
                     style="@style/base_text_field_style"
+                    android:layout_marginStart="15dp"
                     android:enabled="false"
                     android:inputType="text" />
 
                 <TextView
                     style="@style/base_text_field_title_style"
+                    android:layout_marginStart="15dp"
                     android:text="@string/business_card_company_name" />
 
                 <EditText
                     android:id="@+id/businessCard_companyName_et"
                     style="@style/base_text_field_style"
+                    android:layout_marginStart="15dp"
                     android:enabled="false"
                     android:inputType="text" />
+
+                <LinearLayout
+                    android:id="@+id/businessCard_moreInfo_wrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/businessCard_companyLogo_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="@drawable/white_shape"
+                        android:padding="30dp"
+                        android:src="@drawable/ic_logo" />
+
+                    <TextView
+                        style="@style/base_text_field_title_style"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/business_card_phone" />
+
+                    <EditText
+                        android:id="@+id/businessCard_phone_et"
+                        style="@style/base_text_field_style"
+                        android:layout_marginStart="15dp"
+                        android:enabled="false"
+                        android:inputType="phone" />
+
+                    <TextView
+                        style="@style/base_text_field_title_style"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/business_card_country" />
+
+                    <EditText
+                        android:id="@+id/businessCard_country_et"
+                        style="@style/base_text_field_style"
+                        android:layout_marginStart="15dp"
+                        android:enabled="false"
+                        android:inputType="text" />
+
+                    <TextView
+                        style="@style/base_text_field_title_style"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/business_card_address" />
+
+                    <EditText
+                        android:id="@+id/businessCard_address_et"
+                        style="@style/base_text_field_style"
+                        android:layout_marginStart="15dp"
+                        android:enabled="false"
+                        android:inputType="text" />
+
+                    <TextView
+                        style="@style/base_text_field_title_style"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/business_card_tags" />
+
+                    <EditText
+                        android:id="@+id/businessCard_tags_et"
+                        style="@style/base_text_field_style"
+                        android:layout_marginStart="15dp"
+                        android:enabled="false"
+                        android:inputType="text" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/businessCard_more_wrapper"
@@ -112,8 +183,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"

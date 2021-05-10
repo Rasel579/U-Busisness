@@ -22,4 +22,9 @@
     <string name="business_card_industry">Индустрия</string>
     <string name="business_card_company_name">Название компании</string>
     <string name="business_card_more">подробнее</string>
+    <string name="business_card_roll_up">свернуть</string>
+    <string name="business_card_phone">Телефон</string>
+    <string name="business_card_country">Страна</string>
+    <string name="business_card_address">Адрес</string>
+    <string name="business_card_tags">Тэги</string>
 </resources>
