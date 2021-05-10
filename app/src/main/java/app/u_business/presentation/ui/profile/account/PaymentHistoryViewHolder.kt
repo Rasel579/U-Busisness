@@ -1,4 +1,4 @@
-package app.u_business.presentation.ui.profile
+package app.u_business.presentation.ui.profile.account
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -18,4 +18,8 @@
     <string name="subscription_prolong">Продлить</string>
     <string name="subscription_edit">Изменить</string>
     <string name="subscription_cancel">отменить подписку</string>
+    <string name="business_card_edit">Изменить</string>
+    <string name="business_card_industry">Индустрия</string>
+    <string name="business_card_company_name">Название компании</string>
+    <string name="business_card_more">подробнее</string>
 </resources>

@@ -1,6 +1,5 @@
-package app.u_business.presentation.ui.profile
+package app.u_business.presentation.ui.profile.account
 
-import androidx.fragment.app.Fragment
 import app.u_business.R
 import app.u_business.databinding.FrSubscriptionBinding
 import app.u_business.domain.model.PaymentHistory
