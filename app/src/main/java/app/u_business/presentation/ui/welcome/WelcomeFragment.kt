@@ -10,6 +10,7 @@ import app.u_business.presentation.ui.base.BaseFragment
 
 class WelcomeFragment(override val layoutId: Int = R.layout.fr_welcome) :
     BaseFragment<FrWelcomeBinding>(), View.OnClickListener {
+
     private var selectedLanguage: Language = Language.RUSSIAN
 
     override fun initViews() {

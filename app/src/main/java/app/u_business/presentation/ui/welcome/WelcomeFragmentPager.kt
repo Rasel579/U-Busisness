@@ -8,7 +8,9 @@ import app.u_business.R
 import app.u_business.databinding.FrWelcomePagerBinding
 import app.u_business.presentation.ui.base.BaseFragment
 
-class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_pager) : BaseFragment<FrWelcomePagerBinding>() {
+class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_pager) :
+    BaseFragment<FrWelcomePagerBinding>() {
+
     private lateinit var pagerAdapter: WelcomePagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

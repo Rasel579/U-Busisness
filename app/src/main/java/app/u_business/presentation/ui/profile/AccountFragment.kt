@@ -12,7 +12,8 @@ import ru.tinkoff.decoro.slots.PredefinedSlots
 import ru.tinkoff.decoro.watchers.FormatWatcher
 import ru.tinkoff.decoro.watchers.MaskFormatWatcher
 
-class AccountFragment(override val layoutId: Int = R.layout.fr_account) : BaseFragment<FrAccountBinding>() {
+class AccountFragment(override val layoutId: Int = R.layout.fr_account) :
+    BaseFragment<FrAccountBinding>() {
 
     override fun initViews() {
         initUi()
