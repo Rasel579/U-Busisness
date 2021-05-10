@@ -50,6 +50,7 @@ class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_page
                     }
                 })
             }
+            pagerIndicator.initWithViewPager(welcomeViewPager)
         }
     }
 }
