@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import app.u_business.R
 import app.u_business.databinding.FrAccountBinding
 import app.u_business.presentation.ui.base.BaseFragment
@@ -30,9 +31,14 @@ class AccountFragment(override val layoutId: Int = R.layout.fr_account) :
 
     private fun initListeners() {
         with(binding) {
+            accountSubscriptionBtn.setOnClickListener { openSubscriptionScreen() }
             accountEditBtn.setOnClickListener { switchOnEditableMode() }
             accountSaveBtn.setOnClickListener { switchOffEditableMode() }
         }
+    }
+
+    private fun openSubscriptionScreen() {
+        Navigation.findNavController(binding.root).navigate(R.id.destination_subscription)
     }
 
     private fun switchOnEditableMode() {

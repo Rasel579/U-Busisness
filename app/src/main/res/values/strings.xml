@@ -15,4 +15,7 @@
     <string name="save">Сохранить</string>
     <string name="edit">Редактировать</string>
     <string name="subscription_management">Управление подпиской</string>
+    <string name="subscription_prolong">Продлить</string>
+    <string name="subscription_edit">Изменить</string>
+    <string name="subscription_cancel">отменить подписку</string>
 </resources>
