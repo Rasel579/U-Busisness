@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profile_navigation"
-    app:startDestination="@id/specialOffersFragment">
+    app:startDestination="@id/editOfferFragment">
 
     <fragment
         android:id="@+id/destination_account"
@@ -20,4 +20,8 @@
         android:id="@+id/specialOffersFragment"
         android:name="app.u_business.presentation.ui.profile.special_offers.SpecialOffersFragment"
         android:label="SpecialOffersFragment" />
+    <fragment
+        android:id="@+id/editOfferFragment"
+        android:name="app.u_business.presentation.ui.profile.special_offers.EditOfferFragment"
+        android:label="EditOfferFragment" />
 </navigation>

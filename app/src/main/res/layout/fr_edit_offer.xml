@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bridal_heath">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_margin="30dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/editOffer_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/test_offer" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/photo_overlay_big" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/edit_offer_name" />
+
+            <EditText
+                android:id="@+id/editOffer_name_et"
+                style="@style/base_text_field_style"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/edit_offer_protocol" />
+
+            <EditText
+                android:id="@+id/editOffer_protocol_et"
+                style="@style/base_text_field_style"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/edit_offer_validity" />
+
+            <EditText
+                android:id="@+id/editOffer_validity_et"
+                style="@style/base_text_field_style"
+                android:inputType="date" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/edit_offer_desc" />
+
+            <EditText
+                android:id="@+id/editOffer_desc_et"
+                style="@style/base_text_field_style"
+                android:inputType="textMultiLine" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/editOffer_save_btn"
+                style="@style/base_button_style"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="60dp"
+                android:text="@string/edit_offer_save" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

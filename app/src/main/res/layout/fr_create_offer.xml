@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bridal_heath">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/createOffer_uploadPhoto_iv"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_margin="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/cover_upload"/>
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/create_offer_name" />
+
+            <EditText
+                android:id="@+id/createOffer_name_et"
+                style="@style/base_text_field_style"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/create_offer_protocol" />
+
+            <EditText
+                android:id="@+id/createOffer_protocol_et"
+                style="@style/base_text_field_style"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/create_offer_validity" />
+
+            <EditText
+                android:id="@+id/createOffer_validity_et"
+                style="@style/base_text_field_style"
+                android:inputType="date" />
+
+            <TextView
+                style="@style/base_text_field_title_style"
+                android:text="@string/create_offer_desc" />
+
+            <EditText
+                android:id="@+id/createOffer_desc_et"
+                style="@style/base_text_field_style"
+                android:inputType="textMultiLine" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createOffer_publish_btn"
+                style="@style/base_button_style"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="60dp"
+                android:text="@string/edit_offer_save" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

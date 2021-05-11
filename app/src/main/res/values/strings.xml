@@ -58,4 +58,13 @@
         вы сможете начать пользоваться приложением!</string>
     <string name="specialOffers_actual">актуальные</string>
     <string name="specialOffers_overdue">просроченные</string>
+    <string name="edit_offer_name">Название</string>
+    <string name="edit_offer_protocol">Протокол</string>
+    <string name="edit_offer_validity">Срок действия</string>
+    <string name="edit_offer_desc">Описания</string>
+    <string name="edit_offer_save">Сохранить</string>
+    <string name="create_offer_name">Название</string>
+    <string name="create_offer_protocol">Протокол</string>
+    <string name="create_offer_validity">Срок действия</string>
+    <string name="create_offer_desc">Описание</string>
 </resources>
