@@ -1,5 +1,6 @@
 package app.u_business.presentation.ui.sign_in
 
+/*
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,4 +36,4 @@ class SignIn1 : Fragment() {
 
         return binding.root
     }
-}
+}*/

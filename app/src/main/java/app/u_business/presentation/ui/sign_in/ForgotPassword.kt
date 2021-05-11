@@ -1,14 +1,6 @@
 package app.u_business.presentation.ui.sign_in
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.fragment.NavHostFragment
-import app.u_business.R
-import app.u_business.databinding.FragmentForgotPasswordBinding
-
+/*
 class ForgotPassword : Fragment() {
     private lateinit var binding: FragmentForgotPasswordBinding
 
@@ -29,3 +21,4 @@ class ForgotPassword : Fragment() {
         return binding.root
     }
 }
+*/

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bridal_heath"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/specialOffers_toggle"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/toggle_outline"
+            android:checkedButton="@id/specialOffers_actual_switch"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/specialOffers_actual_switch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:fontFamily="@font/manrope_medium"
+                android:gravity="center"
+                android:text="@string/specialOffers_actual"
+                android:textColor="@color/switch_color_selector" />
+
+            <RadioButton
+                android:id="@+id/specialOffers_overdue_switch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:fontFamily="@font/manrope_medium"
+                android:gravity="center"
+                android:text="@string/specialOffers_overdue"
+                android:textColor="@color/switch_color_selector" />
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/specialOffers_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_offer" />
+
+    </LinearLayout>
+</layout>

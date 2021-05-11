@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="discount"
+            type="Integer" />
+
+        <variable
+            name="goods"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/white_shape"
+        android:backgroundTint="@color/mona_lisa">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/univers_lt_cyr_65_bold"
+            android:text="Специальная цена\nдля участников сообщества!"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemOffer_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/univers_lt_cyr_65_bold"
+            android:text='@{"скидка " + discount + "%"}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@id/itemOffer_good"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/itemOffer_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/univers_lt_cyr_65_bold"
+            android:text='@{"на "+goods}'
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

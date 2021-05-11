@@ -56,4 +56,6 @@
     <string name="is_waiting_subtext">Ваш аккаунт в ожидании оплаты.<br />
         После подтверждения статуса платежа,<br />
         вы сможете начать пользоваться приложением!</string>
+    <string name="specialOffers_actual">актуальные</string>
+    <string name="specialOffers_overdue">просроченные</string>
 </resources>

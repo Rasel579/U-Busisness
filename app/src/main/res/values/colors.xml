@@ -5,6 +5,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray_light">#D8D7D7</color>
     <color name="gray">#BCBEC0</color>
-    <color name="orange">#FFF4EC</color>
+    <color name="bright_orange">#FFF4EC</color>
     <color name="gray_btn">#F1F2F2</color>
+    <color name="transparent">@null</color>
+    <color name="bright_blue">#F1F2F2</color>
+    <color name="mona_lisa">#FF989B</color>
+    <color name="violet">#E1AECD</color>
+    <color name="light_blue">#D8EDF5</color>
+    <color name="orange">#FFC59E</color>
 </resources>
