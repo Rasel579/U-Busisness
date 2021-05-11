@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_in_nav"
+    app:startDestination="@id/signIn1">
+    <fragment
+        android:id="@+id/signIn1"
+        android:name="app.u_business.presentation.ui.sign_in.SignIn1"
+        android:label="SignIn1"
+        tools:layout="@layout/fragment_sign_in_1">
+        <action
+            android:id="@+id/action_signIn1_to_signIn2"
+            app:destination="@id/signIn2" />
+        <action
+            android:id="@+id/action_signIn1_to_signUp1"
+            app:destination="@id/signUp1" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn2"
+        android:name="app.u_business.presentation.ui.sign_in.SignIn2"
+        android:label="SignIn2"
+        tools:layout="@layout/fragment_sign_in_2">
+        <action
+            android:id="@+id/action_signIn2_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp1"
+        android:name="app.u_business.presentation.ui.sign_in.SignUp1"
+        android:label="SignUp1"
+        tools:layout="@layout/fragment_sign_up_1">
+        <action
+            android:id="@+id/action_signUp1_to_signUp2"
+            app:destination="@id/signUp2" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp2"
+        android:name="app.u_business.presentation.ui.sign_in.SignUp2"
+        android:label="SignUp2"
+        tools:layout="@layout/fragment_sign_up_2"/>
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="app.u_business.presentation.ui.sign_in.ForgotPassword"
+        android:label="ForgotPassword"
+        tools:layout="@layout/fragment_forgot_password"/>
+</navigation>

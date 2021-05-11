@@ -15,4 +15,33 @@
     <string name="save">Сохранить</string>
     <string name="edit">Редактировать</string>
     <string name="subscription_management">Управление подпиской</string>
+
+    <string name="sign_in_1_text">Принимайте участие <br />в закрытых встречах</string>
+    <string name="sign_in_1_sign_up">Зарегистрироваться</string>
+    <string name="sign_in_1_sign_in">Войти</string>
+    <string name="sign_in_1_btn_facebook">Facebook</string>
+    <string name="sign_in_1_btn_google">Google</string>
+    <string name="sign_in_2_back">Back</string>
+    <string name="sign_in_2_text">Вход</string>
+    <string name="sign_in_2_mail">E-Mail</string>
+    <string name="sign_in_2_password">Пароль</string>
+    <string name="sign_in_2_forgot_password"><u>Забыли пароль?</u></string>
+    <string name="sign_in_2_sign_in">Войти</string>
+    <string name="sign_up_1_text">Регистрация</string>
+    <string name="sign_up_1_back">Back</string>
+    <string name="sign_up_1_name">Имя</string>
+    <string name="sign_up_1_mail">E-Mail</string>
+    <string name="sign_up_1_continue">Продолжить</string>
+    <string name="sign_up_2_text">Регистрация</string>
+    <string name="sign_up_2_back">Back</string>
+    <string name="sign_up_2_password">Пароль</string>
+    <string name="sign_up_2_repeat_password">Потвердите пароль</string>
+    <string name="sign_up_2_sign_up">Зарегистрироваться</string>
+    <string name="forgot_password_back">Back</string>
+    <string name="forgot_password_text">Восстановление доступа</string>
+    <string name="forgot_password_mail">E-Mail</string>
+    <string name="is_waiting_text">В ожидании оплаты</string>
+    <string name="is_waiting_subtext">Ваш аккаунт в ожидании оплаты.<br />
+        После подтверждения статуса платежа,<br />
+        вы сможете начать пользоваться приложением!</string>
 </resources>
