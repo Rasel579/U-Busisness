@@ -11,7 +11,7 @@
         android:id="@+id/onboard3_icon_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="150dp"
         android:src="@drawable/ic_onboard3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

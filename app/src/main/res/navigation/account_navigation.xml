@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_navigation"
+    app:startDestination="@id/businessCardFragment">
+
+    <fragment
+        android:id="@+id/destination_account"
+        android:name="app.u_business.presentation.ui.profile.account.AccountFragment"
+        android:label="AccountFragment" />
+    <fragment
+        android:id="@+id/destination_subscription"
+        android:name="app.u_business.presentation.ui.profile.account.SubscriptionFragment"
+        android:label="SubscriptionFragment" />
+    <fragment
+        android:id="@+id/businessCardFragment"
+        android:name="app.u_business.presentation.ui.profile.business_card.BusinessCardFragment"
+        android:label="BusinessCardFragment" />
+</navigation>

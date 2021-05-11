@@ -15,7 +15,19 @@
     <string name="save">Сохранить</string>
     <string name="edit">Редактировать</string>
     <string name="subscription_management">Управление подпиской</string>
-
+    <string name="subscription_prolong">Продлить</string>
+    <string name="subscription_edit">Изменить</string>
+    <string name="subscription_cancel">отменить подписку</string>
+    <string name="business_card_edit">Изменить</string>
+    <string name="business_card_industry">Индустрия</string>
+    <string name="business_card_company_name">Название компании</string>
+    <string name="business_card_more">подробнее</string>
+    <string name="business_card_roll_up">свернуть</string>
+    <string name="business_card_phone">Телефон</string>
+    <string name="business_card_country">Страна</string>
+    <string name="business_card_address">Адрес</string>
+    <string name="business_card_tags">Тэги</string>
+    <string name="business_card_save">Сохранить</string>
     <string name="sign_in_1_text">Принимайте участие <br />в закрытых встречах</string>
     <string name="sign_in_1_sign_up">Зарегистрироваться</string>
     <string name="sign_in_1_sign_in">Войти</string>
