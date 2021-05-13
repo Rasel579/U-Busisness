@@ -1,65 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/constraint">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="17dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_stroke_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/sign_up_1_back" />
+    <data>
 
-    <TextView
-        android:id="@+id/text_view"
-        style="@style/main_text_style"
-        android:text="@string/sign_up_1_text"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </data>
 
-    <EditText
-        android:id="@+id/edit_text_name"
-        style="@style/input_text_style"
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/constraint">
 
-        android:hint="@string/sign_up_1_name"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints=""
-        android:inputType="text" />
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="17dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_stroke_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/sign_up_1_back" />
 
-    <EditText
-        android:id="@+id/edit_text_mail"
-        style="@style/input_text_style"
-        android:layout_marginBottom="50dp"
+        <TextView
+            android:id="@+id/text_view"
+            style="@style/main_text_style"
+            android:text="@string/sign_up_1_text"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:hint="@string/sign_up_1_mail"
-        app:layout_constraintBottom_toTopOf="@+id/btn_continue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints=""
-        android:inputType="textEmailAddress"
-        tools:ignore="LabelFor,TextFields" />
+        <EditText
+            android:id="@+id/edit_text_name"
+            style="@style/input_text_style"
 
-    <Button
-        android:id="@+id/btn_continue"
-        style="@style/black_rounded_button_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            android:hint="@string/sign_up_1_name"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_mail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:autofillHints=""
+            android:inputType="text" />
 
-        android:text="@string/sign_up_1_continue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_mail"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_mail"
-        android:layout_marginBottom="80dp"/>
+        <EditText
+            android:id="@+id/edit_text_mail"
+            style="@style/input_text_style"
+            android:layout_marginBottom="50dp"
+
+            android:hint="@string/sign_up_1_mail"
+            app:layout_constraintBottom_toTopOf="@+id/btn_continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:autofillHints=""
+            android:inputType="textEmailAddress"
+            tools:ignore="LabelFor,TextFields" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            style="@style/black_rounded_button_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/sign_up_1_continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_mail"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_mail"
+            android:layout_marginBottom="80dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

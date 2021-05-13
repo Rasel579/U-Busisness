@@ -1,64 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/constraint">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="17dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_stroke_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/sign_up_2_back" />
+    <data>
 
-    <TextView
-        android:id="@+id/text_view"
-        style="@style/main_text_style"
-        android:text="@string/sign_up_2_text"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </data>
 
-    <EditText
-        android:id="@+id/edit_text_password"
-        style="@style/input_text_style"
-        android:hint="@string/sign_up_2_password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_repeat_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="" />
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/constraint">
 
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="17dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_stroke_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/sign_up_2_back" />
 
-    <EditText
-        android:id="@+id/edit_text_repeat_password"
-        style="@style/input_text_style"
+        <TextView
+            android:id="@+id/text_view"
+            style="@style/main_text_style"
+            android:text="@string/sign_up_2_text"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:hint="@string/sign_up_2_repeat_password"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints=""
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/btn_sign_up"
-        style="@style/black_rounded_button_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
-        android:text="@string/sign_up_2_sign_up"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_repeat_password"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_repeat_password"
-        android:layout_marginBottom="80dp"/>
+        <EditText
+            android:id="@+id/edit_text_password"
+            style="@style/input_text_style"
+            android:hint="@string/sign_up_2_password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_repeat_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:autofillHints="" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/edit_text_repeat_password"
+            style="@style/input_text_style"
+
+            android:hint="@string/sign_up_2_repeat_password"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:autofillHints=""
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            style="@style/black_rounded_button_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/sign_up_2_sign_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_repeat_password"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_repeat_password"
+            android:layout_marginBottom="80dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

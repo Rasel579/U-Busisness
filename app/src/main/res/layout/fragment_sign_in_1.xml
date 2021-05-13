@@ -1,79 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/constraint"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/text_view"
-        style="@style/main_text_style"
-        android:text="@string/sign_in_1_text"
+    <data>
 
-        app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="AllCaps" />
+    </data>
 
-    <Button
-        android:id="@+id/btn_sign_up"
-        style="@style/black_rounded_button_style"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/constraint">
 
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/text_view"
+            style="@style/main_text_style"
+            android:text="@string/sign_in_1_text"
 
-        android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="AllCaps" />
 
-        android:text="@string/sign_in_1_sign_up"
-        app:layout_constraintBottom_toTopOf="@+id/btn_facebook"
-        app:layout_constraintEnd_toEndOf="@+id/text_view"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/text_view" />
+        <Button
+            android:id="@+id/btn_sign_up"
+            style="@style/black_rounded_button_style"
+            android:layout_width="0dp"
 
-    <ImageButton
-        android:id="@+id/btn_facebook"
-        style="@style/gray_rounded_button_style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:paddingVertical="14dp"
-        android:layout_marginBottom="15dp"
-        android:src="@drawable/ic_facebook"
-        app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
-        app:layout_constraintEnd_toStartOf="@+id/btn_google"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
-        android:contentDescription="@string/sign_in_1_btn_facebook" />
-
-    <ImageButton
-        android:id="@+id/btn_google"
-        style="@style/gray_rounded_button_style"
-        android:layout_width="168dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="14dp"
-        android:src="@drawable/ic_google"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_facebook"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
-        app:layout_constraintTop_toTopOf="@+id/btn_facebook"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="@string/sign_in_1_btn_google" />
-
-    <Button
-        android:id="@+id/btn_sign_in"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:paddingVertical="20dp"
-        android:text="@string/sign_in_1_sign_in"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
-        app:layout_constraintStart_toStartOf="@+id/btn_sign_up" />
+            android:layout_height="wrap_content"
 
 
+            android:layout_marginBottom="15dp"
+
+            android:text="@string/sign_in_1_sign_up"
+            app:layout_constraintBottom_toTopOf="@+id/btn_facebook"
+            app:layout_constraintEnd_toEndOf="@+id/text_view"
+            app:layout_constraintStart_toStartOf="@+id/text_view" />
+
+        <ImageButton
+            android:id="@+id/btn_facebook"
+            style="@style/gray_rounded_button_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:paddingVertical="14dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_facebook"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
+            app:layout_constraintEnd_toStartOf="@+id/btn_google"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
+            android:contentDescription="@string/sign_in_1_btn_facebook" />
+
+        <ImageButton
+            android:id="@+id/btn_google"
+            style="@style/gray_rounded_button_style"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:src="@drawable/ic_google"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_facebook"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
+            app:layout_constraintTop_toTopOf="@+id/btn_facebook"
+            tools:ignore="MissingConstraints"
+            android:contentDescription="@string/sign_in_1_btn_google" />
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingVertical="20dp"
+            android:text="@string/sign_in_1_sign_in"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_up" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
