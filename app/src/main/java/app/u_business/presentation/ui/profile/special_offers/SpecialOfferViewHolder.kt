@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import app.u_business.databinding.ItemOfferBinding
+import app.u_business.domain.model.Event
 import app.u_business.domain.model.Offer
 
 class SpecialOfferViewHolder(
