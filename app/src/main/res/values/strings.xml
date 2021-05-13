@@ -15,7 +15,19 @@
     <string name="save">Сохранить</string>
     <string name="edit">Редактировать</string>
     <string name="subscription_management">Управление подпиской</string>
-
+    <string name="subscription_prolong">Продлить</string>
+    <string name="subscription_edit">Изменить</string>
+    <string name="subscription_cancel">отменить подписку</string>
+    <string name="business_card_edit">Изменить</string>
+    <string name="business_card_industry">Индустрия</string>
+    <string name="business_card_company_name">Название компании</string>
+    <string name="business_card_more">подробнее</string>
+    <string name="business_card_roll_up">свернуть</string>
+    <string name="business_card_phone">Телефон</string>
+    <string name="business_card_country">Страна</string>
+    <string name="business_card_address">Адрес</string>
+    <string name="business_card_tags">Тэги</string>
+    <string name="business_card_save">Сохранить</string>
     <string name="sign_in_1_text">Принимайте участие <br />в закрытых встречах</string>
     <string name="sign_in_1_sign_up">Зарегистрироваться</string>
     <string name="sign_in_1_sign_in">Войти</string>
@@ -44,4 +56,15 @@
     <string name="is_waiting_subtext">Ваш аккаунт в ожидании оплаты.<br />
         После подтверждения статуса платежа,<br />
         вы сможете начать пользоваться приложением!</string>
+    <string name="specialOffers_actual">актуальные</string>
+    <string name="specialOffers_overdue">просроченные</string>
+    <string name="edit_offer_name">Название</string>
+    <string name="edit_offer_protocol">Протокол</string>
+    <string name="edit_offer_validity">Срок действия</string>
+    <string name="edit_offer_desc">Описания</string>
+    <string name="edit_offer_save">Сохранить</string>
+    <string name="create_offer_name">Название</string>
+    <string name="create_offer_protocol">Протокол</string>
+    <string name="create_offer_validity">Срок действия</string>
+    <string name="create_offer_desc">Описание</string>
 </resources>

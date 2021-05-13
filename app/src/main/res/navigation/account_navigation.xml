@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_navigation"
+    app:startDestination="@id/editOfferFragment">
+
+    <fragment
+        android:id="@+id/destination_account"
+        android:name="app.u_business.presentation.ui.profile.account.AccountFragment"
+        android:label="AccountFragment" />
+    <fragment
+        android:id="@+id/destination_subscription"
+        android:name="app.u_business.presentation.ui.profile.account.SubscriptionFragment"
+        android:label="SubscriptionFragment" />
+    <fragment
+        android:id="@+id/businessCardFragment"
+        android:name="app.u_business.presentation.ui.profile.business_card.BusinessCardFragment"
+        android:label="BusinessCardFragment" />
+    <fragment
+        android:id="@+id/specialOffersFragment"
+        android:name="app.u_business.presentation.ui.profile.special_offers.SpecialOffersFragment"
+        android:label="SpecialOffersFragment" />
+    <fragment
+        android:id="@+id/editOfferFragment"
+        android:name="app.u_business.presentation.ui.profile.special_offers.EditOfferFragment"
+        android:label="EditOfferFragment" />
+</navigation>
