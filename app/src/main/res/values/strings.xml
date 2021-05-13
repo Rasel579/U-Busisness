@@ -67,4 +67,5 @@
     <string name="create_offer_protocol">Протокол</string>
     <string name="create_offer_validity">Срок действия</string>
     <string name="create_offer_desc">Описание</string>
+    <string name="item_news_more">Подробнее ></string>
 </resources>
