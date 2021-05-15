@@ -81,4 +81,5 @@
     <string name="folder_photos">Фото</string>
     <string name="folder_videos">Видео</string>
     <string name="folder_recordings">Аудио</string>
+    <string name="gallery_title">Галерея</string>
 </resources>
