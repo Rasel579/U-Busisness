@@ -77,4 +77,8 @@
     <string name="library_title">Библиотека</string>
     <string name="library_last">последние</string>
     <string name="library_fav">избранное</string>
+    <string name="folder_documents">Документы</string>
+    <string name="folder_photos">Фото</string>
+    <string name="folder_videos">Видео</string>
+    <string name="folder_recordings">Аудио</string>
 </resources>

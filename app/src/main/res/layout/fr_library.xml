@@ -22,13 +22,14 @@
                 android:text="@string/library_title" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/library_folders_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal"
                 android:layout_marginStart="30dp"
-                tools:listitem="@layout/item_file_folder"
-                tools:itemCount="3" />
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_file_folder" />
 
             <RadioGroup
                 android:id="@+id/library_toggle"
@@ -50,10 +51,10 @@
                 android:id="@+id/library_files_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_margin="30dp"
-                tools:listitem="@layout/item_file"
-                tools:itemCount="4" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_file" />
 
         </LinearLayout>
 

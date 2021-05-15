@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation.xml"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/libraryFragment2">
     <fragment
         android:id="@+id/welcomeFragmentPager"
         android:name="app.u_business.presentation.ui.welcome.WelcomeFragmentPager"
@@ -10,4 +10,8 @@
         android:id="@+id/homeFragment"
         android:name="app.u_business.presentation.ui.home.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/libraryFragment2"
+        android:name="app.u_business.presentation.ui.library.LibraryFragment"
+        android:label="LibraryFragment" />
 </navigation>
