@@ -15,8 +15,9 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="315dp"
         android:layout_height="175dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/white_shape"
         android:backgroundTint="@color/mona_lisa">
