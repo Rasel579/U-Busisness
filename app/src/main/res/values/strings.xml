@@ -82,4 +82,9 @@
     <string name="folder_videos">Видео</string>
     <string name="folder_recordings">Аудио</string>
     <string name="gallery_title">Галерея</string>
+    <string name="editPassword_title">Галерея</string>
+    <string name="edit_password_old_password">Старый пароль</string>
+    <string name="edit_password_new_password">Новый пароль</string>
+    <string name="edit_password_confirm_password">Подтвердите пароль</string>
+    <string name="edit_password_save">Сохранить</string>
 </resources>
