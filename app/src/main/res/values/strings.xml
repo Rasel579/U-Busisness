@@ -74,4 +74,7 @@
     <string name="news_special_offers"><a href="">Специальные предложения</a></string>
     <string name="home_test_link_text">Участников U пригласили изучить воздействия эфирных масел и релаксирующих программ на психофизиологическое состояние человека! Цель исследования – понять, как ароматерапия помогает человеку расслабиться и снизить стресс. <a href="http://www.google.com">Читать еще ></a></string>
     <string name="item_event_more_show_more">Смотреть ещё</string>
+    <string name="library_title">Библиотека</string>
+    <string name="library_last">последние</string>
+    <string name="library_fav">избранное</string>
 </resources>

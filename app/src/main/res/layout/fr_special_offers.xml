@@ -15,51 +15,26 @@
 
         <RadioGroup
             android:id="@+id/specialOffers_toggle"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/toggle_outline"
-            android:checkedButton="@id/specialOffers_actual_switch"
-            android:orientation="horizontal">
+            style="@style/base_toggle_style"
+            android:checkedButton="@id/specialOffers_actual_switch">
 
             <RadioButton
                 android:id="@+id/specialOffers_actual_switch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/toggle_widget_background"
-                android:button="@null"
-                android:fontFamily="@font/manrope_medium"
-                android:gravity="center"
-                android:text="@string/specialOffers_actual"
-                android:textColor="@color/switch_color_selector" />
+                style="@style/base_switch_style"
+                android:text="@string/specialOffers_actual" />
 
             <RadioButton
                 android:id="@+id/specialOffers_overdue_switch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/toggle_widget_background"
-                android:button="@null"
-                android:fontFamily="@font/manrope_medium"
-                android:gravity="center"
-                android:text="@string/specialOffers_overdue"
-                android:textColor="@color/switch_color_selector" />
+                style="@style/base_switch_style"
+                android:text="@string/specialOffers_overdue" />
         </RadioGroup>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/specialOffers_rv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="45dp"
+            android:layout_marginTop="30dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_offer" />
 

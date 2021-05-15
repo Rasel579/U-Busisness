@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="140dp"
+        android:layout_height="175dp"
+        android:background="@drawable/white_shape"
+        tools:backgroundTint="@color/bright_violet"
+        android:layout_marginEnd="15dp">
+
+        <TextView
+            android:id="@+id/itemFileFolder_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            tools:text="Документы"
+            android:fontFamily="@font/manrope_bold"
+            app:layout_constraintBottom_toTopOf="@id/itemFileFolder_type_text" />
+
+        <TextView
+            android:id="@+id/itemFileFolder_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="15dp"
+            tools:text="DOC-PDF"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:fontFamily="@font/manrope_medium" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

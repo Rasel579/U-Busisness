@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bridal_heath">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/base_title_style"
+                android:text="@string/library_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_marginStart="30dp"
+                tools:listitem="@layout/item_file_folder"
+                tools:itemCount="3" />
+
+            <RadioGroup
+                android:id="@+id/library_toggle"
+                style="@style/base_toggle_style"
+                android:checkedButton="@id/library_last_switch">
+
+                <RadioButton
+                    android:id="@+id/library_last_switch"
+                    style="@style/base_switch_style"
+                    android:text="@string/library_last" />
+
+                <RadioButton
+                    android:id="@+id/library_fav_switch"
+                    style="@style/base_switch_style"
+                    android:text="@string/library_fav" />
+            </RadioGroup>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/library_files_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_margin="30dp"
+                tools:listitem="@layout/item_file"
+                tools:itemCount="4" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
