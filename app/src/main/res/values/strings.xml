@@ -87,4 +87,23 @@
     <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="library_title">Библиотека</string>
+    <string name="library_last">последние</string>
+    <string name="library_fav">избранное</string>
+    <string name="folder_documents">Документы</string>
+    <string name="folder_photos">Фото</string>
+    <string name="folder_videos">Видео</string>
+    <string name="folder_recordings">Аудио</string>
+    <string name="gallery_title">Галерея</string>
+    <string name="editPassword_title">Галерея</string>
+    <string name="edit_password_old_password">Старый пароль</string>
+    <string name="edit_password_new_password">Новый пароль</string>
+    <string name="edit_password_confirm_password">Подтвердите пароль</string>
+    <string name="edit_password_save">Сохранить</string>
+    <string name="edit_phone_number">Номер телефона</string>
+    <string name="edit_phone_confirmation">Подтверждение номера</string>
+    <string name="edit_phone_input_code">Введите код подтверждения</string>
+    <string name="edit_phone_continue">Продолжить</string>
+    <string name="edit_phone_confirm">Подтвердить</string>
+    <string name="edit_phone_code">Код подтверждения</string>
 </resources>

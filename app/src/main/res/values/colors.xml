@@ -10,9 +10,12 @@
     <color name="gray_btn">#F1F2F2</color>
     <color name="transparent">@null</color>
     <color name="bright_blue">#F1F2F2</color>
+    <color name="brighter_blue">#DEF0FB</color>
     <color name="mona_lisa">#FF989B</color>
     <color name="violet">#E1AECD</color>
     <color name="light_blue">#D8EDF5</color>
     <color name="blue">#C4DEEA</color>
     <color name="orange">#FFC59E</color>
+    <color name="bright_violet">#F7E8F0</color>
+    <color name="bright_green">#3395D1BB</color>
 </resources>

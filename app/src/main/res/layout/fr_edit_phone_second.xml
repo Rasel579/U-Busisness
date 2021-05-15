@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bridal_heath">
+
+        <TextView
+            android:id="@+id/editPhone_title"
+            style="@style/base_title_style"
+            android:layout_width="191dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/edit_phone_input_code"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editPhone_code_et"
+            style="@style/base_text_field_style"
+            android:layout_marginTop="50dp"
+            android:hint="@string/edit_phone_code"
+            android:inputType="number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editPhone_title" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/editPhone_confirm_btn"
+            style="@style/base_button_style"
+            android:layout_marginBottom="32dp"
+            android:text="@string/edit_phone_confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
