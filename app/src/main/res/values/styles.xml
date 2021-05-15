@@ -160,4 +160,16 @@
         <item name="android:textColorLink">@color/black</item>
         <item name="android:layout_marginStart">30dp</item>
     </style>
+
+
+    <style name="MyWhiteColorTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
+    </style>
+
+    <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/black</item>
+    </style>
 </resources>

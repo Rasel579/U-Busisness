@@ -2,62 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation.xml"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
     <fragment
-        android:id="@+id/sign_up"
-        android:name="app.u_business.presentation.ui.sign_in.SignUp1"
-        android:label="SignUp1"
-        tools:layout="@layout/fr_registration">
-        <action
-            android:id="@+id/action_signUp1_to_signUp2"
-            app:destination="@id/signUp2" />
-    </fragment>
-    <fragment
-        android:id="@+id/signIn2"
-        android:name="app.u_business.presentation.ui.sign_in.SignIn2"
-        android:label="SignIn2"
-        tools:layout="@layout/fr_login">
-        <action
-            android:id="@+id/action_signIn2_to_forgotPassword"
-            app:destination="@id/forgotPassword" />
-    </fragment>
-    <fragment
-        android:id="@+id/forgotPassword"
-        android:name="app.u_business.presentation.ui.sign_in.ForgotPassword"
-        android:label="ForgotPassword"
-        tools:layout="@layout/fragment_forgot_password" />
-    <fragment
-        android:id="@+id/signUp2"
-        android:name="app.u_business.presentation.ui.sign_in.SignUp2"
-        android:label="SignUp2"
-        tools:layout="@layout/fr_registration_password" />
-    <fragment
-        android:id="@+id/auth"
-        android:name="app.u_business.presentation.ui.sign_in.SignIn1"
-        android:label="SignIn1"
-        tools:layout="@layout/fr_auth">
-        <action
-            android:id="@+id/action_signIn1_to_signIn2"
-            app:destination="@id/signIn2" />
-        <action
-            android:id="@+id/action_signIn1_to_signUp1"
-            app:destination="@id/sign_up" />
-        <action
-            android:id="@+id/action_auth_to_signIn2"
-            app:destination="@id/signIn2" />
-    </fragment>
-    <fragment
-        android:id="@+id/welcomeFragmentPager"
-        android:name="app.u_business.presentation.ui.welcome.WelcomeFragmentPager"
-        android:label="WelcomeFragmentPager"
-        tools:layout="@layout/fr_welcome">
-        <action
-            android:id="@+id/action_welcomeFragmentPager_to_signIn"
-            app:destination="@id/auth" />
-    </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/nav_home"
         android:name="app.u_business.presentation.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="app.u_business.presentation.ui.profile.ProfilePagerFragment"
+        android:label="ProfilePagerFragment"
+        tools:layout="@layout/fr_profle_pager" />
 </navigation>
