@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="size"
+            type="Integer" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/bridal_heath"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/itemFile_image"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/white_shape"
+            android:padding="13dp"
+            tools:backgroundTint="@color/bright_violet"
+            tools:srcCompat="@drawable/ic_document" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/itemFile_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_bold"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="document.pdf" />
+
+            <TextView
+                android:id="@+id/itemFile_size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_regular"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="256 kb"
+                android:text='@{size + " kb"}'/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>
