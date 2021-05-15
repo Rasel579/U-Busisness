@@ -87,4 +87,10 @@
     <string name="edit_password_new_password">Новый пароль</string>
     <string name="edit_password_confirm_password">Подтвердите пароль</string>
     <string name="edit_password_save">Сохранить</string>
+    <string name="edit_phone_number">Номер телефона</string>
+    <string name="edit_phone_confirmation">Подтверждение номера</string>
+    <string name="edit_phone_input_code">Введите код подтверждения</string>
+    <string name="edit_phone_continue">Продолжить</string>
+    <string name="edit_phone_confirm">Подтвердить</string>
+    <string name="edit_phone_code">Код подтверждения</string>
 </resources>

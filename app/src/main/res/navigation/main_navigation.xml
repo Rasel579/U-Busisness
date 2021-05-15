@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation.xml"
-    app:startDestination="@id/editPasswordFragment">
+    app:startDestination="@id/editPhoneSecondFragment">
     <fragment
         android:id="@+id/welcomeFragmentPager"
         android:name="app.u_business.presentation.ui.welcome.WelcomeFragmentPager"
@@ -11,7 +11,7 @@
         android:name="app.u_business.presentation.ui.home.HomeFragment"
         android:label="HomeFragment" />
     <fragment
-        android:id="@+id/editPasswordFragment"
-        android:name="app.u_business.presentation.ui.edit_profile.EditPasswordFragment"
-        android:label="EditPasswordFragment" />
+        android:id="@+id/editPhoneSecondFragment"
+        android:name="app.u_business.presentation.ui.edit_profile.EditPhoneSecondFragment"
+        android:label="EditPhoneSecondFragment" />
 </navigation>
