@@ -32,6 +32,14 @@ class ProfilePagerFragment(override val layoutId: Int = R.layout.fr_profle_pager
     }
 
     private fun initPager() {
-        binding.profileViewPager.adapter = pagerAdapter
+        with(binding) {
+            profileViewPager.adapter = pagerAdapter
+            profileTabLayout.setupWithViewPager(profileViewPager)
+            profileTabLayout.apply {
+                getTabAt(0)?.setIcon(R.drawable.ic_profile_user)
+                getTabAt(1)?.setIcon(R.drawable.ic_profile_business_card)
+                getTabAt(2)?.setIcon(R.drawable.ic_profile_offers)
+            }
+        }
     }
 }

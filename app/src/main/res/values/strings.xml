@@ -112,4 +112,8 @@
     <string name="edit_phone_continue">Продолжить</string>
     <string name="edit_phone_confirm">Подтвердить</string>
     <string name="edit_phone_code">Код подтверждения</string>
+
+    <string name="profile_account">мой кабинет</string>
+    <string name="profile_business_card">моя визитка</string>
+    <string name="profile_special_offers">мои спец. предложения</string>
 </resources>
