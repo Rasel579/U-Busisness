@@ -11,17 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/bridal_heath"
-        app:elevation="0dp"
-        android:theme="@style/Theme.UBusiness.AppBarOverlay">
+        android:theme="@style/Theme.UBusiness.AppBarOverlay"
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/bridal_heath"
-            app:popupTheme="@style/Theme.UBusiness.PopupOverlay"
             app:menu="@menu/home_toolbar_menu"
-            />
+            app:popupTheme="@style/Theme.UBusiness.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

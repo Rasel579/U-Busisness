@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import app.u_business.R
 import app.u_business.databinding.FrAccountBinding
 import app.u_business.presentation.ui.base.BaseFragment
+import app.u_business.presentation.utils.navigate
 import com.bumptech.glide.Glide
 import ru.tinkoff.decoro.MaskImpl
 import ru.tinkoff.decoro.slots.PredefinedSlots
@@ -48,7 +49,7 @@ class AccountFragment(override val layoutId: Int = R.layout.fr_account) :
     }
 
     private fun openSubscriptionScreen() {
-        Navigation.findNavController(binding.root).navigate(R.id.destination_subscription)
+        navigate(R.id.nav_subscription)
     }
 
     private fun switchOnEditableMode() {
