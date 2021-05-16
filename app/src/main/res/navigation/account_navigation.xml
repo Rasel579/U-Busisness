@@ -2,26 +2,30 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profile_navigation"
-    app:startDestination="@id/editOfferFragment">
+    app:startDestination="@id/nav_profile_pager">
 
     <fragment
-        android:id="@+id/destination_account"
+        android:id="@+id/nav_account"
         android:name="app.u_business.presentation.ui.profile.account.AccountFragment"
         android:label="AccountFragment" />
     <fragment
-        android:id="@+id/destination_subscription"
+        android:id="@+id/nav_subscription"
         android:name="app.u_business.presentation.ui.profile.account.SubscriptionFragment"
         android:label="SubscriptionFragment" />
     <fragment
-        android:id="@+id/businessCardFragment"
+        android:id="@+id/nav_business_card"
         android:name="app.u_business.presentation.ui.profile.business_card.BusinessCardFragment"
         android:label="BusinessCardFragment" />
     <fragment
-        android:id="@+id/specialOffersFragment"
+        android:id="@+id/nav_profile_special_offers"
         android:name="app.u_business.presentation.ui.profile.special_offers.SpecialOffersFragment"
         android:label="SpecialOffersFragment" />
     <fragment
-        android:id="@+id/editOfferFragment"
+        android:id="@+id/nav_edit_offer"
         android:name="app.u_business.presentation.ui.profile.special_offers.EditOfferFragment"
         android:label="EditOfferFragment" />
+    <fragment
+        android:id="@+id/nav_profile_pager"
+        android:name="app.u_business.presentation.ui.profile.ProfilePagerFragment"
+        android:label="ProfilePagerFragment" />
 </navigation>

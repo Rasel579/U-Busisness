@@ -67,10 +67,7 @@ class Home : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
             android.R.id.home -> {
                 if (navController.currentDestination?.id != R.id.nav_home)
