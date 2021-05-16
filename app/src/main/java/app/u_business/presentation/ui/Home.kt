@@ -38,13 +38,22 @@ class Home : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_profile,
+                R.id.nav_business_cards,
+                R.id.nav_calendar,
+                R.id.nav_special_offers,
+                R.id.nav_news,
+                R.id.nav_library,
+                R.id.nav_gallery,
+                R.id.nav_about_us,
+                R.id.nav_connect_with_us,
+                R.id.nav_home,
             ), drawerLayout
         )
 
         findViewById<NavigationView>(R.id.nav_view)
             .setupWithNavController(navController)
-
+        binding.navView.itemIconTintList = null
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 //        navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
 //            supportActionBar?.apply {

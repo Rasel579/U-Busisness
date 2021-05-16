@@ -4,14 +4,23 @@ import app.u_business.R
 import app.u_business.databinding.FrSpecialOffersBinding
 import app.u_business.domain.model.Offer
 import app.u_business.presentation.ui.base.BaseFragment
+import app.u_business.presentation.utils.navigate
 
 class SpecialOffersFragment(override val layoutId: Int = R.layout.fr_special_offers) :
     BaseFragment<FrSpecialOffersBinding>() {
 
-    private val adapter: SpecialOffersAdapter by lazy { SpecialOffersAdapter() }
+    private val adapter: SpecialOffersAdapter by lazy {
+        SpecialOffersAdapter {
+            openEditOffer()
+        }
+    }
 
     override fun initViews() {
         initRecyclerView()
+    }
+
+    private fun openEditOffer() {
+        navigate(R.id.nav_edit_offer)
     }
 
     private fun initRecyclerView() {
