@@ -8,12 +8,26 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="app.u_business.presentation.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/menu_home" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="app.u_business.presentation.ui.profile.ProfilePagerFragment"
-        android:label="ProfilePagerFragment"
-        tools:layout="@layout/fr_profle_pager" />
+        android:name="app.u_business.presentation.ui.profile.ProfileFragment"
+        android:label="ProfilePagerFragment" />
+    <fragment
+        android:id="@+id/nav_edit_offer"
+        android:name="app.u_business.presentation.ui.profile.special_offers.EditOfferFragment"
+        android:label="EditOfferFragment" />
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="app.u_business.presentation.ui.gallery.GalleryFragment"
+        android:label="GalleryFragment" />
+    <fragment
+        android:id="@+id/nav_library"
+        android:name="app.u_business.presentation.ui.library.LibraryFragment"
+        android:label="LibraryFragment" />
+    <fragment
+        android:id="@+id/nav_special_offers"
+        android:name="app.u_business.presentation.ui.profile.special_offers.SpecialOffersFragment"
+        android:label="SpecialOffersFragment" />
 </navigation>

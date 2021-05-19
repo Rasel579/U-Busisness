@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import app.u_business.databinding.ItemOfferBinding
-import app.u_business.domain.model.Event
 import app.u_business.domain.model.Offer
 
 class SpecialOfferViewHolder(
@@ -20,9 +19,12 @@ class SpecialOfferViewHolder(
         }
     }
 
-    fun bind(offer: Offer, backgroundTint: Int) {
+    fun bind(offer: Offer, backgroundTint: Int, onClick: ((Offer) -> Unit)?) {
         with(binding) {
-            root.backgroundTintList = ContextCompat.getColorStateList(root.context, backgroundTint)
+            root.apply {
+                backgroundTintList = ContextCompat.getColorStateList(root.context, backgroundTint)
+                setOnClickListener { onClick?.let { click -> click(offer) } }
+            }
             discount = offer.discount
             goods = offer.goods
             executePendingBindings()

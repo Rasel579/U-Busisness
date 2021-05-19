@@ -24,7 +24,7 @@
             android:paddingTop="100dp"
             app:itemTextColor="@color/white"
             app:itemBackground="@color/transparent"
-            app:itemIconTint="@color/white"
             app:menu="@menu/act_home_drawer" />
+
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

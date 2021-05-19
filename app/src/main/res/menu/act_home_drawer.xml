@@ -5,16 +5,44 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_user"
+            android:title="@string/menu_profile" />
+        <item
+            android:id="@+id/nav_business_cards"
+            android:icon="@drawable/ic_business_card"
+            android:title="@string/menu_business_cards" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/menu_calendar" />
+        <item
+            android:id="@+id/nav_special_offers"
+            android:icon="@drawable/ic_offers"
+            android:title="@string/menu_special_offers" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_news"
+            android:title="@string/menu_news" />
+        <item
+            android:id="@+id/nav_library"
+            android:icon="@drawable/ic_library"
+            android:title="@string/menu_library" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_gallery"
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_about_us"
+            android:title="@string/menu_about_us" />
+        <item
+            android:id="@+id/nav_connect_with_us"
+            android:icon="@drawable/ic_contact"
+            android:title="@string/menu_connect_with_us" />
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
     </group>
 </menu>
