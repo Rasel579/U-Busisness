@@ -116,4 +116,5 @@
     <string name="profile_account">мой кабинет</string>
     <string name="profile_business_card">моя визитка</string>
     <string name="profile_special_offers">мои спец. предложения</string>
+    <string name="news_search">Поиск</string>
 </resources>
