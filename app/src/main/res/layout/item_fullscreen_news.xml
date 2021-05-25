@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:background="@color/bridal_heath"
-    android:layout_marginBottom="45dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/itemFullscreenNews_image"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:background="@drawable/test_image"
-        tools:srcCompat="@drawable/test_image" />
+        android:layout_height="250dp"
+        android:background="@color/bridal_heath"
+        android:layout_marginBottom="45dp">
 
-    <TextView
-        android:id="@+id/itemFullscreenNews_title_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="7dp"
-        android:fontFamily="@font/univers_lt_cyr_65_bold"
-        android:gravity="end"
-        android:paddingStart="40dp"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/itemFullscreenNews_date_text"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:text="Может ли самозанятый платить НПД с процентов по займам" />
+        <ImageView
+            android:id="@+id/itemFullscreenNews_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@drawable/test_image"
+            tools:srcCompat="@drawable/test_image" />
 
-    <TextView
-        android:id="@+id/itemFullscreenNews_date_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="@font/univers_lt_cyr_55_roman"
-        android:textColor="@color/gray"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:text="19 февраля" />
+        <TextView
+            android:id="@+id/itemFullscreenNews_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="7dp"
+            android:fontFamily="@font/univers_lt_cyr_65_bold"
+            android:gravity="end"
+            android:paddingStart="40dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/itemFullscreenNews_date_text"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Может ли самозанятый платить НПД с процентов по займам" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/itemFullscreenNews_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/univers_lt_cyr_55_roman"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="19 февраля" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
