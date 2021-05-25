@@ -69,15 +69,21 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
         offersAdapter.data = listOf(
             Offer(
                 10,
-                "все арома масла"
+                "все арома масла",
+                "",
+                ""
             ),
             Offer(
                 10,
-                "все арома масла"
+                "все арома масла",
+                "",
+                ""
             ),
             Offer(
                 10,
-                "все арома масла"
+                "все арома масла",
+                "",
+                ""
             ),
             null
         )

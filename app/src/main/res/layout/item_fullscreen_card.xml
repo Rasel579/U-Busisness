@@ -10,18 +10,30 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/bridal_heath"
-        android:layout_marginBottom="45dp">
+        android:layout_marginBottom="45dp"
+        android:background="@color/bridal_heath">
 
         <ImageView
-            android:id="@+id/itemFullscreenNews_image"
+            android:id="@+id/itemFullscreenCard_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:background="@drawable/test_image"
             tools:srcCompat="@drawable/test_image" />
 
         <TextView
-            android:id="@+id/itemFullscreenNews_title_text"
+            android:id="@+id/itemFullscreenCard_category_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/univers_lt_cyr_55_roman"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/itemFullscreenCard_title_text"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Маркетинг" />
+
+        <TextView
+            android:id="@+id/itemFullscreenCard_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
@@ -31,12 +43,12 @@
             android:paddingStart="40dp"
             android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/itemFullscreenNews_date_text"
+            app:layout_constraintBottom_toTopOf="@id/itemFullscreenCard_date_text"
             app:layout_constraintRight_toRightOf="parent"
             tools:text="Может ли самозанятый платить НПД с процентов по займам" />
 
         <TextView
-            android:id="@+id/itemFullscreenNews_date_text"
+            android:id="@+id/itemFullscreenCard_date_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"

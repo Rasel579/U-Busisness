@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_calendar"
             android:title="@string/menu_calendar" />
         <item
-            android:id="@+id/nav_special_offers"
+            android:id="@+id/nav_offers"
             android:icon="@drawable/ic_offers"
             android:title="@string/menu_special_offers" />
         <item

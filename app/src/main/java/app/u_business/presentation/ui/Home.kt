@@ -32,7 +32,7 @@ class Home : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
-        drawerLayout.setScrimColor(resources.getColor(android.R.color.transparent));
+        drawerLayout.setScrimColor(resources.getColor(android.R.color.transparent))
         drawerLayout.drawerElevation = 0f
         navController = findNavController(R.id.nav_host_fragment_content_home)
 
@@ -41,7 +41,7 @@ class Home : AppCompatActivity() {
                 R.id.nav_profile,
                 R.id.nav_business_cards,
                 R.id.nav_calendar,
-                R.id.nav_special_offers,
+                R.id.nav_offers,
                 R.id.nav_news,
                 R.id.nav_library,
                 R.id.nav_gallery,

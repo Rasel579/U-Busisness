@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.u_business.R
-import app.u_business.databinding.ItemFullscreenNewsBinding
 import app.u_business.databinding.ItemSmallNewsBinding
 import app.u_business.domain.model.News
 import com.bumptech.glide.Glide
@@ -31,13 +30,16 @@ class NewsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when(viewType) {
             DEFAULT_TYPE -> SmallNewsViewHolder.create(parent)
-            else -> FullscreenNewsViewHolder.create(parent)
+            else -> FullscreenCardViewHolder.create(parent)
         }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder.itemViewType) {
             DEFAULT_TYPE -> { (holder as SmallNewsViewHolder).bind(data[position]) }
-            FULLSCREEN_TYPE -> { (holder as FullscreenNewsViewHolder).bind(data[position]) }
+            FULLSCREEN_TYPE -> {
+                val news = data[position]
+                (holder as FullscreenCardViewHolder).bind(news.image, news.title, news.date)
+            }
         }
     }
 
@@ -67,32 +69,6 @@ class SmallNewsViewHolder(
             itemSmallNewsTitleText.text = news.title
             itemSmallNewsDateText.text = news.date
             itemSmallNewsContentText.text = news.content
-        }
-    }
-}
-
-class FullscreenNewsViewHolder(
-    private val binding: ItemFullscreenNewsBinding
-) : RecyclerView.ViewHolder(binding.root) {
-
-    companion object {
-        fun create(parent: ViewGroup): FullscreenNewsViewHolder {
-            val inflater = LayoutInflater.from(parent.context)
-            val binding = ItemFullscreenNewsBinding.inflate(inflater, parent, false)
-            return FullscreenNewsViewHolder(binding)
-        }
-    }
-
-    fun bind(news: News) {
-        with(binding) {
-            Glide.with(root)
-//                .load(news.image)
-                .load(R.drawable.test_image)
-                .centerCrop()
-                .into(itemFullscreenNewsImage)
-
-            itemFullscreenNewsTitleText.text = news.title
-            itemFullscreenNewsDateText.text = news.date
         }
     }
 }

@@ -30,10 +30,14 @@ class SpecialOffersFragment(override val layoutId: Int = R.layout.fr_special_off
 
     private fun mockAdapter() {
         adapter.data = listOf(
-            Offer(10, "все арома масла"),
-            Offer(10, "всю обувь"),
-            Offer(10, "стройматериалы"),
-            Offer(10, "все мастерклассы"),
+            Offer(10, "все арома масла", "", ""),
+            Offer(10, "всю обувь", "", ""),
+            Offer(10, "стройматериалы", "", ""),
+            Offer(10, "все мастерклассы", "", ""),
+            Offer(10, "все арома масла", "", ""),
+            Offer(10, "всю обувь", "", ""),
+            Offer(10, "стройматериалы", "", ""),
+            Offer(10, "все мастерклассы", "", ""),
         )
     }
 }
