@@ -5,17 +5,29 @@
 
     <data>
 
+        <variable
+            name="date"
+            type="String" />
+
+        <variable
+            name="discount"
+            type="Integer" />
+
+        <variable
+            name="goods"
+            type="String" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="90dp"
         android:background="@color/bridal_heath"
         android:paddingTop="12dp"
         android:paddingBottom="12dp">
 
         <ImageView
-            android:id="@+id/itemSmallNews_image"
+            android:id="@+id/itemSmallOffer_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
@@ -30,20 +42,11 @@
             android:layout_marginStart="15dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/itemSmallNews_image"
+            app:layout_constraintLeft_toRightOf="@id/itemSmallOffer_image"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/itemSmallNews_date_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/univers_lt_cyr_55_roman"
-                android:textColor="@color/gray"
-                android:textSize="12sp"
-                tools:text="18 октября" />
-
-            <TextView
-                android:id="@+id/itemSmallNews_title_text"
+                android:id="@+id/itemSmallOffer_title_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/univers_lt_cyr_65_bold"
@@ -51,18 +54,18 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:textSize="14sp"
+                android:text='@{"Скидка " + discount + "% на " + goods}'
                 tools:text="SEO — Продвижение бизнеса и деградации" />
 
             <TextView
-                android:id="@+id/itemSmallNews_content_text"
-                android:layout_width="200dp"
+                android:id="@+id/itemSmallOffer_date_text"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/univers_lt_cyr_55_roman"
-                android:textSize="12sp"
                 android:textColor="@color/gray"
-                android:ellipsize="end"
-                android:maxLines="1"
-                tools:text="Разнообразный и богатый опыт..." />
+                android:textSize="12sp"
+                android:text='@{"до " + date}'
+                tools:text="до 18 октября"/>
 
         </LinearLayout>
 

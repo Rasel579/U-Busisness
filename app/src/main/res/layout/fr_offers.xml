@@ -18,21 +18,21 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/news_search_til"
+                android:id="@+id/offers_search_til"
                 style="@style/search_text_input_layout_style">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/news_search_et"
+                    android:id="@+id/offers_search_et"
                     style="@style/search_text_input_edit_text_style" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/news_rv"
+                android:id="@+id/offers_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_small_news" />
+                tools:listitem="@layout/item_small_offer" />
 
         </LinearLayout>
 

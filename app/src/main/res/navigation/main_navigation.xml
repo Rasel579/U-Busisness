@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
@@ -15,10 +14,6 @@
         android:name="app.u_business.presentation.ui.profile.ProfileFragment"
         android:label="ProfilePagerFragment" />
     <fragment
-        android:id="@+id/nav_edit_offer"
-        android:name="app.u_business.presentation.ui.profile.special_offers.EditOfferFragment"
-        android:label="EditOfferFragment" />
-    <fragment
         android:id="@+id/nav_gallery"
         android:name="app.u_business.presentation.ui.gallery.GalleryFragment"
         android:label="GalleryFragment" />
@@ -27,7 +22,11 @@
         android:name="app.u_business.presentation.ui.library.LibraryFragment"
         android:label="LibraryFragment" />
     <fragment
-        android:id="@+id/nav_special_offers"
-        android:name="app.u_business.presentation.ui.profile.special_offers.SpecialOffersFragment"
-        android:label="SpecialOffersFragment" />
+        android:id="@+id/nav_news"
+        android:name="app.u_business.presentation.ui.news.NewsFragment"
+        android:label="NewsFragment" />
+    <fragment
+        android:id="@+id/nav_offers"
+        android:name="app.u_business.presentation.ui.offers.FragmentOffers"
+        android:label="FragmentOffers" />
 </navigation>
