@@ -6,33 +6,33 @@ import app.u_business.data.network.query.events.EventBody
 import app.u_business.data.network.query.events.UserEventBody
 import app.u_business.data.network.query.library.FileBody
 import app.u_business.data.network.query.library.UserFileBody
+import app.u_business.data.network.query.news.NewBody
 import app.u_business.data.network.response.business_card.card_response.BusinessCardResponse
 import app.u_business.data.network.response.business_card.tag_list.TagListResponse
 import app.u_business.data.network.response.business_card.verified_card_response.FetchActivatedBusinessCards
 import app.u_business.data.network.response.events.fetch_event.FetchEventResponse
 import app.u_business.data.network.response.library.fetch_last_files.FetchLastFiles
 import app.u_business.data.network.response.message_response.MessageResponse
+import app.u_business.data.network.response.news.fetch_news.FetchNewsResponse
+import app.u_business.data.network.response.news.open_news.OpenNewsResponse
 import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Part
+import retrofit2.http.*
 
 interface ServiceApi {
 
     // methods for business cards
     @POST("/api/fetchBusinessCard")
-    fun getBusinessCard(@Body user: UserBody) : Call<List<BusinessCardResponse>>
+    fun getBusinessCard(@Body user: UserBody) : Call<BusinessCardResponse>
 
     @POST("/api/editBusinessCard")
     fun editBusinessCard(@Body card: BusinessCardBody, @Part("files") file: RequestBody) : Call<MessageResponse>
 
     @GET("/api/fetchBusinessCards")
-    fun getActiveBusinessCards() : Call<List<FetchActivatedBusinessCards>>
+    fun getActiveBusinessCards() : Call<FetchActivatedBusinessCards>
 
     @POST("/api/searchBusinessCards")
-    fun searchBusinessCards(@Body word: SearchBody) : Call<List<FetchActivatedBusinessCards>>
+    fun searchBusinessCards(@Body word: SearchBody) : Call<FetchActivatedBusinessCards>
 
     @POST("/api/addFavoriteCard")
     fun addCardToFavorite(@Body card: FavoriteCardBody) : Call<MessageResponse>
@@ -41,19 +41,19 @@ interface ServiceApi {
     fun deleteCardFromFavorite(@Body card: FavoriteCardBody) : Call<MessageResponse>
 
     @POST("/api/fetchFavoritesCards")
-    fun getFavoritesCards(@Body user: UserBody) : Call<List<FetchActivatedBusinessCards>>
+    fun getFavoritesCards(@Body user: UserBody) : Call<FetchActivatedBusinessCards>
 
     @GET("/api/tagslist")
-    fun getTop20Tags() : Call<List<TagListResponse>>
+    fun getTop20Tags() : Call<TagListResponse>
 
     @POST("/api/tagsfilter")
-    fun getBusinessCardsByTag(@Body tag: TagBody) : Call<List<FetchActivatedBusinessCards>>
+    fun getBusinessCardsByTag(@Body tag: TagBody) : Call<FetchActivatedBusinessCards>
 
     @POST("/api/locationfilter50")
-    fun getBusinessCardsByLocation50(@Body locationBody: LocationBody) : Call<List<FetchActivatedBusinessCards>>
+    fun getBusinessCardsByLocation50(@Body locationBody: LocationBody) : Call<FetchActivatedBusinessCards>
 
     @POST("/api/locationfilter100")
-    fun getBusinessCardsByLocation100(@Body locationBody: LocationBody) : Call<List<FetchActivatedBusinessCards>>
+    fun getBusinessCardsByLocation100(@Body locationBody: LocationBody) : Call<FetchActivatedBusinessCards>
 
 
 //    methods for events
@@ -67,7 +67,7 @@ interface ServiceApi {
     fun unjoinFromEvent(@Body eventUser: UserEventBody) : Call<MessageResponse>
 
     @POST("/api/members")
-    fun getMembersFromEvent(@Body even: EventIdBody) : Call<List<FetchActivatedBusinessCards>>
+    fun getMembersFromEvent(@Body even: EventIdBody) : Call<FetchActivatedBusinessCards>
 
     @POST("/api/editevents")
     fun editEvent(@Body event: EventBody, @Part("files") file: RequestBody) : Call<MessageResponse>
@@ -108,11 +108,28 @@ interface ServiceApi {
     fun deleteFavoriteFiles(@Body user: FileBody) : Call<MessageResponse>
 
     @POST("/api/fetchFavorfiles")
-    fun getFavoriteFiles(@Body user: FileBody) : Call<List<FetchLastFiles>>
+    fun getFavoriteFiles(@Body user: FileBody) : Call<FetchLastFiles>
 
     @POST("/api/updateTimeAction")
     fun updateTimeAction(@Body user: FileBody) : Call<MessageResponse>
 
     @POST("/api/deleteFile")
     fun deleteFile(@Body user: FileBody) : Call<MessageResponse>
+
+    // methods for news
+    @POST("/api/createnews")
+    fun createNews(@Body news: NewBody, @Part("files") file: RequestBody) : Call<MessageResponse>
+
+    @POST("/api/editnews")
+    fun editNews(@Body news: NewBody, @Part("files") file: RequestBody) : Call<MessageResponse>
+
+    @POST("/api/opentnews")
+    fun editNews(@Field("id_news") id: String) : Call<OpenNewsResponse>
+
+    @GET("/api/fetchnewslist")
+    fun getNewsList() : Call<FetchNewsResponse>
+
+    @POST("/api/searchnews")
+    fun searchNews(@Field("word") word: String) : Call<OpenNewsResponse>
+
 }
