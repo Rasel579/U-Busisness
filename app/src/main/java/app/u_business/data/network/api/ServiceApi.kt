@@ -1,12 +1,18 @@
 package app.u_business.data.network.api
 
-import EventIdBody
+import app.u_business.data.network.query.user.LoginBody
+import app.u_business.data.network.query.offers.OfferBody
+import app.u_business.data.network.query.events.EventIdBody
 import app.u_business.data.network.query.cards.*
 import app.u_business.data.network.query.events.EventBody
 import app.u_business.data.network.query.events.UserEventBody
 import app.u_business.data.network.query.library.FileBody
 import app.u_business.data.network.query.library.UserFileBody
 import app.u_business.data.network.query.news.NewBody
+import app.u_business.data.network.query.offers.EditableOfferBody
+import app.u_business.data.network.query.user.ChangePasswordBody
+import app.u_business.data.network.query.user.ProfileBody
+import app.u_business.data.network.query.user.RegistrationBody
 import app.u_business.data.network.response.business_card.card_response.BusinessCardResponse
 import app.u_business.data.network.response.business_card.tag_list.TagListResponse
 import app.u_business.data.network.response.business_card.verified_card_response.FetchActivatedBusinessCards
@@ -15,6 +21,11 @@ import app.u_business.data.network.response.library.fetch_last_files.FetchLastFi
 import app.u_business.data.network.response.message_response.MessageResponse
 import app.u_business.data.network.response.news.fetch_news.FetchNewsResponse
 import app.u_business.data.network.response.news.open_news.OpenNewsResponse
+import app.u_business.data.network.response.offers.fetch_user_offers.FetchUserOffersResponse
+import app.u_business.data.network.response.offers.search_offers.SearchOffersResponse
+import app.u_business.data.network.response.user.fetch.FetchProfileResponse
+import app.u_business.data.network.response.user.login.LoginResponse
+import app.u_business.data.network.response.user.login.LoginWithServiceResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -132,4 +143,55 @@ interface ServiceApi {
     @POST("/api/searchnews")
     fun searchNews(@Field("word") word: String) : Call<OpenNewsResponse>
 
+
+    // methods for offers
+    @POST("/api/createOffer")
+    fun createOffer(@Body offer: OfferBody, @Part("files") file: RequestBody) : Call<MessageResponse>
+
+    @POST("/api/fetchUserOffers")
+    fun getUserOffers(@Field("iduser") id: String) : Call<FetchUserOffersResponse>
+
+    @GET("/api/fetchOffers")
+    fun getOffers() : Call<FetchUserOffersResponse>
+
+    @POST("/api/fetchHistoryOffers")
+    fun getHistoryOffers(@Field("iduser") id: String) : Call<FetchUserOffersResponse>
+
+    @POST("/api/fetchOffer")
+    fun getOfferById(@Field("idoffer") id: String) : Call<FetchUserOffersResponse>
+
+    @POST("/api/editOffers")
+    fun editOffer(@Body offer: EditableOfferBody, @Part("files") file: RequestBody) : Call<MessageResponse>
+
+    @POST("/api/updateTime")
+    fun updateTime(@Field("idoffer") id: String) : Call<MessageResponse>
+
+    @POST("/api/searchoffers")
+    fun searchOffers(@Field("word") id: String) : Call<SearchOffersResponse>
+
+
+    //methods for user
+    @POST("/api/login")
+    fun loginUser(@Body user: LoginBody, @Part("files") file: RequestBody) : Call<LoginResponse>
+
+    @GET("/api/facebook")
+    fun loginUserWithFacebook() : Call<LoginWithServiceResponse>
+
+    @GET("/api/google")
+    fun loginUserWithGoogle() : Call<LoginWithServiceResponse>
+
+    @POST("/api/reg")
+    fun registerUser(@Body user: RegistrationBody) : Call<LoginResponse>
+
+    @POST("/api/editProfile")
+    fun editProfile(@Body profile: ProfileBody, @Part("files") file: RequestBody) : Call<MessageResponse>
+
+    @POST("/api/fetchProfile")
+    fun getProfile(@Field("idUser") id: String) : Call<FetchProfileResponse>
+
+    @POST("/api/changePassword")
+    fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : Call<MessageResponse>
+
+    @POST("/api/locationupdate")
+    fun locationUpdate(@Body newLocation: LocationBody) : Call<MessageResponse>
 }

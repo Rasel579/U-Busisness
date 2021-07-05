@@ -5,5 +5,6 @@ data class FetchProfileResponseItem(
     val idUser: Int?,
     val lang: String?,
     val name: String?,
-    val tel: String?
+    val tel: String?,
+    val message: String?
 )
