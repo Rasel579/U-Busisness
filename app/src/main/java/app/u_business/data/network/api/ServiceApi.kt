@@ -86,10 +86,10 @@ interface ServiceApi {
     @POST("/api/addFile")
     fun addFile(@Body user: UserBody, @Part("files") file: RequestBody) : Call<MessageResponse>
 
-    @POST("/api//api/fetchLastFiles")
+    @POST("/api/fetchLastFiles")
     fun getLastFiles(@Body user: UserBody) : Call<List<FetchLastFiles>>
 
-    @POST("/api//api/fetchImages")
+    @POST("/api/fetchImages")
     fun getImages(@Body user: UserBody) : Call<List<FetchLastFiles>>
 
     @POST("/api/fetchDocs")
