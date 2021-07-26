@@ -4,4 +4,5 @@ interface AuthRepository {
     fun isFirstOpen(): Boolean
 
     fun isAuthed(): Boolean
+
 }

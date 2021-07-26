@@ -1,8 +1,10 @@
 package app.u_business.presentation.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -27,7 +29,6 @@ class Home : AppCompatActivity() {
 
         binding = AcHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.appBarHome.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 

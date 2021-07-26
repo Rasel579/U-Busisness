@@ -1,5 +1,6 @@
 package app.u_business.presentation.ui.home
 
+import android.view.View
 import app.u_business.R
 import app.u_business.databinding.FrHomeBinding
 import app.u_business.domain.model.Event
@@ -7,6 +8,7 @@ import app.u_business.domain.model.News
 import app.u_business.domain.model.Offer
 import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.ui.profile.special_offers.SpecialOffersAdapter
+import app.u_business.presentation.utils.navigate
 
 class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment<FrHomeBinding>() {
     private val eventAdapter: EventAdapter by lazy { EventAdapter() }
@@ -23,6 +25,10 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
             homeEventsRv.adapter = eventAdapter
             homeNewsRv.adapter = newsAdapter
             homeOffersRv.adapter = offersAdapter
+            homeRegisterBtn.apply {
+                visibility = if (true) View.VISIBLE else View.GONE
+                setOnClickListener { navigate(R.id.sign_up) }
+            }
         }
     }
 

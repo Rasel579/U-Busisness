@@ -1,5 +1,6 @@
 package app.u_business.data.network.api
 
+import android.telecom.Call
 import app.u_business.data.network.query.user.LoginBody
 import app.u_business.data.network.query.offers.OfferBody
 import app.u_business.data.network.query.events.EventIdBody
@@ -26,9 +27,6 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
-import okhttp3.RequestBody
-import retrofit2.Call
-import retrofit2.http.*
 
 interface ServiceApi {
 
