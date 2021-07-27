@@ -6,5 +6,5 @@ import app.u_business.presentation.utils.SharedPreferencesHelper
 class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper): AuthRepository{
     override fun isFirstOpen(): Boolean = prefs.isFirstOpen
 
-    override fun isAuthed(): Boolean = false
+    override fun isAuthed(): Boolean =  false
 }
