@@ -26,7 +26,11 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
+import com.google.gson.Gson
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 interface ServiceApi {
@@ -171,7 +175,7 @@ interface ServiceApi {
 
     //methods for user
     @POST("/api/login")
-    fun loginUser(@Body user: LoginBody, @Part("files") file: RequestBody) : LoginResponse
+    suspend fun loginUser(@Body user: LoginBody, @Part("files") file: RequestBody) : LoginResponse
 
     @GET("/api/facebook")
     fun loginUserWithFacebook() : LoginWithServiceResponse
@@ -180,7 +184,7 @@ interface ServiceApi {
     fun loginUserWithGoogle() : LoginWithServiceResponse
 
     @POST("/api/reg")
-    fun registerUser(@Body user: RegistrationBody) : LoginResponse
+    suspend fun registerUser(@Body user: RegistrationBody) : LoginResponse
 
     @POST("/api/editProfile")
     fun editProfile(@Body profile: ProfileBody, @Part("files") file: RequestBody) : MessageResponse
@@ -193,4 +197,16 @@ interface ServiceApi {
 
     @POST("/api/locationupdate")
     fun locationUpdate(@Body newLocation: LocationBody) : MessageResponse
+}
+
+private inline fun <reified T> createWebService(
+    httpClient: OkHttpClient,
+    baseUrl: String
+): T {
+    val retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create(Gson()))
+        .client(httpClient)
+        .baseUrl(baseUrl)
+        .build()
+    return retrofit.create(T::class.java)
 }
