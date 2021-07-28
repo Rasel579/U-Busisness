@@ -27,7 +27,7 @@ class MainVM(
         if (repo.isFirstOpen())
             navEvents.postValue(NavigateEvent(NavigateEventAction.ONBOARDING))
         else {
-            if (repo.isAuthed())
+            if (repo.isAuthed()) //TODO(сменить)
                 navEvents.postValue(NavigateEvent(NavigateEventAction.HOME))
             else
                 navEvents.postValue(NavigateEvent(NavigateEventAction.AUTH))

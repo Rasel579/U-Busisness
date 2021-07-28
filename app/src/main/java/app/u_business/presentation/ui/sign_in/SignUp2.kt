@@ -1,7 +1,6 @@
 package app.u_business.presentation.ui.sign_in
 
 import android.content.Intent
-import android.util.Log
 import androidx.navigation.fragment.findNavController
 import app.u_business.R
 import app.u_business.data.network.query.user.RegistrationBody
@@ -9,7 +8,6 @@ import app.u_business.databinding.FrRegistrationPasswordBinding
 import app.u_business.presentation.ui.Home
 import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.utils.SharedPreferencesHelper
-import app.u_business.presentation.utils.navigate
 import app.u_business.presentation.utils.showAlertDialog
 import com.google.gson.Gson
 import org.koin.android.ext.android.inject
@@ -19,13 +17,13 @@ class SignUp2(override val layoutId: Int = R.layout.fr_registration_password) : 
     private val vm by viewModel<AuthVM>()
     private val sharePref by inject<SharedPreferencesHelper>()
     override fun initViews() {
-       initListener()
+        initListener()
         initEventAction()
     }
 
-    private fun initListener()= with(binding) {
-        binding.btnBack.setOnClickListener{findNavController().popBackStack()}
-        binding.btnSignUp.setOnClickListener{
+    private fun initListener() = with(binding) {
+        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        binding.btnSignUp.setOnClickListener {
             if (!editTextPassword.text.isNullOrBlank() && !editTextRepeatPassword.text.isNullOrBlank()
                 && editTextPassword.text.toString() == editTextRepeatPassword.text.toString()
             ) {
@@ -33,19 +31,20 @@ class SignUp2(override val layoutId: Int = R.layout.fr_registration_password) : 
                 val name = contacts?.get(0)
                 val email = contacts?.get(1)
                 val password = editTextRepeatPassword.text.toString()
-                vm.registerUser(RegistrationBody(email,name,password))
-                }
-            else {
-                showAlertDialog(R.string.alert_title_password_not_equals,
-                             R.string.alert_title_password_not_equals)
+                vm.registerUser(RegistrationBody(email, name, password))
+            } else {
+                showAlertDialog(
+                    R.string.alert_title_password_not_equals,
+                    R.string.alert_title_password_not_equals
+                )
             }
         }
     }
 
     private fun initEventAction() {
-        vm.authEvents.observe(this){ event ->
-            when(event.action){
-                is AuthEventAction.Success->{
+        vm.authEvents.observe(this) { event ->
+            when (event.action) {
+                is AuthEventAction.Success -> {
                     sharePref.accessToken = event.action.loginResponse?.accessToken
                     sharePref.isAuthed = true
                     sharePref.registrationBody = Gson().toJson(event.action.loginResponse)

@@ -9,14 +9,15 @@ import app.u_business.databinding.FrAuthBinding
 import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.utils.navigate
 
+import app.u_business.presentation.utils.SharedPreferencesHelper
+import app.u_business.presentation.utils.navigate
+import org.koin.android.ext.android.inject
+
 
 class SignIn1(override val layoutId: Int = R.layout.fr_auth) : BaseFragment<FrAuthBinding>() {
-    override fun initViews()= with(binding) {
-        btnSignUp.setOnClickListener{navigate(R.id.action_signIn1_to_signUp1)}
-        btnSignIn.setOnClickListener{navigate(R.id.action_auth_to_signIn2)}
+
+    override fun initViews() {
+        binding.btnSignIn.setOnClickListener { navigate(SignIn1Directions.actionAuthToSignIn2()) }
+        binding.btnSignUp.setOnClickListener { navigate(SignIn1Directions.actionSignIn1ToSignUp1()) }
     }
-
-
-    }
-
-
+}
