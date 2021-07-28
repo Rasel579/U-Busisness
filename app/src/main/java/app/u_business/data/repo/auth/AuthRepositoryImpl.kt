@@ -22,4 +22,5 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper) : AuthRepos
         BackEndRepo.api.loginUser(user, RequestBody.create("images".toMediaType(), "jpg"))
 
     override fun isAuthed(): Boolean = prefs.isAuthed
+
 }
