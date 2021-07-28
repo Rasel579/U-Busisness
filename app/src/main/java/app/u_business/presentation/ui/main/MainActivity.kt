@@ -3,6 +3,7 @@ package app.u_business.presentation.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.Navigation
 import app.u_business.R
 import app.u_business.presentation.ui.Home
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity(), KoinComponent{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ac_main)
+        sharedPreferencesHelper.accessToken?.let { Log.e("Home_access_token", it) }
+        sharedPreferencesHelper.registrationBody?.let { Log.e("Home_reg_body", it) }
+        Log.e("sdfsfd", "${sharedPreferencesHelper.isAuthed}")
 
         vm.navEvents.observe(this){ event ->
             when(event.action){

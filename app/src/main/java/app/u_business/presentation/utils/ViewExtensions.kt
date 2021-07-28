@@ -24,6 +24,13 @@ fun Fragment.showAlertDialog(title: Int, message: Int)  {
         .show()
 }
 
+fun Fragment.showAlertDialog(title: String, message: String)  {
+    AlertDialog.Builder(context).setTitle(title)
+        .setMessage(message)
+        .setPositiveButton("Ok") { dialog, _ -> dialog.cancel() }
+        .show()
+}
+
 fun EditText.validateEmail(email: String) : Boolean{
     val VALID_EMAIL_ADDRESS_REGEX: Pattern =
         Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE)

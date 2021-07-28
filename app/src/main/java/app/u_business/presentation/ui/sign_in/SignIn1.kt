@@ -13,6 +13,7 @@ import app.u_business.presentation.utils.navigate
 class SignIn1(override val layoutId: Int = R.layout.fr_auth) : BaseFragment<FrAuthBinding>() {
     override fun initViews()= with(binding) {
         btnSignUp.setOnClickListener{navigate(R.id.action_signIn1_to_signUp1)}
+        btnSignIn.setOnClickListener{navigate(R.id.action_auth_to_signIn2)}
     }
 
 
