@@ -2,6 +2,7 @@ package app.u_business.presentation.ui
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
@@ -16,7 +17,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import app.u_business.R
 import app.u_business.databinding.AcHomeBinding
+import app.u_business.presentation.utils.SharedPreferencesHelper
 import com.google.android.material.navigation.NavigationView
+import org.koin.android.ext.android.inject
 
 
 class Home : AppCompatActivity() {
@@ -24,6 +27,7 @@ class Home : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: AcHomeBinding
     private lateinit var navController: NavController
+    private val sharedPref by inject<SharedPreferencesHelper>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -62,6 +66,8 @@ class Home : AppCompatActivity() {
 //            }
 //        }
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.home_toolbar_menu, menu)
