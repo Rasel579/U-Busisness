@@ -1,6 +1,5 @@
 package app.u_business.data.network.api
 
-import app.u_business.presentation.utils.SharedPreferencesHelper
 import okhttp3.OkHttpClient
 import org.koin.core.KoinComponent
 import org.koin.core.inject
@@ -13,7 +12,7 @@ object ApiUtils {
     }.im
     val baseUrl = "https://ubusiness-ithub.ru/"
     private val duration = 2000L
-    fun getOkHttpClient(): OkHttpClient {
+    fun getOkHttpClient() : OkHttpClient {
         val httpClient = OkHttpClient.Builder().apply {
             connectTimeout(duration, TimeUnit.MILLISECONDS)
             readTimeout(duration, TimeUnit.MILLISECONDS)
