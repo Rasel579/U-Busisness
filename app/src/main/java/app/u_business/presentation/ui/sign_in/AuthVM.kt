@@ -27,17 +27,24 @@ class AuthVM(
 
     fun registerUser(registrationBody: RegistrationBody) {
         viewModelScope.launch(Dispatchers.IO) {
-            val res = repo.registerNewUser(registrationBody)
-            Log.d(Companion.TAG, "registerUser: $res")
-//            authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
+            try {
+                val res = repo.registerNewUser(registrationBody)
+                Log.d(Companion.TAG, "registerUser: $res")
+                authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
+            }catch (exception : retrofit2.HttpException){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            }
         }
     }
 
     fun signIn(loginBody: LoginBody) {
         viewModelScope.launch(Dispatchers.IO) {
-            val res = repo.signIn(loginBody)
-            Log.d(Companion.TAG, "signIn: $res")
-//            authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
+            try {
+                val res = repo.signIn(loginBody)
+                authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
+            } catch (exception : retrofit2.HttpException){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            }
         }
     }
 
