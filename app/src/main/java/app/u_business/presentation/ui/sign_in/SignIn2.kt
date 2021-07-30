@@ -23,6 +23,7 @@ class SignIn2(override val layoutId: Int = R.layout.fr_login) : BaseFragment<FrL
 
     private fun initListeners() = with(binding) {
         btnBack.setOnClickListener { findNavController().popBackStack() }
+
         btnSignIn.setOnClickListener {
             if (editTextMail.text.isNotBlank() && editTextPassword.text.isNotBlank()) {
                 vm.signIn(LoginBody(editTextMail.text.toString(), editTextPassword.text.toString()))

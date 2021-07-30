@@ -19,7 +19,7 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper) : AuthRepos
         BackEndRepo.api.registerUser(user)
 
     override suspend fun signIn(user: LoginBody): LoginResponse =
-        BackEndRepo.api.loginUser(user, RequestBody.create("images".toMediaType(), "jpg"))
+        BackEndRepo.api.loginUser(user)
 
     override fun isAuthed(): Boolean = prefs.isAuthed
 

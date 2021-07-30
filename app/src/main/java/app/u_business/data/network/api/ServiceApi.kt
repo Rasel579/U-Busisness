@@ -176,7 +176,7 @@ interface ServiceApi {
 
     //methods for user
     @POST("/api/login")
-    suspend fun loginUser(@Body user: LoginBody, @Part("files") file: RequestBody) : LoginResponse
+    suspend fun loginUser(@Body user: LoginBody) : LoginResponse
 
     @GET("/api/facebook")
     fun loginUserWithFacebook() : LoginWithServiceResponse

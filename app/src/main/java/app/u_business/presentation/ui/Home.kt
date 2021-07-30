@@ -30,7 +30,7 @@ class Home : AppCompatActivity() {
     private val sharedPref by inject<SharedPreferencesHelper>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.e("login", sharedPref.registrationBody.toString())
         binding = AcHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarHome.toolbar)
