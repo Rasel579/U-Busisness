@@ -11,4 +11,5 @@ interface AuthRepository {
     fun isAuthed(): Boolean
     suspend fun registerNewUser(user: RegistrationBody): LoginResponse
     suspend fun signIn(user: LoginBody): LoginResponse
+    suspend fun recovery(email: String): String
 }

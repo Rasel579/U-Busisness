@@ -178,6 +178,9 @@ interface ServiceApi {
     @POST("/api/login")
     suspend fun loginUser(@Body user: LoginBody) : LoginResponse
 
+    @POST("/api/recovery")
+    suspend fun recovery(@Body email: String) : String
+
     @GET("/api/facebook")
     fun loginUserWithFacebook() : LoginWithServiceResponse
 

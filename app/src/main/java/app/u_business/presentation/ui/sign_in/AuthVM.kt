@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 sealed class AuthEventAction {
     data class Success(val loginResponse: LoginResponse?) : AuthEventAction()
     data class Error(val string: String?) : AuthEventAction()
+    data class SuccessRecovery(val message : String) : AuthEventAction()
 }
 
 data class AuthEvent(val action: AuthEventAction)
@@ -42,6 +43,17 @@ class AuthVM(
             try {
                 val res = repo.signIn(loginBody)
                 authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
+            } catch (exception : retrofit2.HttpException){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            }
+        }
+    }
+
+    fun recovery(email: String){
+        viewModelScope.launch (Dispatchers.IO){
+            try {
+                val res = repo.recovery(email)
+                authEvents.postValue(AuthEvent((AuthEventAction.SuccessRecovery(res))))
             } catch (exception : retrofit2.HttpException){
                 authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
             }

@@ -21,6 +21,9 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper) : AuthRepos
     override suspend fun signIn(user: LoginBody): LoginResponse =
         BackEndRepo.api.loginUser(user)
 
+    override suspend fun recovery(email: String) = BackEndRepo.api.recovery(email)
+
+
     override fun isAuthed(): Boolean = prefs.isAuthed
 
 }
