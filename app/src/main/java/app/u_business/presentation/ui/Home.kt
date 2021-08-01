@@ -16,9 +16,11 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import app.u_business.R
+import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.databinding.AcHomeBinding
 import app.u_business.presentation.utils.SharedPreferencesHelper
 import com.google.android.material.navigation.NavigationView
+import com.google.gson.Gson
 import org.koin.android.ext.android.inject
 
 
@@ -30,7 +32,9 @@ class Home : AppCompatActivity() {
     private val sharedPref by inject<SharedPreferencesHelper>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.e("login", sharedPref.registrationBody.toString())
+        Log.e("login",
+            Gson().fromJson(sharedPref.registrationBody, LoginResponse::class.java).toString()
+        )
         binding = AcHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarHome.toolbar)

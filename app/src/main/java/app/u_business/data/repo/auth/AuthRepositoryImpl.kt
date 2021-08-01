@@ -6,6 +6,7 @@ import app.u_business.data.network.query.user.RegistrationBody
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.domain.repo.auth.AuthRepository
 import app.u_business.presentation.utils.SharedPreferencesHelper
+import com.google.gson.Gson
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody
@@ -22,6 +23,8 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper) : AuthRepos
         BackEndRepo.api.loginUser(user)
 
     override suspend fun recovery(email: String) = BackEndRepo.api.recovery(email)
+    override fun getAccessToken() = prefs.accessToken
+    override fun getUser() = Gson().fromJson(prefs.registrationBody, LoginResponse::class.java)
 
 
     override fun isAuthed(): Boolean = prefs.isAuthed
