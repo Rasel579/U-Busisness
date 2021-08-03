@@ -14,4 +14,7 @@ interface AuthRepository {
     suspend fun recovery(email: String): String
     fun getAccessToken(): String?
     fun getUser(): LoginResponse
+    fun saveUser(user : LoginResponse)
+    fun saveToken(accessToken : String?)
+    fun makeAuthed(boolean: Boolean)
 }

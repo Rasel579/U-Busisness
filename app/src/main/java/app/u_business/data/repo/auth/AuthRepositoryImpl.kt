@@ -25,6 +25,17 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper) : AuthRepos
     override suspend fun recovery(email: String) = BackEndRepo.api.recovery(email)
     override fun getAccessToken() = prefs.accessToken
     override fun getUser() = Gson().fromJson(prefs.registrationBody, LoginResponse::class.java)
+    override fun saveUser(user: LoginResponse) {
+      prefs.registrationBody = Gson().toJson(user)
+    }
+
+    override fun saveToken(accessToken: String?) {
+        prefs.accessToken = accessToken
+    }
+
+    override fun makeAuthed(boolean: Boolean) {
+        prefs.isAuthed =  boolean
+    }
 
 
     override fun isAuthed(): Boolean = prefs.isAuthed

@@ -1,7 +1,7 @@
 package app.u_business.presentation.ui.profile.business_card
 
 import android.app.Application
-import android.util.Log
+import androidx.core.net.toUri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import app.u_business.data.network.query.cards.BusinessCardBody
@@ -11,46 +11,69 @@ import app.u_business.domain.repo.business_card.BusinessCardRepo
 import app.u_business.presentation.ui.base.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import org.koin.ext.getOrCreateScope
-import kotlin.Exception
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import retrofit2.HttpException
+import java.io.File
 
-sealed class CardFetchAction{
+sealed class CardFetchAction {
     data class Success(val businessCardResponseItem: BusinessCardResponse?) : CardFetchAction()
-    data class SuccessEdit(val message: String?): CardFetchAction()
-    data class Error(val message: String?): CardFetchAction()
+    data class SuccessEdit(val message: String?) : CardFetchAction()
+    data class Error(val message: String?) : CardFetchAction()
 }
+
 data class FetchCardsEvent(val action: CardFetchAction)
 class BusinessCardVM
-    (app: Application,
-     private val repo : BusinessCardRepo,
-     private val authRepo: AuthRepository
-) : BaseViewModel(app){
-   val fetchCardsEvent = MutableLiveData<FetchCardsEvent>()
-   fun fetchBusinessCard(){
-       viewModelScope.launch(Dispatchers.IO) {
-           try {
-               authRepo.getAccessToken()?.let { Log.e("my access token is", it) }
-               val res = authRepo.getAccessToken()?.let { repo.getBusinessCard(it) }
-               fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Success(res)))
+    (
+    val app: Application,
+    private val repo: BusinessCardRepo,
+    private val authRepo: AuthRepository
+) : BaseViewModel(app) {
+    companion object {
+        private const val MULTIPART_DATA = "multipart/form-data"
+    }
 
-           }catch (exception: Exception){
-               fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Error(exception.message)))
-           }
-       }
-   }
-
-    fun postEditCard(businessCardBody: BusinessCardBody){
+    val fetchCardsEvent = MutableLiveData<FetchCardsEvent>()
+    fun fetchBusinessCard() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                 val user = authRepo.getUser()
-                businessCardBody.idUser = user.userId?.toInt()
-                Log.e("login shares", authRepo.getUser().toString())
-                val res = repo.postEditBusinessCard(businessCardBody, RequestBody.create("jpg".toMediaTypeOrNull(), "files.jpg"))
-                 fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.SuccessEdit(res.messageRu)))
-            }catch (exception: Exception){
+                val accessToken = authRepo.getAccessToken()
+                val res = accessToken?.let { repo.getBusinessCard(it) }
+                fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Success(res)))
+            } catch (exception: HttpException) {
+                fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Error(exception.message)))
+            }
+        }
+    }
+
+    fun postEditCard(businessCardBody: BusinessCardBody, uriImage: String?) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val authToken = authRepo.getAccessToken()
+                businessCardBody.idUser = authRepo.getUser().userId
+                val file = File(uriImage)
+                val filePart = file.asRequestBody(uriImage?.let {
+                    app.contentResolver.getType(it.toUri())?.toMediaTypeOrNull()
+                })
+                val multipartBody = MultipartBody.Part.createFormData("image", file.name, filePart)
+                val partMapBody = mutableMapOf<String, RequestBody>()
+                partMapBody["name"] = businessCardBody.name.toString()
+                    .toRequestBody(MULTIPART_DATA.toMediaTypeOrNull())
+                partMapBody["country"] = businessCardBody.country.toString()
+                    .toRequestBody(MULTIPART_DATA.toMediaTypeOrNull())
+                partMapBody["adress"] = businessCardBody.address.toString()
+                    .toRequestBody(MULTIPART_DATA.toMediaTypeOrNull())
+                partMapBody["industry"] = businessCardBody.industry.toString()
+                    .toRequestBody(MULTIPART_DATA.toMediaTypeOrNull())
+                partMapBody["tags"] = businessCardBody.tags.toString()
+                    .toRequestBody(MULTIPART_DATA.toMediaTypeOrNull())
+
+                val res = repo.postEditBusinessCard(authToken, partMapBody, multipartBody)
+                fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.SuccessEdit(res.messageRu)))
+            } catch (exception: Exception) {
                 fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Error(exception.message)))
             }
         }
