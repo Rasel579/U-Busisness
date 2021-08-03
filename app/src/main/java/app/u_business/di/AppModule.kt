@@ -19,4 +19,5 @@ val appModule = module {
     //vm
     viewModel { MainVM(androidApplication(), get()) }
     viewModel { AuthVM(androidApplication(), get()) }
+
 }
