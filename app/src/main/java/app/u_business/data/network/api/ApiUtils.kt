@@ -16,7 +16,7 @@ object ApiUtils {
         httpClient.addInterceptor { chain ->
             val originReq = chain.request()
             val request = originReq.newBuilder()
-                .method(originReq.method(), originReq.body())
+//                .method(originReq.method(), originReq.body())
                 .build()
             chain.proceed(request)
         }
