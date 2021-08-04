@@ -1,4 +1,4 @@
-package app.u_business.domain.model
+package app.u_business.presentation.ui.eventlist.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

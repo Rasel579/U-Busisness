@@ -39,7 +39,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/itemSmallNews_date_text"
+                android:id="@+id/itemSmallNews_type_text"
                 android:layout_width="match_parent"
                 android:layout_height="14dp"
                 android:fontFamily="@font/univers_lt_cyr_55_roman"
@@ -59,7 +59,7 @@
                 tools:text="SEO — Продвижение бизнеса и деградации" />
 
             <TextView
-                android:id="@+id/itemSmallNews_content_text"
+                android:id="@+id/itemSmallNews_date_text"
                 android:layout_width="200dp"
                 android:layout_height="14dp"
                 android:layout_marginBottom="9dp"
