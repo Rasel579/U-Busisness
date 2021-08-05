@@ -1,6 +1,6 @@
 package app.u_business.presentation.ui.eventlist.`interface`
 
-import app.u_business.domain.model.EventList
+import app.u_business.presentation.ui.eventlist.model.EventList
 
 interface OnItemEventClickListener {
 

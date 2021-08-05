@@ -27,6 +27,10 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
+import app.u_business.presentation.ui.eventlist.response.FetchEventListResponse
+import app.u_business.presentation.ui.eventlist.response.FetchUserProfileResponce
+import okhttp3.RequestBody
+import retrofit2.http.*
 
 interface ServiceApi {
 
@@ -88,7 +92,7 @@ interface ServiceApi {
     fun searchEventByWord(@Body event: SearchBody) : Call<FetchEventResponse>
 
     @GET("/api/fetchevents")
-    fun getEvents() : Call<FetchEventResponse>
+   suspend fun getEvents() : FetchEventListResponse
 
 
     // methods for library
@@ -186,6 +190,9 @@ interface ServiceApi {
 
     @POST("/api/fetchProfile")
     fun getProfile(@Field("idUser") id: String) : Call<FetchProfileResponse>
+
+    @POST("/api/fetchProfile")
+   suspend fun getProfileUser(@Field("idUser") id: String) : FetchUserProfileResponce
 
     @POST("/api/changePassword")
     fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : Call<MessageResponse>

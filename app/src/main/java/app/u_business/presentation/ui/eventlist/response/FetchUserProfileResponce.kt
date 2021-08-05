@@ -5,14 +5,14 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class UserList(
+data class FetchUserProfileResponce(
 
 	@field:SerializedName("UserPojo")
-	val userList: List<UserItem?>? = null
+	val userList: List<FetchUserProfileDto?>? = null
 ) : Parcelable
 
 @Parcelize
-data class UserItem(
+data class FetchUserProfileDto(
 
 	@field:SerializedName("idUser")
 	val idUser: Int? = null,

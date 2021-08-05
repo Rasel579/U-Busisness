@@ -53,6 +53,7 @@ class Home : AppCompatActivity() {
                 R.id.nav_about_us,
                 R.id.nav_connect_with_us,
                 R.id.nav_home,
+                R.id.nav_event_list
             ), drawerLayout
         )
 
@@ -85,6 +86,9 @@ class Home : AppCompatActivity() {
             }
             R.id.profile -> {
                 navController.navigate(R.id.nav_profile)
+            }
+            R.id.nav_event_list -> {
+                navController.navigate(R.id.nav_event_list)
             }
         }
         return super.onOptionsItemSelected(item)

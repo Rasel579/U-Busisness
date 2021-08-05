@@ -15,8 +15,6 @@ import java.io.File
 class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper): AuthRepository{
 
     override fun isFirstOpen(): Boolean = prefs.isFirstOpen
-
-<<<<<<< HEAD
     override fun isAuthed(): Boolean =  prefs.isAuthed
     override fun registerNewUser(user: RegistrationBody, callback: Callback<LoginResponse>){
         BackEndRepo.api.registerUser(user).enqueue(callback)
@@ -25,7 +23,4 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper): AuthReposi
     override fun signIn(user: LoginBody, callback: Callback<LoginResponse>) {
         BackEndRepo.api.loginUser(user, RequestBody.create(MediaType.get("images"),"jpg")).enqueue(callback)
     }
-=======
-    override fun isAuthed(): Boolean = prefs.isAuthed
->>>>>>> master
 }

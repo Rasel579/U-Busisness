@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import app.u_business.R
 import app.u_business.databinding.ItemEventForListBinding
 import app.u_business.databinding.ItemSmallEventNewsRBinding
-import app.u_business.domain.model.EventList
 import app.u_business.presentation.ui.eventlist.`interface`.OnItemEventClickListener
+import app.u_business.presentation.ui.eventlist.model.EventList
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
