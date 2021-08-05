@@ -30,7 +30,7 @@ class Home : AppCompatActivity() {
     private val sharedPref by inject<SharedPreferencesHelper>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.e("login", sharedPref.registrationBody.toString())
         binding = AcHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarHome.toolbar)
@@ -53,6 +53,7 @@ class Home : AppCompatActivity() {
                 R.id.nav_about_us,
                 R.id.nav_connect_with_us,
                 R.id.nav_home,
+                R.id.nav_event_list
             ), drawerLayout
         )
 
@@ -85,6 +86,9 @@ class Home : AppCompatActivity() {
             }
             R.id.profile -> {
                 navController.navigate(R.id.nav_profile)
+            }
+            R.id.nav_event_list -> {
+                navController.navigate(R.id.nav_event_list)
             }
         }
         return super.onOptionsItemSelected(item)

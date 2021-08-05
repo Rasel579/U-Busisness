@@ -44,5 +44,9 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_event_list"
+            android:icon="@drawable/ic_event"
+            android:title="@string/event_list" />
     </group>
 </menu>

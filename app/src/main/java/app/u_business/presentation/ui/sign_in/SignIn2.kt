@@ -8,6 +8,7 @@ import app.u_business.databinding.FrLoginBinding
 import app.u_business.presentation.ui.Home
 import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.utils.SharedPreferencesHelper
+import app.u_business.presentation.utils.navigate
 import app.u_business.presentation.utils.showAlertDialog
 import com.google.gson.Gson
 import org.koin.android.ext.android.inject
@@ -23,6 +24,7 @@ class SignIn2(override val layoutId: Int = R.layout.fr_login) : BaseFragment<FrL
 
     private fun initListeners() = with(binding) {
         btnBack.setOnClickListener { findNavController().popBackStack() }
+        textViewForgotPassword.setOnClickListener{navigate(SignIn2Directions.actionSignIn2ToForgotPassword())}
         btnSignIn.setOnClickListener {
             if (editTextMail.text.isNotBlank() && editTextPassword.text.isNotBlank()) {
                 vm.signIn(LoginBody(editTextMail.text.toString(), editTextPassword.text.toString()))

@@ -1,5 +1,6 @@
 package app.u_business.data.network.api
 
+
 import app.u_business.data.network.query.cards.*
 import app.u_business.data.network.query.events.EventBody
 import app.u_business.data.network.query.events.EventIdBody
@@ -26,7 +27,13 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
+import app.u_business.presentation.ui.eventlist.response.FetchEventListResponse
+import app.u_business.presentation.ui.eventlist.response.FetchUserProfileResponce
+import com.google.gson.Gson
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 interface ServiceApi {
@@ -89,7 +96,7 @@ interface ServiceApi {
     fun searchEventByWord(@Body event: SearchBody) : FetchEventResponse
 
     @GET("/api/fetchevents")
-    fun getEvents() : FetchEventResponse
+   suspend fun getEvents() : FetchEventListResponse
 
 
     // methods for library
@@ -171,7 +178,10 @@ interface ServiceApi {
 
     //methods for user
     @POST("/api/login")
-    fun loginUser(@Body user: LoginBody, @Part("files") file: RequestBody) : LoginResponse
+    suspend fun loginUser(@Body user: LoginBody) : LoginResponse
+
+    @POST("/api/recovery")
+    suspend fun recovery(@Body email: String) : String
 
     @GET("/api/facebook")
     fun loginUserWithFacebook() : LoginWithServiceResponse
@@ -180,7 +190,7 @@ interface ServiceApi {
     fun loginUserWithGoogle() : LoginWithServiceResponse
 
     @POST("/api/reg")
-    fun registerUser(@Body user: RegistrationBody) : LoginResponse
+    suspend fun registerUser(@Body user: RegistrationBody) : LoginResponse
 
     @POST("/api/editProfile")
     fun editProfile(@Body profile: ProfileBody, @Part("files") file: RequestBody) : MessageResponse
@@ -188,9 +198,24 @@ interface ServiceApi {
     @POST("/api/fetchProfile")
     fun getProfile(@Field("idUser") id: String) : FetchProfileResponse
 
+    @POST("/api/fetchProfile")
+   suspend fun getProfileUser(@Field("idUser") id: String) : FetchUserProfileResponce
+
     @POST("/api/changePassword")
     fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : MessageResponse
 
     @POST("/api/locationupdate")
     fun locationUpdate(@Body newLocation: LocationBody) : MessageResponse
+}
+
+private inline fun <reified T> createWebService(
+    httpClient: OkHttpClient,
+    baseUrl: String
+): T {
+    val retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create(Gson()))
+        .client(httpClient)
+        .baseUrl(baseUrl)
+        .build()
+    return retrofit.create(T::class.java)
 }
