@@ -13,6 +13,7 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 
 class MainActivity : AppCompatActivity(), KoinComponent{
+
     private val vm by viewModel<MainVM>()
     private val sharedPreferencesHelper by inject<SharedPreferencesHelper>()
 

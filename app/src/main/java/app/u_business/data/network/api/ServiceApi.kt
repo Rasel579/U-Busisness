@@ -27,6 +27,8 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
+import app.u_business.presentation.ui.eventlist.response.FetchEventListResponse
+import app.u_business.presentation.ui.eventlist.response.FetchUserProfileResponce
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
@@ -94,7 +96,7 @@ interface ServiceApi {
     fun searchEventByWord(@Body event: SearchBody) : FetchEventResponse
 
     @GET("/api/fetchevents")
-    fun getEvents() : FetchEventResponse
+   suspend fun getEvents() : FetchEventListResponse
 
 
     // methods for library
@@ -195,6 +197,9 @@ interface ServiceApi {
 
     @POST("/api/fetchProfile")
     fun getProfile(@Field("idUser") id: String) : FetchProfileResponse
+
+    @POST("/api/fetchProfile")
+   suspend fun getProfileUser(@Field("idUser") id: String) : FetchUserProfileResponce
 
     @POST("/api/changePassword")
     fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : MessageResponse
