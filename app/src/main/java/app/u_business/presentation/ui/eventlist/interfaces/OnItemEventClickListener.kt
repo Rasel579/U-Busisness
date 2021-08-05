@@ -1,4 +1,4 @@
-package app.u_business.presentation.ui.eventlist.`interface`
+package app.u_business.presentation.ui.eventlist.interfaces
 
 import app.u_business.presentation.ui.eventlist.model.EventList
 

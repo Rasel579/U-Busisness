@@ -1,14 +1,11 @@
 package app.u_business.presentation.ui.eventlist
 
-import android.view.View
 import app.u_business.R
 import app.u_business.databinding.EventListFragmentBinding
 import app.u_business.presentation.ui.base.BaseFragment
-import app.u_business.presentation.ui.eventlist.`interface`.OnItemEventClickListener
+import app.u_business.presentation.ui.eventlist.interfaces.OnItemEventClickListener
 import app.u_business.presentation.ui.eventlist.adapter.EventListAdapter
 import app.u_business.presentation.ui.eventlist.model.EventList
-import app.u_business.presentation.utils.SharedPreferencesHelper
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EventListFragment(override val layoutId: Int = R.layout.event_list_fragment) :
@@ -17,9 +14,7 @@ class EventListFragment(override val layoutId: Int = R.layout.event_list_fragmen
 
     private val vm by viewModel<EventListViewModel>()
 
-    private var UserID: String = "26"
-
-    private val sharedPreferencesHelper by inject<SharedPreferencesHelper>()
+    private var userId: String = "26"
 
     private val adapter: EventListAdapter by lazy { EventListAdapter(this) }
 
@@ -45,12 +40,12 @@ class EventListFragment(override val layoutId: Int = R.layout.event_list_fragmen
 
     override fun onStart() {
         super.onStart()
-        vm.loadeventListFromApi(UserID)
+        vm.loadeventListFromApi(userId)
 
     }
 
     private fun setObservers() {
-        // observe movies data
+        // observe event data
         vm.eventList.observe(viewLifecycleOwner, {
             val eventList = it ?: return@observe
             eventList.let {

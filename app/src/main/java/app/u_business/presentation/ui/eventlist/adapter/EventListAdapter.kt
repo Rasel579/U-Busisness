@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import app.u_business.R
 import app.u_business.databinding.ItemEventForListBinding
 import app.u_business.databinding.ItemSmallEventNewsRBinding
-import app.u_business.presentation.ui.eventlist.`interface`.OnItemEventClickListener
+import app.u_business.presentation.ui.eventlist.interfaces.OnItemEventClickListener
 import app.u_business.presentation.ui.eventlist.model.EventList
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -77,7 +77,7 @@ class EventListViewHolder(
         with(binding) {
             Glide.with(binding.root)
                 .load(eventList.image)
-                .fitCenter()
+//                .fitCenter()
                 .apply(imageOption)
                 .into(itemEventImage)
 
@@ -110,7 +110,7 @@ class EventListItemViewHolder(
         with(binding) {
             Glide.with(binding.root)
                 .load(eventListItem.image)
-                .fitCenter()
+//                .fitCenter()
                 .apply(imageOption)
                 .into(itemSmallEventNewsImage)
 

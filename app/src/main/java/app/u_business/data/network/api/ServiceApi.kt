@@ -27,7 +27,14 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
-import retrofit2.http.GET
+import app.u_business.presentation.ui.eventlist.response.FetchEventListResponse
+import app.u_business.presentation.ui.eventlist.response.FetchUserProfileResponce
+import com.google.gson.Gson
+import okhttp3.OkHttpClient
+import okhttp3.RequestBody
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.*
 
 interface ServiceApi {
 
@@ -195,7 +202,7 @@ interface ServiceApi {
    suspend fun getProfileUser(@Field("idUser") id: String) : FetchUserProfileResponce
 
     @POST("/api/changePassword")
-    fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : Call<MessageResponse>
+    fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : MessageResponse
 
     @POST("/api/locationupdate")
     fun locationUpdate(@Body newLocation: LocationBody) : MessageResponse
