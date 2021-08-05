@@ -7,13 +7,17 @@ import app.u_business.domain.model.Event
 import app.u_business.domain.model.News
 import app.u_business.domain.model.Offer
 import app.u_business.presentation.ui.base.BaseFragment
+import app.u_business.presentation.ui.news.NewsVM
+import app.u_business.presentation.ui.news.renderData
 import app.u_business.presentation.ui.profile.special_offers.SpecialOffersAdapter
 import app.u_business.presentation.utils.navigate
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment<FrHomeBinding>() {
     private val eventAdapter: EventAdapter by lazy { EventAdapter() }
     private val newsAdapter: NewsAdapter by lazy { NewsAdapter() }
     private val offersAdapter: SpecialOffersAdapter by lazy { SpecialOffersAdapter() }
+    private val newsVm by viewModel<NewsVM>()
 
     override fun initViews() {
         initRecyclers()
@@ -30,6 +34,10 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
                 setOnClickListener { navigate(R.id.sign_up) }
             }
         }
+        newsVm.ldFetchNews.observe(viewLifecycleOwner) {
+            renderData(it, null, { newsAdapter.data = it.data.toNewsWithEmpty() })
+        }
+        newsVm.requestNewsList()
     }
 
     private fun mockRecyclers() {

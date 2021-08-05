@@ -38,169 +38,172 @@ interface ServiceApi {
 
     // methods for business cards
     @POST("/api/fetchBusinessCard")
-    fun getBusinessCard(@Body user: UserBody) : BusinessCardResponse
+    fun getBusinessCard(@Body user: UserBody): BusinessCardResponse
 
     @POST("/api/editBusinessCard")
-    fun editBusinessCard(@Body card: BusinessCardBody, @Part("files") file: RequestBody) : MessageResponse
+    fun editBusinessCard(
+        @Body card: BusinessCardBody,
+        @Part("files") file: RequestBody
+    ): MessageResponse
 
     @GET("/api/fetchBusinessCards")
-    fun getActiveBusinessCards() : FetchActivatedBusinessCards
+    fun getActiveBusinessCards(): FetchActivatedBusinessCards
 
     @POST("/api/searchBusinessCards")
-    fun searchBusinessCards(@Body word: SearchBody) : FetchActivatedBusinessCards
+    fun searchBusinessCards(@Body word: SearchBody): FetchActivatedBusinessCards
 
     @POST("/api/addFavoriteCard")
-    fun addCardToFavorite(@Body card: FavoriteCardBody) : MessageResponse
+    fun addCardToFavorite(@Body card: FavoriteCardBody): MessageResponse
 
     @POST("/api/deleteFavoriteCard")
-    fun deleteCardFromFavorite(@Body card: FavoriteCardBody) : MessageResponse
+    fun deleteCardFromFavorite(@Body card: FavoriteCardBody): MessageResponse
 
     @POST("/api/fetchFavoritesCards")
-    fun getFavoritesCards(@Body user: UserBody) : FetchActivatedBusinessCards
+    fun getFavoritesCards(@Body user: UserBody): FetchActivatedBusinessCards
 
     @GET("/api/tagslist")
-    fun getTop20Tags() : TagListResponse
+    fun getTop20Tags(): TagListResponse
 
     @POST("/api/tagsfilter")
-    fun getBusinessCardsByTag(@Body tag: TagBody) : FetchActivatedBusinessCards
+    fun getBusinessCardsByTag(@Body tag: TagBody): FetchActivatedBusinessCards
 
     @POST("/api/locationfilter50")
-    fun getBusinessCardsByLocation50(@Body locationBody: LocationBody) : FetchActivatedBusinessCards
+    fun getBusinessCardsByLocation50(@Body locationBody: LocationBody): FetchActivatedBusinessCards
 
     @POST("/api/locationfilter100")
-    fun getBusinessCardsByLocation100(@Body locationBody: LocationBody) : FetchActivatedBusinessCards
+    fun getBusinessCardsByLocation100(@Body locationBody: LocationBody): FetchActivatedBusinessCards
 
 
-//    methods for events
+    //    methods for events
     @POST("/api/createevent")
-    fun createEvent(@Body event: EventBody, @Part("files") file: RequestBody) : MessageResponse
+    fun createEvent(@Body event: EventBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/join")
-    fun joinToEvent(@Body eventUser: UserEventBody) : MessageResponse
+    fun joinToEvent(@Body eventUser: UserEventBody): MessageResponse
 
     @POST("/api/unjoin")
-    fun unjoinFromEvent(@Body eventUser: UserEventBody) : MessageResponse
+    fun unjoinFromEvent(@Body eventUser: UserEventBody): MessageResponse
 
     @POST("/api/members")
-    fun getMembersFromEvent(@Body even: EventIdBody) : FetchActivatedBusinessCards
+    fun getMembersFromEvent(@Body even: EventIdBody): FetchActivatedBusinessCards
 
     @POST("/api/editevents")
-    fun editEvent(@Body event: EventBody, @Part("files") file: RequestBody) : MessageResponse
+    fun editEvent(@Body event: EventBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/fetchevent")
-    fun getEvent(@Body event: EventIdBody) : FetchEventResponse
+    fun getEvent(@Body event: EventIdBody): FetchEventResponse
 
     @POST("/api/searchevents")
-    fun searchEventByWord(@Body event: SearchBody) : FetchEventResponse
+    fun searchEventByWord(@Body event: SearchBody): FetchEventResponse
 
     @GET("/api/fetchevents")
-    fun getEvents() : FetchEventResponse
+    fun getEvents(): FetchEventResponse
 
 
     // methods for library
     @POST("/api/addFile")
-    fun addFile(@Body user: UserBody, @Part("files") file: RequestBody) : MessageResponse
+    fun addFile(@Body user: UserBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/fetchLastFiles")
-    fun getLastFiles(@Body user: UserBody) : FetchLastFiles
+    fun getLastFiles(@Body user: UserBody): FetchLastFiles
 
     @POST("/api/fetchImages")
-    fun getImages(@Body user: UserBody) : FetchLastFiles
+    fun getImages(@Body user: UserBody): FetchLastFiles
 
     @POST("/api/fetchDocs")
-    fun getDocs(@Body user: UserBody) : FetchLastFiles
+    fun getDocs(@Body user: UserBody): FetchLastFiles
 
     @POST("/api/fetchAudio")
-    fun getAudio(@Body user: UserBody) : FetchLastFiles
+    fun getAudio(@Body user: UserBody): FetchLastFiles
 
     @POST("/api/fetchVideo")
-    fun getVideo(@Body user: UserBody) : FetchLastFiles
+    fun getVideo(@Body user: UserBody): FetchLastFiles
 
     @POST("/api/addFavoriteFile")
-    fun addFavoriteFile(@Body user: UserFileBody) :MessageResponse
+    fun addFavoriteFile(@Body user: UserFileBody): MessageResponse
 
     @POST("/api/deleteFavorfiles")
-    fun deleteFavoriteFiles(@Body user: FileBody) : MessageResponse
+    fun deleteFavoriteFiles(@Body user: FileBody): MessageResponse
 
     @POST("/api/fetchFavorfiles")
-    fun getFavoriteFiles(@Body user: FileBody) : FetchLastFiles
+    fun getFavoriteFiles(@Body user: FileBody): FetchLastFiles
 
     @POST("/api/updateTimeAction")
-    fun updateTimeAction(@Body user: FileBody) : MessageResponse
+    fun updateTimeAction(@Body user: FileBody): MessageResponse
 
     @POST("/api/deleteFile")
-    fun deleteFile(@Body user: FileBody) : MessageResponse
+    fun deleteFile(@Body user: FileBody): MessageResponse
 
     // methods for news
     @POST("/api/createnews")
-    fun createNews(@Body news: NewBody, @Part("files") file: RequestBody) : MessageResponse
+    suspend fun createNews(@Body news: NewBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/editnews")
-    fun editNews(@Body news: NewBody, @Part("files") file: RequestBody) : MessageResponse
+    suspend fun editNews(@Body news: NewBody, @Part("files") file: RequestBody): MessageResponse
 
-    @POST("/api/opentnews")
-    fun editNews(@Field("id_news") id: String) : OpenNewsResponse
+    @GET("/api/opennews")
+    suspend fun openNews(@Field("id_news") id: String): OpenNewsResponse
 
     @GET("/api/fetchnewslist")
-    fun getNewsList() : FetchNewsResponse
+    suspend fun getNewsList(): FetchNewsResponse
 
     @POST("/api/searchnews")
-    fun searchNews(@Field("word") word: String) : OpenNewsResponse
+    fun searchNews(@Field("word") word: String): FetchNewsResponse
 
 
     // methods for offers
     @POST("/api/createOffer")
-    fun createOffer(@Body offer: OfferBody, @Part("files") file: RequestBody) : MessageResponse
+    fun createOffer(@Body offer: OfferBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/fetchUserOffers")
-    fun getUserOffers(@Field("iduser") id: String) : FetchUserOffersResponse
+    fun getUserOffers(@Field("iduser") id: String): FetchUserOffersResponse
 
     @GET("/api/fetchOffers")
-    fun getOffers() : FetchUserOffersResponse
+    fun getOffers(): FetchUserOffersResponse
 
     @POST("/api/fetchHistoryOffers")
-    fun getHistoryOffers(@Field("iduser") id: String) : FetchUserOffersResponse
+    fun getHistoryOffers(@Field("iduser") id: String): FetchUserOffersResponse
 
     @POST("/api/fetchOffer")
-    fun getOfferById(@Field("idoffer") id: String) : FetchUserOffersResponse
+    fun getOfferById(@Field("idoffer") id: String): FetchUserOffersResponse
 
     @POST("/api/editOffers")
-    fun editOffer(@Body offer: EditableOfferBody, @Part("files") file: RequestBody) : MessageResponse
+    fun editOffer(@Body offer: EditableOfferBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/updateTime")
-    fun updateTime(@Field("idoffer") id: String) : MessageResponse
+    fun updateTime(@Field("idoffer") id: String): MessageResponse
 
     @POST("/api/searchoffers")
-    fun searchOffers(@Field("word") id: String) : SearchOffersResponse
+    fun searchOffers(@Field("word") id: String): SearchOffersResponse
 
 
     //methods for user
     @POST("/api/login")
-    suspend fun loginUser(@Body user: LoginBody) : LoginResponse
+    suspend fun loginUser(@Body user: LoginBody): LoginResponse
 
     @POST("/api/recovery")
-    suspend fun recovery(@Body email: String) : String
+    suspend fun recovery(@Body email: String): String
 
     @GET("/api/facebook")
-    fun loginUserWithFacebook() : LoginWithServiceResponse
+    fun loginUserWithFacebook(): LoginWithServiceResponse
 
     @GET("/api/google")
-    fun loginUserWithGoogle() : LoginWithServiceResponse
+    fun loginUserWithGoogle(): LoginWithServiceResponse
 
     @POST("/api/reg")
-    suspend fun registerUser(@Body user: RegistrationBody) : LoginResponse
+    suspend fun registerUser(@Body user: RegistrationBody): LoginResponse
 
     @POST("/api/editProfile")
-    fun editProfile(@Body profile: ProfileBody, @Part("files") file: RequestBody) : MessageResponse
+    fun editProfile(@Body profile: ProfileBody, @Part("files") file: RequestBody): MessageResponse
 
     @POST("/api/fetchProfile")
-    fun getProfile(@Field("idUser") id: String) : FetchProfileResponse
+    fun getProfile(@Field("idUser") id: String): FetchProfileResponse
 
     @POST("/api/changePassword")
-    fun changePasswordProfile(@Body newPassword: ChangePasswordBody) : MessageResponse
+    fun changePasswordProfile(@Body newPassword: ChangePasswordBody): MessageResponse
 
     @POST("/api/locationupdate")
-    fun locationUpdate(@Body newLocation: LocationBody) : MessageResponse
+    fun locationUpdate(@Body newLocation: LocationBody): MessageResponse
 }
 
 private inline fun <reified T> createWebService(
