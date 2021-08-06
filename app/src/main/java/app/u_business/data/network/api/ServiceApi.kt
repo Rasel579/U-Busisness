@@ -147,8 +147,9 @@ interface ServiceApi {
     @GET("/api/fetchnewslist")
     suspend fun getNewsList(): FetchNewsResponse
 
+    @FormUrlEncoded
     @POST("/api/searchnews")
-    fun searchNews(@Field("word") word: String): FetchNewsResponse
+    suspend fun searchNews(@Field("word") word: String): FetchNewsResponse
 
 
     // methods for offers

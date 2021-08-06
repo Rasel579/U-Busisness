@@ -8,12 +8,12 @@ val serverDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
 val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.getDefault())
 
 class FetchNewsResponse : ArrayList<FetchNewsResponseItem>() {
-    fun toNewsWithEmpty(): List<News?> {
-        return toNews().toMutableList<News?>().apply { add(null) }
+    fun toNewsWithEmpty(count: Int): List<News?> {
+        return toNews(count).toMutableList<News?>().apply { add(null) }
     }
 
-    fun toNews(): List<News> {
-        return ArrayList(map {
+    fun toNews(count: Int = Int.MAX_VALUE): List<News> {
+        return ArrayList(subList(0, if (size > count) count else size - 1).map {
             News(
                 it.banner ?: "", it.title ?: "",
                 try {

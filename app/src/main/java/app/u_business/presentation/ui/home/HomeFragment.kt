@@ -35,7 +35,7 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
             }
         }
         newsVm.ldFetchNews.observe(viewLifecycleOwner) {
-            renderData(it, null, { newsAdapter.data = it.data.toNewsWithEmpty() })
+            renderData(it, null, { newsAdapter.data = it.data.toNewsWithEmpty(2) })
         }
         newsVm.requestNewsList()
     }

@@ -20,6 +20,7 @@ class NewsFragment(override val layoutId: Int = R.layout.fr_news) : BaseFragment
         newsVm.ldFetchNews.observe(viewLifecycleOwner) {
             renderData(it, R.id.progress_news, { adapter.data = it.data.toNews() })
         }
+        binding.newsSearchTil.setEndIconOnClickListener { newsVm.requestSearchNews(binding.newsSearchTil.editText?.text.toString()) }
         newsVm.requestNewsList()
     }
 

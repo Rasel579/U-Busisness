@@ -28,6 +28,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/news_rv"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_search"
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
