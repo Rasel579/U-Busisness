@@ -8,27 +8,23 @@ import app.u_business.databinding.ItemEventForListBinding
 import app.u_business.databinding.ItemSmallEventNewsRBinding
 import app.u_business.presentation.ui.eventlist.interfaces.OnItemEventClickListener
 import app.u_business.presentation.ui.eventlist.model.EventList
+import app.u_business.presentation.ui.eventlist.response.EventItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class EventListAdapter(
-    private val itemEventClickListener: OnItemEventClickListener
+//    private val itemEventClickListener: OnItemEventClickListener?
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         private const val DEFAULT_TYPE = 0
         private const val PLACEHOLDER_TYPE = 1
     }
 
-    var data: List<EventList?> = listOf()
+    var data: List<EventItem?> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
-
-    fun setEventListData(dataEventList: List<EventList>) {
-        data = dataEventList
-        notifyDataSetChanged()
-    }
 
     override fun getItemViewType(position: Int): Int =
         if (data[position] == null) PLACEHOLDER_TYPE else DEFAULT_TYPE
@@ -50,7 +46,7 @@ class EventListAdapter(
             (holder as EventListViewHolder).bind(data[position]!!)
 
         holder.itemView.setOnClickListener {
-            itemEventClickListener.onItemViewClick(data[position]!!)
+//            itemEventClickListener.onItemViewClick(data[position]!!)
         }
     }
 
@@ -73,10 +69,10 @@ class EventListViewHolder(
         .fallback(R.drawable.ic_no_photo_vector)
         .centerCrop()
 
-    fun bind(eventList: EventList) {
+    fun bind(eventList: EventItem) {
         with(binding) {
             Glide.with(binding.root)
-                .load(eventList.image)
+                .load(eventList.banner)
 //                .fitCenter()
                 .apply(imageOption)
                 .into(itemEventImage)
