@@ -18,16 +18,17 @@ import app.u_business.data.network.response.business_card.card_response.Business
 import app.u_business.data.network.response.business_card.tag_list.TagListResponse
 import app.u_business.data.network.response.business_card.verified_card_response.FetchActivatedBusinessCards
 import app.u_business.data.network.response.events.fetch_event.FetchEventResponse
+import app.u_business.data.network.response.events.fetch_event.FetchEventResponseItem
 import app.u_business.data.network.response.library.fetch_last_files.FetchLastFiles
 import app.u_business.data.network.response.message_response.MessageResponse
-import app.u_business.data.network.response.news.fetch_news.FetchNewsResponse
+import app.u_business.data.network.response.news.fetch_news.FetchNewsResponseItem
 import app.u_business.data.network.response.news.open_news.OpenNewsResponse
 import app.u_business.data.network.response.offers.fetch_user_offers.FetchUserOffersResponse
+import app.u_business.data.network.response.offers.fetch_user_offers.FetchUserOffersResponseItem
 import app.u_business.data.network.response.offers.search_offers.SearchOffersResponse
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
-import app.u_business.presentation.ui.eventlist.response.FetchEventListResponse
 import app.u_business.presentation.ui.eventlist.response.FetchUserProfileResponce
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -96,7 +97,7 @@ interface ServiceApi {
     fun searchEventByWord(@Body event: SearchBody) : FetchEventResponse
 
     @GET("/api/fetchevents")
-   suspend fun getEvents() : FetchEventListResponse
+   suspend fun getEvents(): List<Any>
 
 
     // methods for library
@@ -144,7 +145,7 @@ interface ServiceApi {
     fun editNews(@Field("id_news") id: String) : OpenNewsResponse
 
     @GET("/api/fetchnewslist")
-    fun getNewsList() : FetchNewsResponse
+    fun getNewsList() : List<Any>
 
     @POST("/api/searchnews")
     fun searchNews(@Field("word") word: String) : OpenNewsResponse
@@ -158,7 +159,7 @@ interface ServiceApi {
     fun getUserOffers(@Field("iduser") id: String) : FetchUserOffersResponse
 
     @GET("/api/fetchOffers")
-    fun getOffers() : FetchUserOffersResponse
+    fun getOffers() : List<Any>
 
     @POST("/api/fetchHistoryOffers")
     fun getHistoryOffers(@Field("iduser") id: String) : FetchUserOffersResponse

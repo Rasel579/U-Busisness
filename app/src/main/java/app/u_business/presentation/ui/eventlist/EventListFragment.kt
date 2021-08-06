@@ -49,7 +49,7 @@ class EventListFragment(override val layoutId: Int = R.layout.event_list_fragmen
         vm.eventList.observe(viewLifecycleOwner, {
             val eventList = it ?: return@observe
             eventList.let {
-                adapter.data
+                adapter.data = it
 //                adapter.setEventListData(eventList)
                 adapter.notifyDataSetChanged()
             }

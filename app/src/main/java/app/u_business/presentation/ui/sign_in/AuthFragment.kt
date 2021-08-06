@@ -14,10 +14,10 @@ import app.u_business.presentation.utils.navigate
 import org.koin.android.ext.android.inject
 
 
-class SignIn1(override val layoutId: Int = R.layout.fr_auth) : BaseFragment<FrAuthBinding>() {
+class AuthFragment(override val layoutId: Int = R.layout.fr_auth) : BaseFragment<FrAuthBinding>() {
 
     override fun initViews() {
-        binding.btnSignIn.setOnClickListener { navigate(SignIn1Directions.actionAuthToSignIn2()) }
-        binding.btnSignUp.setOnClickListener { navigate(SignIn1Directions.actionSignIn1ToSignUp1()) }
+        binding.btnSignIn.setOnClickListener { navigate(AuthFragmentDirections.actionAuthToSignIn2()) }
+        binding.btnSignUp.setOnClickListener { navigate(AuthFragmentDirections.actionSignIn1ToSignUp1()) }
     }
 }

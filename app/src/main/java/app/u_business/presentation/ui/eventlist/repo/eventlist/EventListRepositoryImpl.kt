@@ -17,7 +17,7 @@ class EventListRepositoryImpl(private val apiServiceEvent: ServiceApi):  EventLi
         // get eventsList
         val eventListDto = apiServiceEvent.getEvents()
         // get eventsList model
-        val eventsListModel = convertEventDtoToDomain(eventListDto.event as List<EventItem>,
+        val eventsListModel = convertEventDtoToDomain(eventListDto as List<EventItem>,
             users.userList as List<FetchUserProfileDto>
         )
 

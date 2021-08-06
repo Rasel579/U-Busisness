@@ -13,7 +13,7 @@ import com.google.gson.Gson
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SignUp2(override val layoutId: Int = R.layout.fr_registration_password) : BaseFragment<FrRegistrationPasswordBinding>() {
+class SignUpPassword(override val layoutId: Int = R.layout.fr_registration_password) : BaseFragment<FrRegistrationPasswordBinding>() {
     private val vm by viewModel<AuthVM>()
     private val sharePref by inject<SharedPreferencesHelper>()
     override fun initViews() {
@@ -27,7 +27,7 @@ class SignUp2(override val layoutId: Int = R.layout.fr_registration_password) : 
             if (!editTextPassword.text.isNullOrBlank() && !editTextRepeatPassword.text.isNullOrBlank()
                 && editTextPassword.text.toString() == editTextRepeatPassword.text.toString()
             ) {
-                val contacts = arguments?.getStringArrayList(SignUp1.BUNDLE_USER)
+                val contacts = arguments?.getStringArrayList(SignUp.BUNDLE_USER)
                 val name = contacts?.get(0)
                 val email = contacts?.get(1)
                 val password = editTextRepeatPassword.text.toString()
