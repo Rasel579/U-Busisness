@@ -27,12 +27,9 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
-import com.google.gson.Gson
-import okhttp3.OkHttpClient
 import okhttp3.RequestBody
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
+import app.u_business.presentation.ui.eventlist.response.EventItem
 
 interface ServiceApi {
 
@@ -97,7 +94,7 @@ interface ServiceApi {
     fun searchEventByWord(@Body event: SearchBody): FetchEventResponse
 
     @GET("/api/fetchevents")
-    fun getEvents(): FetchEventResponse
+   suspend fun getEvents() : List<EventItem>
 
 
     // methods for library
@@ -205,16 +202,4 @@ interface ServiceApi {
 
     @POST("/api/locationupdate")
     fun locationUpdate(@Body newLocation: LocationBody): MessageResponse
-}
-
-private inline fun <reified T> createWebService(
-    httpClient: OkHttpClient,
-    baseUrl: String
-): T {
-    val retrofit = Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create(Gson()))
-        .client(httpClient)
-        .baseUrl(baseUrl)
-        .build()
-    return retrofit.create(T::class.java)
 }
