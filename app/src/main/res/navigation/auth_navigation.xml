@@ -6,7 +6,7 @@
     app:startDestination="@id/loadingFragment">
     <fragment
         android:id="@+id/sign_up"
-        android:name="app.u_business.presentation.ui.sign_in.SignUp1"
+        android:name="app.u_business.presentation.ui.sign_in.SignUp"
         android:label="SignUp1"
         tools:layout="@layout/fr_registration">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/signIn2"
-        android:name="app.u_business.presentation.ui.sign_in.SignIn2"
+        android:name="app.u_business.presentation.ui.sign_in.SignInFragment"
         android:label="SignIn2"
         tools:layout="@layout/fr_login">
         <action
@@ -29,12 +29,12 @@
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/signUp2"
-        android:name="app.u_business.presentation.ui.sign_in.SignUp2"
+        android:name="app.u_business.presentation.ui.sign_in.SignUpPassword"
         android:label="SignUp2"
         tools:layout="@layout/fr_registration_password" />
     <fragment
         android:id="@+id/auth"
-        android:name="app.u_business.presentation.ui.sign_in.SignIn1"
+        android:name="app.u_business.presentation.ui.sign_in.AuthFragment"
         android:label="SignIn1"
         tools:layout="@layout/fr_auth">
         <action

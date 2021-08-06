@@ -14,7 +14,8 @@ import com.google.gson.Gson
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SignIn2(override val layoutId: Int = R.layout.fr_login) : BaseFragment<FrLoginBinding>() {
+class SignInFragment(override val layoutId: Int = R.layout.fr_login) :
+    BaseFragment<FrLoginBinding>() {
     private val vm by viewModel<AuthVM>()
     private val sharedPreferencesHelper by inject<SharedPreferencesHelper>()
     override fun initViews() {
@@ -24,7 +25,7 @@ class SignIn2(override val layoutId: Int = R.layout.fr_login) : BaseFragment<FrL
 
     private fun initListeners() = with(binding) {
         btnBack.setOnClickListener { findNavController().popBackStack() }
-        textViewForgotPassword.setOnClickListener{navigate(SignIn2Directions.actionSignIn2ToForgotPassword())}
+        textViewForgotPassword.setOnClickListener { navigate(SignInFragmentDirections.actionSignIn2ToForgotPassword()) }
         btnSignIn.setOnClickListener {
             if (editTextMail.text.isNotBlank() && editTextPassword.text.isNotBlank()) {
                 vm.signIn(LoginBody(editTextMail.text.toString(), editTextPassword.text.toString()))

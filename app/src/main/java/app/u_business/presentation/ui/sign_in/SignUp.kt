@@ -10,7 +10,7 @@ import app.u_business.presentation.utils.showAlertDialog
 import app.u_business.presentation.utils.validateEmail
 
 
-class SignUp1(override val layoutId: Int = R.layout.fr_registration) : BaseFragment<FrRegistrationBinding>(){
+class SignUp(override val layoutId: Int = R.layout.fr_registration) : BaseFragment<FrRegistrationBinding>(){
     override fun initViews() {
          initListener()
     }
