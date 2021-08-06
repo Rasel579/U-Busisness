@@ -1,9 +1,15 @@
 package app.u_business.di
 
+import app.u_business.data.repo.MainRepoImpl
 import app.u_business.data.repo.auth.AuthRepositoryImpl
 import app.u_business.data.repo.news.NewsRepositoryImpl
 import app.u_business.domain.repo.auth.AuthRepository
 import app.u_business.domain.repo.news.NewsRepository
+import app.u_business.domain.repo.main.MainRepo
+import app.u_business.presentation.ui.eventlist.EventListViewModel
+import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepository
+import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepositoryImpl
+import app.u_business.presentation.ui.home.HomeVM
 import app.u_business.presentation.ui.main.MainVM
 import app.u_business.presentation.ui.news.NewsVM
 import app.u_business.presentation.ui.sign_in.AuthVM
@@ -19,9 +25,13 @@ val appModule = module {
     //repo
     single<AuthRepository> { AuthRepositoryImpl(get()) }
     single<NewsRepository> { NewsRepositoryImpl() }
+    single<EventListRepository> { EventListRepositoryImpl(get()) }
+    single<MainRepo> { MainRepoImpl() }
 
     //vm
     viewModel { MainVM(androidApplication(), get()) }
     viewModel { AuthVM(androidApplication(), get()) }
     viewModel { NewsVM(androidApplication(), get()) }
+    viewModel { EventListViewModel(androidApplication(), get()) }
+    viewModel { HomeVM(androidApplication(), get()) }
 }

@@ -1,14 +1,9 @@
 package app.u_business.presentation.ui.welcome
 
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
 import app.u_business.R
-import app.u_business.databinding.FrAuthBinding
 import app.u_business.databinding.FrWelcomePagerBinding
 import app.u_business.presentation.ui.base.BaseFragment
-import app.u_business.presentation.ui.sign_in.SignIn1
 
 class WelcomeFragmentPager(override val layoutId: Int = R.layout.fr_welcome_pager) :
     BaseFragment<FrWelcomePagerBinding>() {

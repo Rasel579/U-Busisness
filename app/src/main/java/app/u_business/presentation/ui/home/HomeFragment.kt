@@ -1,5 +1,6 @@
 package app.u_business.presentation.ui.home
 
+import android.util.Log
 import android.view.View
 import app.u_business.R
 import app.u_business.databinding.FrHomeBinding
@@ -10,7 +11,10 @@ import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.ui.news.NewsVM
 import app.u_business.presentation.ui.news.renderData
 import app.u_business.presentation.ui.profile.special_offers.SpecialOffersAdapter
+import app.u_business.presentation.utils.SharedPreferencesHelper
 import app.u_business.presentation.utils.navigate
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment<FrHomeBinding>() {
@@ -19,9 +23,14 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
     private val offersAdapter: SpecialOffersAdapter by lazy { SpecialOffersAdapter() }
     private val newsVm by viewModel<NewsVM>()
 
+    private val prefs by inject<SharedPreferencesHelper>()
+    private val vm by viewModel<HomeVM>()
     override fun initViews() {
         initRecyclers()
         mockRecyclers()
+        vm.state.observe(this){
+            Log.d(TAG, "initViews: $it")
+        }
     }
 
     private fun initRecyclers() {
@@ -30,7 +39,7 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
             homeNewsRv.adapter = newsAdapter
             homeOffersRv.adapter = offersAdapter
             homeRegisterBtn.apply {
-                visibility = if (true) View.VISIBLE else View.GONE
+                visibility = if (prefs.isAuthed) View.GONE else View.VISIBLE
                 setOnClickListener { navigate(R.id.sign_up) }
             }
         }

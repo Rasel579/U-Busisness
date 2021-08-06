@@ -127,4 +127,5 @@
     <string name="alert_message_not_valid_email">Некорректно введен Email</string>
     <string name="error">Ошибка</string>
     <string name="server_unavailable">Сервер недоступен</string>
+    <string name="event_list">СОБЫТИЯ</string>
 </resources>
