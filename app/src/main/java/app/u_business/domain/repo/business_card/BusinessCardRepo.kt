@@ -7,6 +7,6 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 
 interface BusinessCardRepo {
-    suspend fun getBusinessCard(accessToken : String) : BusinessCardResponse
-    suspend fun postEditBusinessCard(authToken: String?, businessCardBody: MutableMap<String, RequestBody>, file: MultipartBody.Part) : MessageResponse
+    suspend fun getBusinessCard() : BusinessCardResponse
+    suspend fun postEditBusinessCard( businessCardBody: MutableMap<String, RequestBody>, file: MultipartBody.Part) : MessageResponse
 }

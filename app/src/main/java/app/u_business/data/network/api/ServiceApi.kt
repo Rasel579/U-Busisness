@@ -40,10 +40,9 @@ interface ServiceApi {
     suspend fun getBusinessCard() : BusinessCardResponse
     @Multipart
     @POST("/api/editBusinessCard")
-    fun editBusinessCard(
-        @Body card: String,
-        @Body file: MutableMap<String, RequestBody>,
-        file1: MultipartBody.Part
+    suspend fun editBusinessCard(
+        @PartMap file: MutableMap<String, RequestBody>,
+        @Part file1: MultipartBody.Part
     ) : MessageResponse
 
     @GET("/api/fetchBusinessCards")

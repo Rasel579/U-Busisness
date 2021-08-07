@@ -41,8 +41,7 @@ class BusinessCardVM
     fun fetchBusinessCard() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val accessToken = authRepo.getAccessToken()
-                val res = accessToken?.let { repo.getBusinessCard(it) }
+                val res = repo.getBusinessCard()
                 fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Success(res)))
             } catch (exception: HttpException) {
                 fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Error(exception.message)))
@@ -72,7 +71,7 @@ class BusinessCardVM
                 partMapBody["tags"] = businessCardBody.tags.toString()
                     .toRequestBody(MULTIPART_DATA.toMediaTypeOrNull())
 
-                val res = repo.postEditBusinessCard(authToken, partMapBody, multipartBody)
+                val res = repo.postEditBusinessCard( partMapBody, multipartBody)
                 fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.SuccessEdit(res.messageRu)))
             } catch (exception: Exception) {
                 fetchCardsEvent.postValue(FetchCardsEvent(CardFetchAction.Error(exception.message)))

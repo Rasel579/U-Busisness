@@ -6,6 +6,6 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 
 class BusinessCardRepoImpl: BusinessCardRepo {
-    override suspend fun getBusinessCard(accessToken: String) = BackEndRepo.api.getBusinessCard("Bearer $accessToken")
-    override suspend fun postEditBusinessCard(authToken: String?, businessCardBody: MutableMap<String, RequestBody>, file: MultipartBody.Part) = BackEndRepo.api.editBusinessCard("Bearer $authToken", businessCardBody, file)
+    override suspend fun getBusinessCard() = BackEndRepo.api.getBusinessCard()
+    override suspend fun postEditBusinessCard( businessCardBody: MutableMap<String, RequestBody>, file: MultipartBody.Part) = BackEndRepo.api.editBusinessCard(businessCardBody, file)
 }
