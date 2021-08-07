@@ -13,9 +13,9 @@ class ForgotPassword(override val layoutId: Int = R.layout.fragment_forgot_passw
     val vm by inject<AuthVM>()
     override fun initViews() = with(binding) {
         initEvents()
-        btnBack.setOnClickListener { findNavController().popBackStack() }
-        btnSignUp.setOnClickListener {
-            if (editTextMail.validateEmail(editTextMail.text.toString())) {
+        btnBack.setOnClickListener{findNavController().popBackStack()}
+        btnSignUp.setOnClickListener{
+            if (editTextMail.validateEmail(editTextMail.text.toString())){
                 vm.recovery(editTextMail.text.toString())
             }
         }

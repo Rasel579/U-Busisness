@@ -37,7 +37,7 @@ interface ServiceApi {
     // methods for business cards
 
     @GET("/api/fetchBusinessCard")
-    suspend fun getBusinessCard(@Header("Authorization") accessToken: String?) : BusinessCardResponse
+    suspend fun getBusinessCard() : BusinessCardResponse
     @Multipart
     @POST("/api/editBusinessCard")
     fun editBusinessCard(
