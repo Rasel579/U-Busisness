@@ -2,6 +2,7 @@ package app.u_business.presentation.ui.profile.business_card
 
 import android.app.Application
 import androidx.core.net.toUri
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import app.u_business.data.network.query.cards.BusinessCardBody

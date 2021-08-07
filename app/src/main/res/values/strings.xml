@@ -128,4 +128,6 @@
     <string name="error">Ошибка</string>
     <string name="server_unavailable">Сервер недоступен</string>
     <string name="event_list">СОБЫТИЯ</string>
+    <string name="status_validate_text">Подтвержден</string>
+    <string name="satus_invalidate_text">Неодтвержден</string>
 </resources>

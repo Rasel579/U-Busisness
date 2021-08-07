@@ -3,6 +3,7 @@ package app.u_business.presentation.ui.sign_in
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import app.u_business.data.network.query.user.LoginBody
 import app.u_business.data.network.query.user.RegistrationBody
 import app.u_business.data.network.response.user.login.LoginResponse
@@ -37,8 +38,8 @@ class AuthVM(
                 val res = repo.registerNewUser(registrationBody)
                 Log.d(Companion.TAG, "registerUser: $res")
                 authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
-            }catch (exception : retrofit2.HttpException){
-                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            }catch (exception : Exception){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message)))
             }
         }
     }
@@ -48,9 +49,24 @@ class AuthVM(
             try {
                 val res = repo.signIn(loginBody)
                 authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
-            } catch (exception : retrofit2.HttpException){
-                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            } catch (exception : Exception){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message)))
             }
         }
+    }
+
+    fun recovery(email: String){
+        viewModelScope.launch (Dispatchers.IO){
+            try {
+                val res = repo.recovery(email)
+                authEvents.postValue(AuthEvent((AuthEventAction.SuccessRecovery(res))))
+            } catch (exception : Exception){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message)))
+            }
+        }
+    }
+
+    companion object {
+        private const val TAG = "AuthVM"
     }
 }

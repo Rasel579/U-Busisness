@@ -30,18 +30,21 @@ import app.u_business.data.network.response.user.login.LoginWithServiceResponse
 import okhttp3.RequestBody
 import retrofit2.http.*
 import app.u_business.presentation.ui.eventlist.response.EventItem
+import okhttp3.MultipartBody
 
 interface ServiceApi {
 
     // methods for business cards
-    @POST("/api/fetchBusinessCard")
-    fun getBusinessCard(@Body user: UserBody): BusinessCardResponse
 
+    @GET("/api/fetchBusinessCard")
+    suspend fun getBusinessCard(@Header("Authorization") accessToken: String?) : BusinessCardResponse
+    @Multipart
     @POST("/api/editBusinessCard")
     fun editBusinessCard(
-        @Body card: BusinessCardBody,
-        @Part("files") file: RequestBody
-    ): MessageResponse
+        @Body card: String,
+        @Body file: MutableMap<String, RequestBody>,
+        file1: MultipartBody.Part
+    ) : MessageResponse
 
     @GET("/api/fetchBusinessCards")
     fun getActiveBusinessCards(): FetchActivatedBusinessCards
@@ -157,7 +160,7 @@ interface ServiceApi {
     fun getUserOffers(@Field("iduser") id: String): FetchUserOffersResponse
 
     @GET("/api/fetchOffers")
-    fun getOffers(): FetchUserOffersResponse
+    suspend fun getOffers(): FetchUserOffersResponse
 
     @POST("/api/fetchHistoryOffers")
     fun getHistoryOffers(@Field("iduser") id: String): FetchUserOffersResponse
@@ -182,8 +185,6 @@ interface ServiceApi {
     @POST("/api/recovery")
     suspend fun recovery(@Body email: String): String
 
-    @POST("/api/recovery")
-    suspend fun recovery(@Body email: String) : String
 
     @GET("/api/facebook")
     fun loginUserWithFacebook(): LoginWithServiceResponse

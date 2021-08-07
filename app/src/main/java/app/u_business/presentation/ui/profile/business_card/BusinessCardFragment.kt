@@ -169,7 +169,6 @@ class BusinessCardFragment(override val layoutId: Int = R.layout.fr_business_car
                     0
                 ), resImage
             )
-
         }
     }
 

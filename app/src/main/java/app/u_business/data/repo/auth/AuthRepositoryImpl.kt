@@ -37,7 +37,6 @@ class AuthRepositoryImpl(private val prefs: SharedPreferencesHelper) : AuthRepos
         prefs.isAuthed =  boolean
     }
 
-
     override fun isAuthed(): Boolean = prefs.isAuthed
 
 }
