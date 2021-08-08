@@ -6,5 +6,5 @@ data class BusinessCardBody(
     val address: String?,
     val industry: String?,
     val tags: String?,
-    val idUser: Int?
+    var idUser: Int?
 )

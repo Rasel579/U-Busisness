@@ -2,9 +2,9 @@ package app.u_business.data.network.response.reg
 import com.google.gson.annotations.SerializedName
 
 data class RegistrationResponse(
-    @SerializedName("AccessToken")
+    @SerializedName("accessToken")
     val accessToken: String?,
-    @SerializedName("RefreshToken")
+    @SerializedName("refreshToken")
     val refreshToken: String?,
     @SerializedName("role")
     val role: String?,

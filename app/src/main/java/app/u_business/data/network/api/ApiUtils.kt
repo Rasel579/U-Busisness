@@ -13,7 +13,7 @@ object ApiUtils {
     }.im
     val baseUrl = "https://ubusiness-ithub.ru/"
     private val duration = 2000L
-    fun getOkHttpClient(): OkHttpClient {
+    fun getOkHttpClient() : OkHttpClient {
         val httpClient = OkHttpClient.Builder().apply {
             connectTimeout(duration, TimeUnit.MILLISECONDS)
             readTimeout(duration, TimeUnit.MILLISECONDS)

@@ -232,4 +232,13 @@
         <item name="android:imeOptions">actionSearch</item>
         <item name="android:inputType">text</item>
     </style>
+    <style name="chip_button_material_style" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">6dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="chipBackgroundColor">@color/bg_state_color</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:checkable">true</item>
+        <item name="android:textColor">@color/switch_color_selector</item>
+    </style>
 </resources>

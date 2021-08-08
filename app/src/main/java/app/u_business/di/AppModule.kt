@@ -2,16 +2,20 @@ package app.u_business.di
 
 import app.u_business.data.repo.MainRepoImpl
 import app.u_business.data.repo.auth.AuthRepositoryImpl
+import app.u_business.data.repo.business_card.BusinessCardRepoImpl
 import app.u_business.data.repo.news.NewsRepositoryImpl
 import app.u_business.domain.repo.auth.AuthRepository
+import app.u_business.domain.repo.business_card.BusinessCardRepo
 import app.u_business.domain.repo.news.NewsRepository
 import app.u_business.domain.repo.main.MainRepo
+import app.u_business.presentation.ui.business_cards.BusinessCardsVM
 import app.u_business.presentation.ui.eventlist.EventListViewModel
 import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepository
 import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepositoryImpl
 import app.u_business.presentation.ui.home.HomeVM
 import app.u_business.presentation.ui.main.MainVM
 import app.u_business.presentation.ui.news.NewsVM
+import app.u_business.presentation.ui.profile.business_card.BusinessCardVM
 import app.u_business.presentation.ui.sign_in.AuthVM
 import app.u_business.presentation.utils.SharedPreferencesHelper
 import com.google.gson.Gson
@@ -28,10 +32,11 @@ val appModule = module {
 
     //repo
     single<AuthRepository> { AuthRepositoryImpl(get()) }
-    single<EventListRepository> { EventListRepositoryImpl() }
     single<NewsRepository> { NewsRepositoryImpl() }
-    single<EventListRepository> { EventListRepositoryImpl(get()) }
+    single <BusinessCardRepo>{ BusinessCardRepoImpl() }
+    single<EventListRepository> { EventListRepositoryImpl() }
     single<MainRepo> { MainRepoImpl() }
+
 
     //vm
     viewModel { MainVM(androidApplication(), get()) }
@@ -39,6 +44,8 @@ val appModule = module {
     viewModel { NewsVM(androidApplication(), get()) }
     viewModel { EventListViewModel(androidApplication(), get()) }
     viewModel { HomeVM(androidApplication(), get()) }
+    viewModel { BusinessCardVM(androidApplication(), get(), get()) }
+    viewModel { BusinessCardsVM(androidApplication(), get(), get()) }
 }
 
 private inline fun <reified T> createWebService(

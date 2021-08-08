@@ -9,8 +9,14 @@ import app.u_business.data.network.query.user.RegistrationBody
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.domain.repo.auth.AuthRepository
 import app.u_business.presentation.ui.base.BaseViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 sealed class AuthEventAction {
     data class Success(val loginResponse: LoginResponse?) : AuthEventAction()
@@ -32,8 +38,8 @@ class AuthVM(
                 val res = repo.registerNewUser(registrationBody)
                 Log.d(Companion.TAG, "registerUser: $res")
                 authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
-            }catch (exception : retrofit2.HttpException){
-                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            }catch (exception : Exception){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message)))
             }
         }
     }
@@ -43,8 +49,8 @@ class AuthVM(
             try {
                 val res = repo.signIn(loginBody)
                 authEvents.postValue(AuthEvent(AuthEventAction.Success(res)))
-            } catch (exception : retrofit2.HttpException){
-                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            } catch (exception : Exception){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message)))
             }
         }
     }
@@ -54,8 +60,8 @@ class AuthVM(
             try {
                 val res = repo.recovery(email)
                 authEvents.postValue(AuthEvent((AuthEventAction.SuccessRecovery(res))))
-            } catch (exception : retrofit2.HttpException){
-                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message())))
+            } catch (exception : Exception){
+                authEvents.postValue(AuthEvent(AuthEventAction.Error(exception.message)))
             }
         }
     }
