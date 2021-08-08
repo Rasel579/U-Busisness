@@ -1,7 +1,10 @@
 package app.u_business.data.network.response.business_card.card_response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class BusinessCardResponseItem(
     @SerializedName("user")
     val user: String?,
@@ -21,4 +24,4 @@ data class BusinessCardResponseItem(
     val address: String?,
     @SerializedName("tags")
     val tags: String?
-)
+): Parcelable

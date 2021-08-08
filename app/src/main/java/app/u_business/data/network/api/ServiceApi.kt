@@ -46,19 +46,19 @@ interface ServiceApi {
     ) : MessageResponse
 
     @GET("/api/fetchBusinessCards")
-    fun getActiveBusinessCards(): FetchActivatedBusinessCards
+    suspend fun getActiveBusinessCards(): FetchActivatedBusinessCards
 
     @POST("/api/searchBusinessCards")
-    fun searchBusinessCards(@Body word: SearchBody): FetchActivatedBusinessCards
+    suspend fun searchBusinessCards(@Body word: SearchBody): FetchActivatedBusinessCards
 
     @POST("/api/addFavoriteCard")
-    fun addCardToFavorite(@Body card: FavoriteCardBody): MessageResponse
+    suspend fun addCardToFavorite(@Body card: FavoriteCardBody): MessageResponse
 
     @POST("/api/deleteFavoriteCard")
     fun deleteCardFromFavorite(@Body card: FavoriteCardBody): MessageResponse
 
     @POST("/api/fetchFavoritesCards")
-    fun getFavoritesCards(@Body user: UserBody): FetchActivatedBusinessCards
+    suspend fun getFavoritesCards(): FetchActivatedBusinessCards
 
     @GET("/api/tagslist")
     fun getTop20Tags(): TagListResponse

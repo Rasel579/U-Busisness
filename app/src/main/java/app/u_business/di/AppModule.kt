@@ -8,6 +8,7 @@ import app.u_business.domain.repo.auth.AuthRepository
 import app.u_business.domain.repo.business_card.BusinessCardRepo
 import app.u_business.domain.repo.news.NewsRepository
 import app.u_business.domain.repo.main.MainRepo
+import app.u_business.presentation.ui.business_cards.BusinessCardsVM
 import app.u_business.presentation.ui.eventlist.EventListViewModel
 import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepository
 import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepositoryImpl
@@ -44,6 +45,7 @@ val appModule = module {
     viewModel { EventListViewModel(androidApplication(), get()) }
     viewModel { HomeVM(androidApplication(), get()) }
     viewModel { BusinessCardVM(androidApplication(), get(), get()) }
+    viewModel { BusinessCardsVM(androidApplication(), get(), get()) }
 }
 
 private inline fun <reified T> createWebService(

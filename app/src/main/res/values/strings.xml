@@ -131,4 +131,8 @@
     <string name="event_list">Мероприятия</string>
     <string name="server_unavailable">Сервер не доступен</string>
     <string name="error">Errr</string>
+    <string name="business_cards_header_title">Визитки</string>
+    <string name="chip_checkable_all_text">Все</string>
+    <string name="chip_checkable_chosen_text">Избранное</string>
+    <string name="button_add_favorite">Добавить контакты</string>
 </resources>
