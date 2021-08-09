@@ -1,30 +1,28 @@
 package app.u_business.presentation.ui.eventlist
 
 import android.app.Application
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import app.u_business.data.network.response.events.fetch_event.FetchEventResponseItem
 import app.u_business.presentation.ui.base.BaseViewModel
-import app.u_business.presentation.ui.eventlist.model.EventList
 import app.u_business.presentation.ui.eventlist.repo.eventlist.EventListRepository
 import app.u_business.presentation.ui.eventlist.response.EventItem
-import app.u_business.presentation.ui.eventlist.response.FetchEventListResponse
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
+import app.u_business.presentation.ui.news.ResponseState
+import app.u_business.presentation.ui.news.getData
 
 
-sealed class EventListState{
+/*sealed class EventListState{
     data class Success(val serverResponseData: List<EventItem?>?) : EventListState()
     data class Error(val error: Throwable) : EventListState()
     object Loading : EventListState()
+}*/
+
+class EventListViewModel(app: Application, private val repo: EventListRepository) :
+    BaseViewModel(app) {
+    val ldEvents: MutableLiveData<ResponseState<List<EventItem>>> = MutableLiveData()
+
+    fun requestEventList() = getData(ldEvents) { repo.getEventList() }
 }
 
-class EventListViewModel(
-    app: Application,
-    private val repo: EventListRepository
+/*class EventListViewModel(    app: Application,    private val repo: EventListRepository
 ) : BaseViewModel(app), CoroutineScope by MainScope() {
 
     val state = MutableLiveData<EventListState>()
@@ -50,4 +48,4 @@ class EventListViewModel(
             }
         }
     }
-}
+}*/

@@ -27,9 +27,9 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
+import app.u_business.presentation.ui.eventlist.response.EventItem
 import okhttp3.RequestBody
 import retrofit2.http.*
-import app.u_business.presentation.ui.eventlist.response.EventItem
 
 interface ServiceApi {
 
@@ -94,7 +94,7 @@ interface ServiceApi {
     fun searchEventByWord(@Body event: SearchBody): FetchEventResponse
 
     @GET("/api/fetchevents")
-   suspend fun getEvents() : List<EventItem>
+    suspend fun getEvents(): List<EventItem>
 
 
     // methods for library
@@ -157,7 +157,7 @@ interface ServiceApi {
     fun getUserOffers(@Field("iduser") id: String): FetchUserOffersResponse
 
     @GET("/api/fetchOffers")
-    fun getOffers(): FetchUserOffersResponse
+    suspend fun getOffers(): FetchUserOffersResponse
 
     @POST("/api/fetchHistoryOffers")
     fun getHistoryOffers(@Field("iduser") id: String): FetchUserOffersResponse

@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import app.u_business.R
 import app.u_business.databinding.ItemEventForListBinding
 import app.u_business.databinding.ItemSmallEventNewsRBinding
-import app.u_business.presentation.ui.eventlist.interfaces.OnItemEventClickListener
 import app.u_business.presentation.ui.eventlist.model.EventList
 import app.u_business.presentation.ui.eventlist.response.EventItem
+import app.u_business.presentation.ui.news.FullscreenCardViewHolder
+import app.u_business.presentation.ui.news.parseDate
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -27,26 +28,24 @@ class EventListAdapter(
         }
 
     override fun getItemViewType(position: Int): Int =
-        if (data[position] == null) PLACEHOLDER_TYPE else DEFAULT_TYPE
+        /*if (data[position] == null) PLACEHOLDER_TYPE else */DEFAULT_TYPE
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
-            DEFAULT_TYPE -> {
-                EventListViewHolder.create(parent)
-            }
-            else -> {
-//                val inflater = LayoutInflater.from(parent.context)
-//                val view = inflater.inflate(R.layout.item_small_event_news_r, parent, false)
-                EventListItemViewHolder.create(parent)
-            }
+            DEFAULT_TYPE -> EventListViewHolder.create(parent)
+            else -> EventListItemViewHolder.create(parent)
         }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder.itemViewType == DEFAULT_TYPE)
             (holder as EventListViewHolder).bind(data[position]!!)
-
-        holder.itemView.setOnClickListener {
-//            itemEventClickListener.onItemViewClick(data[position]!!)
+        else {
+            val news = data[position]
+            (holder as FullscreenCardViewHolder).bind(
+                news?.banner ?: "",
+                news?.title ?: "",
+                news?.date ?: ""
+            )
         }
     }
 
@@ -56,6 +55,7 @@ class EventListAdapter(
 class EventListViewHolder(
     private val binding: ItemEventForListBinding
 ) : RecyclerView.ViewHolder(binding.root) {
+
     companion object {
         fun create(parent: ViewGroup): EventListViewHolder {
             val inflater = LayoutInflater.from(parent.context)
@@ -74,17 +74,15 @@ class EventListViewHolder(
             Glide.with(binding.root)
                 .load(eventList.banner)
 //                .fitCenter()
-                .apply(imageOption)
+                //.apply(imageOption)
                 .into(itemEventImage)
 
             itemEventTitleText.text = eventList.title
-            itemEventDateText.text = eventList.date
+            itemEventDateText.text = parseDate(eventList.date)
             itemEventTitleTypeText.text = eventList.category
         }
     }
 }
-
-//class EventMoreViewHolder(v: View) : RecyclerView.ViewHolder(v)
 
 class EventListItemViewHolder(
     private val binding: ItemSmallEventNewsRBinding
@@ -112,7 +110,9 @@ class EventListItemViewHolder(
 
             itemSmallNewsTypeText.text = eventListItem.category
             itemSmallNewsTitleText.text = eventListItem.title
-            itemSmallNewsDateText.text = eventListItem.date
+            itemSmallNewsDateText.text = parseDate(eventListItem.date)
         }
     }
+
+
 }

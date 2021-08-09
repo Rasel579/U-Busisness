@@ -22,7 +22,7 @@ class EventAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
 
     override fun getItemViewType(position: Int): Int =
-        if (data[position] == null) PLACEHOLDER_TYPE else DEFAULT_TYPE
+        /*if (data[position] == null) PLACEHOLDER_TYPE else */DEFAULT_TYPE
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {

@@ -1,48 +1,58 @@
 package app.u_business.presentation.ui.home
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import app.u_business.data.network.response.events.fetch_event.FetchEventResponseItem
-import app.u_business.data.network.response.news.fetch_news.FetchNewsResponseItem
+import app.u_business.data.network.response.news.fetch_news.FetchNewsResponse
 import app.u_business.data.network.response.offers.fetch_user_offers.FetchUserOffersResponseItem
 import app.u_business.domain.repo.main.MainRepo
 import app.u_business.presentation.ui.base.BaseViewModel
+import app.u_business.presentation.ui.eventlist.response.EventItem
+import app.u_business.presentation.ui.news.ResponseState
+import app.u_business.presentation.ui.news.getData
 import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 data class HomeData(
-    val news: List<FetchNewsResponseItem> = listOf(),
-    val events: List<FetchEventResponseItem> = listOf(),
+    var news: FetchNewsResponse = FetchNewsResponse(),
+    var events: List<EventItem> = listOf(),
     val offers: List<FetchUserOffersResponseItem> = listOf()
 )
 
-sealed class HomeState {
-    data class Success(val data: HomeData) : HomeState()
-    data class Error(val error: Throwable) : HomeState()
-    object Loading : HomeState()
-}
-
 class HomeVM(app: Application, private val repo: MainRepo) : BaseViewModel(app) {
-    init {
-        viewModelScope.launch {
-            with(repo) {
-                val events = async { getEvents() }
-                val news = async { getNews() }
-                val offers = async { getSpecialOffers() }
 
 
-                awaitAll(events, news, offers)
+    val state: MutableLiveData<ResponseState<HomeData>> = MutableLiveData()
 
-                Log.d(TAG, "$events: $news $offers ")
-//                state.postValue(HomeState.Success(HomeData(news.await(), events.await(), offers.await())))
+    fun requestNewsList() = getData(state) { getHomeData() }
+
+    private suspend fun getHomeData(): HomeData {
+        return suspendCoroutine { continuation ->
+            viewModelScope.launch {
+                with(repo) {
+                    val hd = HomeData()
+                    val eventsCor = async { getEvents() }
+                    val newsCor = async { getNews() }
+                    val offersCor = async { getSpecialOffers() }
+
+                    hd.news = try {
+                        newsCor.await()
+                    } catch (ex: Exception) {
+                        FetchNewsResponse()
+                    }
+
+                    hd.events = try {
+                        eventsCor.await()
+                    } catch (ex: Exception) {
+                        listOf<EventItem>()
+                    }
+                    continuation.resume(hd)
+                }
             }
         }
     }
-
-    val state = MutableLiveData<HomeState>(HomeState.Loading)
 
     companion object {
         private const val TAG = "HomeVM"
