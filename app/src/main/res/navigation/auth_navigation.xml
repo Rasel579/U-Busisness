@@ -35,8 +35,7 @@
     <fragment
         android:id="@+id/auth"
         android:name="app.u_business.presentation.ui.sign_in.AuthFragment"
-        android:label="SignIn1"
-        tools:layout="@layout/fr_auth">
+        android:label="SignIn1">
         <action
             android:id="@+id/action_signIn1_to_signIn2"
             app:destination="@id/signIn2" />

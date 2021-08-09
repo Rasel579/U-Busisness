@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/profile"
-        android:title="Профиль"
-        android:icon="@drawable/ic_profile"
-        app:showAsAction="ifRoom"/>
+        android:title="Фильтр"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic__filter_icon"
+        app:showAsAction="always"/>
 </menu>

@@ -125,7 +125,14 @@
     <string name="alert_message_password_not_equals">Пароль не совпадает</string>
     <string name="alert_title_not_valid_email">Email некорректен</string>
     <string name="alert_message_not_valid_email">Некорректно введен Email</string>
-    <string name="error">Ошибка</string>
-    <string name="server_unavailable">Сервер недоступен</string>
-    <string name="event_list">СОБЫТИЯ</string>
+    <string name="status_validate_text">Подтвержден</string>
+    <string name="satus_invalidate_text">Не Подтвержден</string>
+    <string name="title_alert_show_empty_fields">Заполните поля</string>
+    <string name="event_list">Мероприятия</string>
+    <string name="server_unavailable">Сервер не доступен</string>
+    <string name="error">Errr</string>
+    <string name="business_cards_header_title">Визитки</string>
+    <string name="chip_checkable_all_text">Все</string>
+    <string name="chip_checkable_chosen_text">Избранное</string>
+    <string name="button_add_favorite">Добавить контакты</string>
 </resources>

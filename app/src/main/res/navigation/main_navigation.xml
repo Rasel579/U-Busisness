@@ -35,4 +35,16 @@
         android:id="@+id/nav_event_list"
         android:name="app.u_business.presentation.ui.eventlist.EventListFragment"
         android:label="EventListFragment" />
+    <fragment
+        android:id="@+id/nav_business_cards"
+        android:name="app.u_business.presentation.ui.business_cards.FragmentBusinessCards"
+        android:label="FragmentBusinessCards">
+        <action
+            android:id="@+id/action_nav_business_cards_to_nav_business_card_full_fragment"
+            app:destination="@id/nav_business_card_full_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_business_card_full_fragment"
+        android:name="app.u_business.presentation.ui.business_cards.BusinessFullCardFragment"
+        android:label="BusinessFullCardFragment"/>
 </navigation>

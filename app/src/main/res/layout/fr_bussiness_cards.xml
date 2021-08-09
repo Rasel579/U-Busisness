@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <androidx.core.widget.NestedScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@color/bridal_heath">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+               <TextView
+                   style="@style/base_title_style"
+                   android:text="@string/business_cards_header_title" />
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/offers_search_til"
+                   style="@style/search_text_input_layout_style">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/offers_search_et"
+                       style="@style/search_text_input_edit_text_style" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <com.google.android.material.chip.Chip
+                       style="@style/chip_button_material_style"
+                       android:id="@+id/all_cards"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:checked="true"
+                       android:text="@string/chip_checkable_all_text"/>
+                   <com.google.android.material.chip.Chip
+                       style="@style/chip_button_material_style"
+                       android:id="@+id/favorite_cards"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/chip_checkable_chosen_text"/>
+               </LinearLayout>
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/business_cards_rv"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                   tools:listitem="@layout/item_small_business_card" />
+
+           </LinearLayout>
+
+       </androidx.core.widget.NestedScrollView>
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -8,9 +8,10 @@ import app.u_business.presentation.utils.showAlertDialog
 import app.u_business.presentation.utils.validateEmail
 import org.koin.android.ext.android.inject
 
-class ForgotPassword(override val layoutId: Int = R.layout.fragment_forgot_password) : BaseFragment<FragmentForgotPasswordBinding>() {
+class ForgotPassword(override val layoutId: Int = R.layout.fragment_forgot_password) :
+    BaseFragment<FragmentForgotPasswordBinding>() {
     val vm by inject<AuthVM>()
-    override fun initViews()= with(binding) {
+    override fun initViews() = with(binding) {
         initEvents()
         btnBack.setOnClickListener{findNavController().popBackStack()}
         btnSignUp.setOnClickListener{
@@ -21,8 +22,8 @@ class ForgotPassword(override val layoutId: Int = R.layout.fragment_forgot_passw
     }
 
     private fun initEvents() {
-        vm.authEvents.observe(viewLifecycleOwner){ event ->
-            when(event.action){
+        vm.authEvents.observe(viewLifecycleOwner) { event ->
+            when (event.action) {
                 is AuthEventAction.SuccessRecovery -> {
                     showAlertDialog(event.action.message, event.action.message)
                 }

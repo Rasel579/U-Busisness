@@ -28,35 +28,39 @@ import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
 import app.u_business.presentation.ui.eventlist.response.EventItem
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
+
 
 interface ServiceApi {
 
     // methods for business cards
-    @POST("/api/fetchBusinessCard")
-    fun getBusinessCard(@Body user: UserBody): BusinessCardResponse
 
+    @GET("/api/fetchBusinessCard")
+    suspend fun getBusinessCard(): BusinessCardResponse
+
+    @Multipart
     @POST("/api/editBusinessCard")
-    fun editBusinessCard(
-        @Body card: BusinessCardBody,
-        @Part("files") file: RequestBody
+    suspend fun editBusinessCard(
+        @PartMap file: MutableMap<String, RequestBody>,
+        @Part file1: MultipartBody.Part
     ): MessageResponse
 
     @GET("/api/fetchBusinessCards")
-    fun getActiveBusinessCards(): FetchActivatedBusinessCards
+    suspend fun getActiveBusinessCards(): FetchActivatedBusinessCards
 
     @POST("/api/searchBusinessCards")
-    fun searchBusinessCards(@Body word: SearchBody): FetchActivatedBusinessCards
+    suspend fun searchBusinessCards(@Body word: SearchBody): FetchActivatedBusinessCards
 
     @POST("/api/addFavoriteCard")
-    fun addCardToFavorite(@Body card: FavoriteCardBody): MessageResponse
+    suspend fun addCardToFavorite(@Body card: FavoriteCardBody): MessageResponse
 
     @POST("/api/deleteFavoriteCard")
     fun deleteCardFromFavorite(@Body card: FavoriteCardBody): MessageResponse
 
     @POST("/api/fetchFavoritesCards")
-    fun getFavoritesCards(@Body user: UserBody): FetchActivatedBusinessCards
+    suspend fun getFavoritesCards(): FetchActivatedBusinessCards
 
     @GET("/api/tagslist")
     fun getTop20Tags(): TagListResponse
@@ -181,6 +185,7 @@ interface ServiceApi {
 
     @POST("/api/recovery")
     suspend fun recovery(@Body email: String): String
+
 
     @GET("/api/facebook")
     fun loginUserWithFacebook(): LoginWithServiceResponse

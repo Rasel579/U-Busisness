@@ -11,6 +11,7 @@ import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.ui.base.BaseViewModel
 import app.u_business.presentation.utils.showAlertDialog
 import kotlinx.coroutines.launch
+import retrofit2.Response.error
 
 sealed class ResponseState<out T> {
     object Loading : ResponseState<Nothing>()
