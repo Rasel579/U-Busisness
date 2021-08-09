@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import app.u_business.data.network.response.news.fetch_news.FetchNewsResponse
-import app.u_business.data.network.response.offers.fetch_user_offers.FetchUserOffersResponseItem
+import app.u_business.data.network.response.offers.fetch_user_offers.FetchUserOffersResponse
 import app.u_business.domain.repo.main.MainRepo
 import app.u_business.presentation.ui.base.BaseViewModel
 import app.u_business.presentation.ui.eventlist.response.EventItem
@@ -18,7 +18,7 @@ import kotlin.coroutines.suspendCoroutine
 data class HomeData(
     var news: FetchNewsResponse = FetchNewsResponse(),
     var events: List<EventItem?> = listOf(),
-    val offers: List<FetchUserOffersResponseItem> = listOf()
+    var offers: FetchUserOffersResponse = FetchUserOffersResponse()
 )
 
 class HomeVM(app: Application, private val repo: MainRepo) : BaseViewModel(app) {
@@ -45,6 +45,12 @@ class HomeVM(app: Application, private val repo: MainRepo) : BaseViewModel(app) 
                         eventsCor.await()
                     } catch (ex: Exception) {
                         listOf<EventItem>()
+                    }
+
+                    hd.offers = try {
+                        offersCor.await()
+                    } catch (ex: Exception) {
+                        FetchUserOffersResponse()
                     }
                     continuation.resume(hd)
                 }
