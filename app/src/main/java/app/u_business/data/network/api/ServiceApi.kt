@@ -95,7 +95,7 @@ interface ServiceApi {
     fun getEvent(@Body event: EventIdBody): FetchEventResponse
 
     @POST("/api/searchevents")
-    fun searchEventByWord(@Body event: SearchBody): FetchEventResponse
+    suspend fun searchEventByWord(@Body event: SearchBody): List<EventItem>
 
     @GET("/api/fetchevents")
     suspend fun getEvents(): List<EventItem>

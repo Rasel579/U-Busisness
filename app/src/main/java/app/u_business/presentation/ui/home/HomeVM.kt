@@ -17,16 +17,14 @@ import kotlin.coroutines.suspendCoroutine
 
 data class HomeData(
     var news: FetchNewsResponse = FetchNewsResponse(),
-    var events: List<EventItem> = listOf(),
+    var events: List<EventItem?> = listOf(),
     val offers: List<FetchUserOffersResponseItem> = listOf()
 )
 
 class HomeVM(app: Application, private val repo: MainRepo) : BaseViewModel(app) {
-
-
     val state: MutableLiveData<ResponseState<HomeData>> = MutableLiveData()
 
-    fun requestNewsList() = getData(state) { getHomeData() }
+    fun requestHomeData() = getData(state) { getHomeData() }
 
     private suspend fun getHomeData(): HomeData {
         return suspendCoroutine { continuation ->
