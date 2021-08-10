@@ -19,6 +19,8 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/event_search_til"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_search"
                 style="@style/search_text_input_layout_style">
 
                 <com.google.android.material.textfield.TextInputEditText

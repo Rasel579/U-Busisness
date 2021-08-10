@@ -5,6 +5,8 @@ import android.widget.ProgressBar
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import app.u_business.R
+import app.u_business.data.network.response.news.fetch_news.dateFormat
+import app.u_business.data.network.response.news.fetch_news.serverDateFormat
 import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.ui.base.BaseViewModel
 import app.u_business.presentation.utils.showAlertDialog
@@ -79,4 +81,10 @@ fun <T> BaseViewModel.getData(
             mutableLiveData.value = ResponseState.Error(exception)
         }
     }
+}
+
+fun parseDate(date: String?) = try {
+    dateFormat.format(serverDateFormat.parse(date))
+} catch (e: Exception) {
+    ""
 }

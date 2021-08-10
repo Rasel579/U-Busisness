@@ -27,23 +27,25 @@ import app.u_business.data.network.response.offers.search_offers.SearchOffersRes
 import app.u_business.data.network.response.user.fetch.FetchProfileResponse
 import app.u_business.data.network.response.user.login.LoginResponse
 import app.u_business.data.network.response.user.login.LoginWithServiceResponse
-import okhttp3.RequestBody
-import retrofit2.http.*
 import app.u_business.presentation.ui.eventlist.response.EventItem
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.*
+
 
 interface ServiceApi {
 
     // methods for business cards
 
     @GET("/api/fetchBusinessCard")
-    suspend fun getBusinessCard() : BusinessCardResponse
+    suspend fun getBusinessCard(): BusinessCardResponse
+
     @Multipart
     @POST("/api/editBusinessCard")
     suspend fun editBusinessCard(
         @PartMap file: MutableMap<String, RequestBody>,
         @Part file1: MultipartBody.Part
-    ) : MessageResponse
+    ): MessageResponse
 
     @GET("/api/fetchBusinessCards")
     suspend fun getActiveBusinessCards(): FetchActivatedBusinessCards
@@ -93,10 +95,10 @@ interface ServiceApi {
     fun getEvent(@Body event: EventIdBody): FetchEventResponse
 
     @POST("/api/searchevents")
-    fun searchEventByWord(@Body event: SearchBody): FetchEventResponse
+    suspend fun searchEventByWord(@Body event: SearchBody): List<EventItem>
 
     @GET("/api/fetchevents")
-   suspend fun getEvents() : List<EventItem>
+    suspend fun getEvents(): List<EventItem>
 
 
     // methods for library
