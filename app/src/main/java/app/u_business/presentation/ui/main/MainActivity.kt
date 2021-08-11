@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                     })
                     finish()
                 }
+
+                NavigateEventAction.WAIT_PAYMENT -> {
+                    navigateRoot(R.id.paymentWaitingFragment)
+                }
             }
         }
     }

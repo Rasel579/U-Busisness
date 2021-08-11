@@ -1,47 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/constraint">
+<layout>
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="17dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_stroke_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/forgot_password_back" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/constraint">
 
-    <TextView
-        android:id="@+id/text_view"
-        style="@style/main_text_style"
-        android:layout_marginBottom="50dp"
-        android:text="@string/is_waiting_text"
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="17dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/forgot_password_back"
+            android:src="@drawable/ic_stroke_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        app:layout_constraintBottom_toTopOf="@+id/text_view_sub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/text_view"
+            style="@style/main_text_style"
+            android:layout_marginBottom="50dp"
+            android:text="@string/is_waiting_text"
 
-    <TextView
-        android:id="@+id/text_view_sub"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/is_waiting_subtext"
-        android:textStyle="normal"
-        android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_sub"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-        android:lineHeight="24.8sp"
+        <TextView
+            android:id="@+id/text_view_sub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="370dp"
+            android:lineHeight="24.8sp"
+            android:text="@string/is_waiting_subtext"
+
+            android:textSize="16sp"
 
 
-        android:layout_marginBottom="370dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/text_view"
-        app:layout_constraintStart_toStartOf="@+id/text_view" />
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/text_view"
+            app:layout_constraintStart_toStartOf="@+id/text_view" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

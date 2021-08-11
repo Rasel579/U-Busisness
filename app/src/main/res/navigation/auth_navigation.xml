@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_signIn2_to_forgotPassword"
             app:destination="@id/forgotPassword" />
+        <action
+            android:id="@+id/action_signIn2_to_paymentWaitingFragment"
+            app:destination="@id/paymentWaitingFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
@@ -31,7 +34,11 @@
         android:id="@+id/signUp2"
         android:name="app.u_business.presentation.ui.sign_in.SignUpPassword"
         android:label="SignUp2"
-        tools:layout="@layout/fr_registration_password" />
+        tools:layout="@layout/fr_registration_password" >
+        <action
+            android:id="@+id/action_signUp2_to_paymentWaitingFragment"
+            app:destination="@id/paymentWaitingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/auth"
         android:name="app.u_business.presentation.ui.sign_in.AuthFragment"
@@ -60,4 +67,9 @@
         android:name="app.u_business.presentation.ui.base.LoadingFragment"
         android:label="LoadingFragment"
         tools:layout="@layout/fr_loading" />
+    <fragment
+        android:id="@+id/paymentWaitingFragment"
+        android:name="app.u_business.presentation.ui.sign_in.PaymentWaitingFragment"
+        android:label="PaymentWaitingFragment"
+        tools:layout="@layout/fragment_is_waiting" />
 </navigation>

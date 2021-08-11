@@ -1,7 +1,7 @@
 package app.u_business.presentation.ui.sign_in
 
 import android.content.Intent
-import android.util.Log
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import app.u_business.R
 import app.u_business.data.network.query.user.LoginBody
@@ -40,15 +40,47 @@ class SignInFragment(override val layoutId: Int = R.layout.fr_login) :
                 is AuthEventAction.Success -> {
                     sharedPreferencesHelper.accessToken = event.action.loginResponse?.accessToken
                     sharedPreferencesHelper.isAuthed = true
-                    Log.e("userId", event.action.loginResponse?.userId.toString())
                     sharedPreferencesHelper.registrationBody =
                         Gson().toJson(event.action.loginResponse)
+                    sharedPreferencesHelper.userId = event.action.loginResponse?.userId.toString()
                     startActivity(Intent(activity, Home::class.java))
                 }
                 is AuthEventAction.Error -> {
-                    event.action.string?.let { showAlertDialog(it, event.action.string) }
+                    event.action.string?.let {
+                        sharedPreferencesHelper.isAuthed = true
+                        showAlertDialog(it, event.action.string)
+                    }
                 }
+                is AuthEventAction.NotPayed -> {
+                    sharedPreferencesHelper.accessToken = event.action.loginResponse?.accessToken
+                    sharedPreferencesHelper.isAuthed = true
+                    sharedPreferencesHelper.registrationBody =
+                        Gson().toJson(event.action.loginResponse)
+                    sharedPreferencesHelper.userId = event.action.loginResponse?.userId.toString()
+                    navigateRoot(R.id.paymentWaitingFragment)
+                }
+                is AuthEventAction.Payed -> {
+                    sharedPreferencesHelper.accessToken = event.action.loginResponse?.accessToken
+                    sharedPreferencesHelper.isAuthed = true
+                    sharedPreferencesHelper.registrationBody =
+                        Gson().toJson(event.action.loginResponse)
+                    sharedPreferencesHelper.userId = event.action.loginResponse?.userId.toString()
+                    startActivity(Intent(activity, Home::class.java))
+                }
+
+//                is AuthEventAction.SuccessRecovery -> TODO()
             }
+        }
+    }
+
+    private fun navigateRoot(id: Int) {
+        val findNavController =
+            Navigation.findNavController(requireActivity(), R.id.nav_main_fragment)
+        findNavController.let { controller ->
+            val nav =
+                controller.navInflater.inflate(R.navigation.auth_navigation)
+            nav.startDestination = id
+            controller.graph = nav
         }
     }
 }

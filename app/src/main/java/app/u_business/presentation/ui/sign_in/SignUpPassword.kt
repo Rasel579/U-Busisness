@@ -1,6 +1,7 @@
 package app.u_business.presentation.ui.sign_in
 
 import android.content.Intent
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import app.u_business.R
 import app.u_business.data.network.query.user.RegistrationBody
@@ -8,6 +9,7 @@ import app.u_business.databinding.FrRegistrationPasswordBinding
 import app.u_business.presentation.ui.Home
 import app.u_business.presentation.ui.base.BaseFragment
 import app.u_business.presentation.utils.SharedPreferencesHelper
+import app.u_business.presentation.utils.navigate
 import app.u_business.presentation.utils.showAlertDialog
 import com.google.gson.Gson
 import org.koin.android.ext.android.inject
@@ -48,12 +50,24 @@ class SignUpPassword(override val layoutId: Int = R.layout.fr_registration_passw
                     sharePref.accessToken = event.action.loginResponse?.accessToken
                     sharePref.isAuthed = true
                     sharePref.registrationBody = Gson().toJson(event.action.loginResponse)
-                    startActivity(Intent(activity, Home::class.java))
+                    sharePref.userId = event.action.loginResponse?.userId.toString()
+                    navigateRoot(R.id.paymentWaitingFragment)
+//                    startActivity(Intent(activity, Home::class.java))
                 }
                 is AuthEventAction.Error -> {
                     event.action.string?.let { showAlertDialog(it, event.action.string,) }
                 }
             }
+        }
+    }
+
+    private fun navigateRoot(id: Int) {
+        val findNavController = Navigation.findNavController(requireActivity(), R.id.nav_main_fragment)
+        findNavController.let { controller ->
+            val nav =
+                controller.navInflater.inflate(R.navigation.auth_navigation)
+            nav.startDestination = id
+            controller.graph = nav
         }
     }
 }
