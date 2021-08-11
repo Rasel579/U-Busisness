@@ -39,8 +39,8 @@ val appModule = module {
 
 
     //vm
-    viewModel { MainVM(androidApplication(), get()) }
-    viewModel { AuthVM(androidApplication(), get()) }
+    viewModel { MainVM(androidApplication(), get(), get()) }
+    viewModel { AuthVM(androidApplication(), get(), get()) }
     viewModel { NewsVM(androidApplication(), get()) }
     viewModel { EventListViewModel(androidApplication(), get()) }
     viewModel { HomeVM(androidApplication(), get()) }

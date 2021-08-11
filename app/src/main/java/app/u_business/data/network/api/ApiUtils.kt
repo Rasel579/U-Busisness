@@ -12,7 +12,8 @@ object ApiUtils {
         val im: SharedPreferencesHelper by inject()
     }.im
     val baseUrl = "https://ubusiness-ithub.ru/"
-    private val duration = 2000L
+    val paymentBaseUrl = "https://join.u-business.world/"
+    private val duration = 10000L
     fun getOkHttpClient() : OkHttpClient {
         val httpClient = OkHttpClient.Builder().apply {
             connectTimeout(duration, TimeUnit.MILLISECONDS)

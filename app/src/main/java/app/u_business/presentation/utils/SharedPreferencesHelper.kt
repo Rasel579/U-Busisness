@@ -12,7 +12,15 @@ class SharedPreferencesHelper(ctx: Context) {
         private const val IS_AUTHED_KEY = "isAuthed"
         private const val ACCESS_TOKEN = "accessToken"
         private const val REG_BODY = "registrationBody"
+        private const val USER_ID = "user_id"
     }
+
+    var userId: String? = null
+        set(value) {
+            field = value
+            prefs.edit().putString(USER_ID, value).apply()
+        }
+        get() = prefs.getString(USER_ID, null)
 
     var isFirstOpen = true
         set(value) {
