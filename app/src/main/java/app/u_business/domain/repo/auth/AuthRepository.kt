@@ -5,7 +5,6 @@ import app.u_business.data.network.query.user.RegistrationBody
 import app.u_business.data.network.response.payment.link.PaymentLinkResponse
 import app.u_business.data.network.response.payment.products.PaymentProductsResponseItem
 import app.u_business.data.network.response.user.login.LoginResponse
-import okhttp3.ResponseBody
 import retrofit2.Callback
 
 interface AuthRepository {

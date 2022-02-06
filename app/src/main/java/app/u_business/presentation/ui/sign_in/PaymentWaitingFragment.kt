@@ -16,18 +16,14 @@ class PaymentWaitingFragment(override val layoutId: Int = R.layout.fragment_is_w
     override fun initViews() {
 
         vm.getPaymentLink()
-        vm.authEvents.observe(this){
-            when(it.action){
+        vm.authEvents.observe(this) {
+            when (it.action) {
                 is AuthEventAction.Link -> {
                     val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(it.action.link))
                     startActivity(browserIntent)
                 }
-                else -> { }
+                else -> {}
             }
         }
-//        binding.btnBack.setOnClickListener {
-//
-//        }
     }
-
 }

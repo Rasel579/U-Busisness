@@ -32,9 +32,6 @@ class Home : AppCompatActivity() {
     private val sharedPref by inject<SharedPreferencesHelper>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.e("login",
-            Gson().fromJson(sharedPref.registrationBody, LoginResponse::class.java).toString()
-        )
         binding = AcHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarHome.toolbar)
@@ -44,7 +41,6 @@ class Home : AppCompatActivity() {
         drawerLayout.setScrimColor(resources.getColor(android.R.color.transparent))
         drawerLayout.drawerElevation = 0f
         navController = findNavController(R.id.nav_host_fragment_content_home)
-
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_profile,

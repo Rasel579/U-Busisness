@@ -25,7 +25,6 @@ class BusinessFullCardFragment(override val layoutId: Int = R.layout.fr_business
     private var data: ActivatedBusinessCardsItem? = null
     override fun initViews() {
         data = arguments?.getParcelable("Card")
-        Log.e("data from", data.toString())
         initUi()
         mock()
         initListeners()
@@ -34,9 +33,9 @@ class BusinessFullCardFragment(override val layoutId: Int = R.layout.fr_business
     }
 
     override fun initViewModel() {
-        vm.stateLiveData.observe(viewLifecycleOwner, {
+        vm.stateLiveData.observe(viewLifecycleOwner) {
             showAlertDialog(it as String, it as String)
-        })
+        }
     }
 
 

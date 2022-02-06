@@ -1,5 +1,6 @@
 package app.u_business.presentation.ui.home
 
+import android.util.Log
 import android.view.View
 import app.u_business.R
 import app.u_business.databinding.FrHomeBinding
@@ -64,6 +65,7 @@ class HomeFragment(override val layoutId: Int = R.layout.fr_home) : BaseFragment
     private val prefs by inject<SharedPreferencesHelper>()
     private val vm by viewModel<HomeVM>()
     override fun initViews() {
+
         initRecyclers()
         
         vm.state.observe(this) {

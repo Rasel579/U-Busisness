@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/base_page_toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/fr_account.xml" value="0.1109375" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/fr_business_card.xml" value="0.1" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/fr_business_full_card.xml" value="0.1" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/fr_news_page.xml" value="0.1109375" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/item_small_business_card.xml" value="0.1109375" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/item_small_event_news_l.xml" value="0.1109375" />
         <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/item_small_event_news_r.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/item_small_news.xml" value="0.1109375" />
+        <entry key="..\:/Users/rasel/Documents/workspace/GeekBrainsAndroid/UBussiness/U-Business/app/src/main/res/layout/item_small_offer.xml" value="0.1109375" />
       </map>
     </option>
   </component>

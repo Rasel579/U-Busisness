@@ -2,7 +2,6 @@ package app.u_business.presentation.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import app.u_business.R
@@ -20,8 +19,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ac_main)
-        sharedPreferencesHelper.accessToken?.let { Log.e("Home_access_token", it) }
-        sharedPreferencesHelper.registrationBody?.let { Log.e("Home_reg_body", it) }
 
         vm.navEvents.observe(this) { event ->
             when (event.action) {
@@ -29,15 +26,12 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                     navigateRoot(R.id.welcomeFragmentPager)
                     sharedPreferencesHelper.isFirstOpen = false
                 }
-                //  NavigateEventAction.ONBOARDING -> startActivity(Intent(this, ::class.java))
                 NavigateEventAction.AUTH -> navigateRoot(R.id.auth)
                 NavigateEventAction.HOME -> {
                     startActivity(Intent(this, Home::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK
                     })
-                    finish()
                 }
-
                 NavigateEventAction.WAIT_PAYMENT -> {
                     navigateRoot(R.id.paymentWaitingFragment)
                 }

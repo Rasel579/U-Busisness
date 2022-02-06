@@ -1,6 +1,7 @@
 package app.u_business.presentation.ui.base
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,7 @@ abstract class BaseFragment<Binding: ViewDataBinding> : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        this.tag?.let { Log.e("errorHome", it) }
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         return binding.root
     }

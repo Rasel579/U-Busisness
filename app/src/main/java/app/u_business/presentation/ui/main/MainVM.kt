@@ -29,6 +29,7 @@ class MainVM(
     val navEvents = MutableLiveData<NavigateEvent>()
 
     init {
+
         viewModelScope.launch(Dispatchers.Main) {
             if (repo.isFirstOpen())
                 navEvents.postValue(NavigateEvent(NavigateEventAction.ONBOARDING))

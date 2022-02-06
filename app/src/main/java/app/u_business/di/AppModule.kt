@@ -49,15 +49,15 @@ val appModule = module {
     viewModel { BusinessCardsVM(androidApplication(), get(), get()) }
 }
 
-private inline fun <reified T> createWebService(
-    httpClient: OkHttpClient,
-    baseUrl: String
-): T {
-    val retrofit = Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create(Gson()))
-        .client(httpClient)
-        .baseUrl(baseUrl)
-        .build()
-
-    return retrofit.create(T::class.java)
-}
+//private inline fun <reified T> createWebService(
+//    httpClient: OkHttpClient,
+//    baseUrl: String
+//): T {
+//    val retrofit = Retrofit.Builder()
+//        .addConverterFactory(GsonConverterFactory.create(Gson()))
+//        .client(httpClient)
+//        .baseUrl(baseUrl)
+//        .build()
+//
+//    return retrofit.create(T::class.java)
+//}

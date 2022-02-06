@@ -14,7 +14,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EventListFragment(override val layoutId: Int = R.layout.event_list_fragment) :
     BaseFragment<EventListFragmentBinding>() {
-    //private val adapter: EventListAdapter by lazy { EventListAdapter() }
     private val adapter: BaseAdapter<EventItem?, ItemSmallEventNewsRBinding> by lazy {
         BaseAdapter(
             { li, parent, attach -> ItemSmallEventNewsRBinding.inflate(li, parent, attach) },

@@ -1,6 +1,7 @@
 package app.u_business.presentation.ui.home
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import app.u_business.data.network.response.news.fetch_news.FetchNewsResponse
@@ -24,9 +25,12 @@ data class HomeData(
 class HomeVM(app: Application, private val repo: MainRepo) : BaseViewModel(app) {
     val state: MutableLiveData<ResponseState<HomeData>> = MutableLiveData()
 
-    fun requestHomeData() = getData(state) { getHomeData() }
+    fun requestHomeData() = getData(state) {
+        Log.e("errorHome", "error home view model")
+        getHomeData() }
 
     private suspend fun getHomeData(): HomeData {
+        Log.e("errorHome", "error home view model")
         return suspendCoroutine { continuation ->
             viewModelScope.launch {
                 with(repo) {

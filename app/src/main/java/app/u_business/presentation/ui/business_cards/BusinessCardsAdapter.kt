@@ -1,11 +1,9 @@
 package app.u_business.presentation.ui.business_cards
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.u_business.R
-import app.u_business.data.network.api.ApiUtils
 import app.u_business.data.network.response.business_card.verified_card_response.ActivatedBusinessCardsItem
 import app.u_business.data.network.response.business_card.verified_card_response.FetchActivatedBusinessCards
 import app.u_business.databinding.ItemSmallBusinessCardBinding
@@ -68,8 +66,7 @@ class SmallBusinessCardsViewHolder(
     fun bind(cards: ActivatedBusinessCardsItem, onLongClickListener: OnLongClickListener) {
         with(binding) {
             Glide.with(root)
-//                .load(news.image)
-                .load(Uri.parse("${ApiUtils.baseUrl}/${cards.avatarurl}"))
+                .load(R.drawable.photo_overlay_big)
                 .circleCrop()
                 .into(businessCardProfileImage)
             itemSmallProfileNameText.text = cards.user

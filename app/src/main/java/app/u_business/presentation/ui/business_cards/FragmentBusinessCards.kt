@@ -44,7 +44,7 @@ class FragmentBusinessCards(override val layoutId: Int = R.layout.fr_bussiness_c
 
 
     private fun initVM() {
-        vm.stateLiveData.observe(viewLifecycleOwner, {
+        vm.stateLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is FetchActivatedBusinessCards -> {
                     data = it
@@ -52,7 +52,7 @@ class FragmentBusinessCards(override val layoutId: Int = R.layout.fr_bussiness_c
                 }
                 is String? -> showAlertDialog(it, it)
             }
-        })
+        }
         vm.getBusinessCards()
     }
 

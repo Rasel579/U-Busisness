@@ -1,5 +1,6 @@
 package app.u_business.presentation.ui.news
 
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import androidx.lifecycle.MutableLiveData
